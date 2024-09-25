@@ -11,6 +11,7 @@ import { Loading } from '../components';
 import renderService from './renderService';
 import Gallery from './Gallery';
 import ProjectImages from './ProjectImages';
+import { Tooltip as ReactTooltip, Tooltip } from 'react-tooltip';
 
 export default function ProjectPage() {
   return (
@@ -241,42 +242,62 @@ function ProjectComponent() {
               Photos
             </div>
           </div>
-          <div className="text-center">
-            <Link href={property[0].floor_plan ?? '/'} target="_blank">
-              <Image
-                src="/icons/floor_lamp.svg"
-                alt="Lamp icon"
-                width={114}
-                height={114}
-                className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
-              />
-              Floor Plan
-            </Link>
-          </div>
-          <div className="text-center">
-            <Link href={property[0].video ?? '/'} target="_blank">
-              <Image
-                src="/icons/play_circle.svg"
-                alt="Play circle icon"
-                width={114}
-                height={114}
-                className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
-              />
-              Video
-            </Link>
-          </div>
-          <div className="text-center">
-            <Link href={property[0].brochure ?? '/'} target="_blank">
-              <Image
-                src="/icons/book.svg"
-                alt="Book icon"
-                width={114}
-                height={114}
-                className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
-              />
-              Brochure
-            </Link>
-          </div>
+
+          <Tooltip id="my-tooltip" />
+
+          <a
+            data-tooltip-id="my-tooltip"
+            data-tooltip-content={property[0].floor_plan ?? 'Not Available'}
+          >
+            <div className="text-center">
+              <Link href={property[0].floor_plan ?? '/'} target="_blank">
+                <Image
+                  src="/icons/floor_lamp.svg"
+                  alt="Lamp icon"
+                  width={114}
+                  height={114}
+                  className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                />
+                Floor Plan
+              </Link>
+            </div>
+          </a>
+
+          <a
+            data-tooltip-id="my-tooltip"
+            data-tooltip-content={property[0].video ?? 'Not Available'}
+          >
+            <div className="text-center">
+              <Link href={property[0].video ?? '/'} target="_blank">
+                <Image
+                  src="/icons/play_circle.svg"
+                  alt="Play circle icon"
+                  width={114}
+                  height={114}
+                  className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                />
+                Video
+              </Link>
+            </div>
+          </a>
+
+          <a
+            data-tooltip-id="my-tooltip"
+            data-tooltip-content={property[0].brochure ?? 'Not Available'}
+          >
+            <div className="text-center">
+              <Link href={property[0].brochure ?? '/'} target="_blank">
+                <Image
+                  src="/icons/book.svg"
+                  alt="Book icon"
+                  width={114}
+                  height={114}
+                  className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                />
+                Brochure
+              </Link>
+            </div>
+          </a>
         </div>
         {/* <div> */}
         {/* <button className='pt-[13px] pr-[26px] pb-[17px] pl-[24px] rounded-3xl border border-solid border-[#EDDFD0] text-sm hover:bg-white/30 active:bg-white/60 hover:text-gray-700 active:text-black transition duration-200 ease-in-out'>
