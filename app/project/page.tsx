@@ -247,7 +247,9 @@ function ProjectComponent() {
 
           <a
             data-tooltip-id="my-tooltip"
-            data-tooltip-content={property[0].floor_plan ?? 'Not Available'}
+            data-tooltip-content={
+              property[0].floor_plan != undefined ? '' : 'Not Available'
+            }
           >
             <div className="text-center">
               <Link href={property[0].floor_plan ?? '/'} target="_blank">
@@ -265,7 +267,9 @@ function ProjectComponent() {
 
           <a
             data-tooltip-id="my-tooltip"
-            data-tooltip-content={property[0].video ?? 'Not Available'}
+            data-tooltip-content={
+              property[0].video != undefined ? '' : 'Not Available'
+            }
           >
             <div className="text-center">
               <Link href={property[0].video ?? '/'} target="_blank">
@@ -283,7 +287,9 @@ function ProjectComponent() {
 
           <a
             data-tooltip-id="my-tooltip"
-            data-tooltip-content={property[0].brochure ?? 'Not Available'}
+            data-tooltip-content={
+              property[0].brochure != undefined ? '' : 'Not Available'
+            }
           >
             <div className="text-center">
               <Link href={property[0].brochure ?? '/'} target="_blank">
