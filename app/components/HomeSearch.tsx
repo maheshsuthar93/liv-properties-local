@@ -175,6 +175,7 @@ export const HomeSearch = () => {
                         height={0}
                         className='ml-[-20px] h-[17px] w-[17px]'
                     />
+                    <span className="tooltip">Luxury Properties for Sale</span>
                 </button>
             </div>
         </div>

@@ -99,7 +99,7 @@ export default async function ServicesPage() {
                     data={ourServices?.personalisedinvestmentadvisory}
                 />
             </div>
-            <Instagram />
+            {/* <Instagram /> */}
         </div>
     );
 }

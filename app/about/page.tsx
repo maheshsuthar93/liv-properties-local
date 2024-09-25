@@ -28,9 +28,9 @@ const AboutPage = async () => {
                 </div>
                 <WhoWeAre data={aboutUs} />
 
-                <div className='mb-[30px] mt-[50px] flex flex-wrap sm:mb-[60px]'>
+                {/* <div className='mb-[30px] mt-[50px] flex flex-wrap sm:mb-[60px]'>
                     <Instagram />
-                </div>
+                </div> */}
             </div>
         );
     }

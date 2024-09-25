@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useState } from 'react';
 import Image from 'next/image';
-import { InvestmentAdvisory, Loading, MeetTheTeam } from '@/app/components';
+import { InvestmentAdvisory, Loading, MeetTheTeam, Instagram } from '@/app/components';
 import { AboutUs, TeamMember } from '@/app/types';
 import { fetchGeneral } from '../constants';
 
@@ -29,14 +29,14 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
                     className={`w-[93px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'mission' ? 'border-b-[4px]' : ''}`}
                     onClick={() => setActiveTab('mission')}
                 >
-                    {props.data?.aboutusmission[4].field_value}
+                    {props.data?.aboutusmission[4].field_value + ' & ' + props.data?.aboutusvision[6].field_value}
                 </h2>
-                <h2
+                {/* <h2
                     className={`w-[83px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'vision' ? 'border-b-[4px]' : ''}`}
                     onClick={() => setActiveTab('vision')}
                 >
                     {props.data?.aboutusvision[6].field_value}
-                </h2>
+                </h2> */}
                 <h2
                     className={`w-[103px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'meet' ? 'border-b-[4px]' : ''}`}
                     onClick={() => setActiveTab('meet')}
@@ -47,15 +47,20 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
             {console.log(props.data)}
             {/* Who we are */}
             {activeTab === 'who' && (
-                <div className='mt-[47px] flex w-full flex-wrap gap-[26px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] text-xs'>
-                    <div
-                        className='who-desc'
-                        dangerouslySetInnerHTML={{
-                            __html: props.data?.aboutussection2[3]
-                                .field_value as string
-                        }}
-                    ></div>
-                </div>
+                <>
+                    <div className='mt-[47px] flex w-full flex-wrap gap-[26px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] text-xs'>
+                        <div
+                            className='who-desc'
+                            dangerouslySetInnerHTML={{
+                                __html: props.data?.aboutussection2[3]
+                                    .field_value as string
+                            }}
+                        ></div>
+                    </div>
+                    <div className='mb-[30px] mt-[50px] flex flex-wrap sm:mb-[60px]'>
+                        <Instagram />
+                    </div>
+                </>
             )}
             {/* Misson & Vision */}
             {(activeTab === 'mission' || activeTab === 'vision') && (

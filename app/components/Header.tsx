@@ -101,7 +101,7 @@ export const Header = () => {
     return isLargeScreen ? (
         <div
             ref={stickyHeaderRef}
-            className={`${isRouteActive('/', path) ? 'fixed h-auto ' : 'sticky h-[280px] '}w-full top-0 z-[99] mb-[50px] flex px-[3vw] pt-[30px] sm:mb-0 sm:px-[85px] lg:flex-col lg:pt-[60px]`}
+            className={`${isRouteActive('/', path) ? 'fixed h-auto ' : 'sticky h-[280px] '}w-full top-0 z-[99] mb-[50px] flex px-[3vw] pt-[30px] sm:mb-0 sm:px-[85px]  lg:pt-[60px]`}
         >
             <Link href='/' className='w-fit'>
                 <Image
@@ -113,7 +113,7 @@ export const Header = () => {
                     priority={true}
                 />
             </Link>
-            <nav className='z-50 mx-[-1rem] mt-[21px] flex flex-wrap gap-[1px] text-sm'>
+            <nav className='z-50 mx-[2rem] mt-[21px] flex flex-wrap gap-[1px] text-sm'>
                 {routes.map((route) => (
                     <Link key={route} href={route + '/'}>
                         <div
