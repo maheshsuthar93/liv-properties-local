@@ -21,7 +21,7 @@ export default async function Contact() {
   return (
     <div className="mb-[30px] w-full sm:mb-[60px] xl:mb-[84px] 3xl:max-w-[1200px]">
       <div className="relative w-full 3xl:max-w-[1200px]">
-        <div className="text-[30px] font-[700] leading-[38px] small:text-[59px] small:leading-[88px]">
+        <div className="text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px]">
           <h1 className="relative z-[1] inline-block max-w-[220px] capitalize small:max-w-[270px]">
             {contactUs?.['contact-us-section-1'][0].field_value ?? 'Contact us'}
           </h1>

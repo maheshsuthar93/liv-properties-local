@@ -102,7 +102,7 @@ function ProjectComponent() {
     <div className="w-full 3xl:max-w-[1200px]">
       <div className="mt-0 flex w-full flex-wrap gap-8 border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] xl:flex-nowrap xl:gap-0">
         <div className="z-[1] flex w-[100%] flex-row flex-wrap xl:mr-[-5%] xl:w-[40%] xl:flex-col xl:flex-nowrap">
-          <div className="w-[100%] text-[30px] font-[700] leading-[38px] small:text-[59px] small:leading-[88px]">
+          <div className="w-[100%] text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px]">
             <h2>{property[0].property_name ?? 'Property Name'}</h2>
           </div>
           <div className="mt-[10px] w-[100%] text-lg">
