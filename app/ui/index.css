@@ -575,38 +575,3 @@ input.autofill-input:-webkit-autofill:focus {
 .news-detail-desc p:last-child {
     @apply border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[15px];
 }
-
-.tooltip {
-    visibility: hidden;
-    width: auto;
-    background-color: #eddfd0;
-    color: black;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    white-space: nowrap;
-    border: 1px solid #ccc;
-}
-
-.tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 10px;
-    border-style: solid;
-    border-color: #eddfd0 transparent transparent transparent;
-}
-
-button:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-}

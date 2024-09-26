@@ -7,7 +7,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { gmapsApiKey, apiUrl, fetcher } from '@/app/constants';
 import Link from 'next/link';
 import useSWR from 'swr';
-import { Loading } from '../components';
+import { Loading, MediaPopup } from '../components';
 import renderService from './renderService';
 import Gallery from './Gallery';
 import ProjectImages from './ProjectImages';
@@ -22,6 +22,9 @@ export default function ProjectPage() {
 
 function ProjectComponent() {
   const [viewGallery, setViewGallery] = useState(false);
+  const [viewImagePopup, setViewImagePopup] = useState(false);
+  const [viewVideo, setViewVideo] = useState(false);
+
   const [shareButton, setShareButton] = useState(false);
   const url = typeof window !== 'undefined' ? window.location.href : '';
 
@@ -90,6 +93,14 @@ function ProjectComponent() {
 
   const handleShare = () => {
     setShareButton((prevCheck) => !prevCheck);
+  };
+
+  const handleImagePopup = () => {
+    setViewImagePopup((prevCheck) => !prevCheck);
+  };
+
+  const handleVideoPopup = () => {
+    setViewVideo((prevCheck) => !prevCheck);
   };
 
   return (
@@ -226,6 +237,15 @@ function ProjectComponent() {
         {images.length > 0 && viewGallery && (
           <Gallery stateChanger={handlePopup} images={images} />
         )}
+
+        {viewImagePopup && (
+          <MediaPopup stateChanger={handleImagePopup} url={'https://fastly.picsum.photos/id/272/800/600.jpg?hmac=Si-HAYLaQ3WaGRUeA3_AGOt2Wco07TDtbbLH97g7lZ4'} isVideo={false} />
+        )}
+        {viewVideo && (
+          <MediaPopup stateChanger={handleVideoPopup} url={'https://www.youtube.com/embed/dQw4w9WgXcQ'} isVideo={true} />
+        )}
+
+
       </div>
       <div className="w-[100%] flex w-full flex-wrap items-center justify-center border-b border-solid border-[#EDDFD0] border-opacity-50 xl:justify-normal">
         <div className="border-r border-solid border-[#EDDFD0] border-opacity-50 py-[36px] pr-[45px]">
@@ -256,7 +276,7 @@ function ProjectComponent() {
               </Link>
             </div>
             <div className="text-center">
-              <Link href={property[0].video ?? '/'} target="_blank">
+              <div onClick={handleVideoPopup} className="cursor-pointer">
                 <Image
                   src="/icons/play_circle.svg"
                   alt="Play circle icon"
@@ -265,7 +285,7 @@ function ProjectComponent() {
                   className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
                 />
                 Video
-              </Link>
+              </div>
             </div>
             <div className="text-center">
               <Link href={property[0].brochure ?? '/'} target="_blank">
@@ -280,7 +300,7 @@ function ProjectComponent() {
               </Link>
             </div>
             <div className="text-center">
-              <div onClick={handlePopup} className="cursor-pointer">
+              <div onClick={handleImagePopup} className="cursor-pointer">
                 <Image
                   src="/icons/rotate.svg"
                   alt="Book icon"
