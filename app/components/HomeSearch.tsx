@@ -12,27 +12,40 @@ import { HomeSearchText } from '@/app/types';
 
 type ProjType = 'buy' | 'rent' | '';
 
+type PropertyType = 'ready' | 'upcoming' | '';
+
 export const HomeSearch = () => {
   const router = useRouter();
 
   const [isLargeScreen, setIsLargeScreen] = useState(false);
   const [projType, setProjType] = useState<ProjType>('');
   const [pr, setPr] = useState('');
+  const [bedroomRange, setBedroomRange] = useState('');
   const [location, setLocation] = useState('');
-  const [propertyType, setPropertyType] = useState<'ready' | 'upcoming'>(
-    'ready',
-  );
+  // const [propertyType, setPropertyType] = useState<'ready' | 'upcoming'>(
+  //   'ready',
+  // );
+  const [propertyType, setPropertyType] = useState<PropertyType>('');
+
   const [textSearch, setTextSearch] = useState('');
   const [visible, setVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState(false);
+  const [visibleNoOfBedrooms, setVisibleNoOfBedrooms] = useState(false);
 
   const handlePriceClick = () => {
     setVisible((prevCheck) => !prevCheck);
   };
-
+  const handleBedroomsClick = () => {
+    setVisibleNoOfBedrooms((prevCheck) => !prevCheck);
+  };
   // Handler for onChange event
   const handleProjTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setProjType(event.target.value as ProjType);
+  };
+
+  const handleStatusChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    // setProjType(event.target.value as ProjType);
+    setPropertyType(event.target.value as PropertyType);
   };
 
   const buildQueryString = (params: Record<string, string | undefined>) => {
@@ -65,50 +78,71 @@ export const HomeSearch = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
+  // small:px-[85px]
   return isLargeScreen ? (
-    <div className="home-search z-[3] mt-[250px] md:mt-[300px] small:mt-[30px]">
-      <div className="max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center flex px-[3vw] text-sm sm:px-0 small:px-[85px]">
-        <div
-          className={`max-[639px]:flex-1 w-full max-w-[calc(50%%-11px)] pb-[8px] pl-[5px] small:w-[auto] small:min-w-[132px] small:max-w-[auto] ${propertyType === 'ready' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] ${s.hoverable} cursor-pointer`}
-          onClick={() => setPropertyType('ready')}
-        >
-          Ready
+    <div className="home-search z-[3] mt-[250px] md:mt-[300px] small:mt-[30px]  ">
+      <div className="gradient-from bg-gradient-to-r small:ml-[85px] small:p-[20px]">
+        <div className=" max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center  mb-[10px] flex px-[3vw] text-[30px] text-sm font-[700] leading-[94%] sm:px-0 small:text-[39px]">
+          <h2 className="inline-block capitalize">
+            Luxury Properties for Sale
+          </h2>
         </div>
-        <div
-          className={`max-[639px]:flex-1 w-full max-w-[calc(50%%-11px)] pb-[8px] pl-[5px] sm:min-w-[132px] small:w-[auto] small:max-w-[auto] ${propertyType === 'upcoming' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] ${s.hoverable} cursor-pointer`}
-          onClick={() => setPropertyType('upcoming')}
-        >
-          New Projects
-        </div>
-      </div>
-      <div className="max-[639px]:w-full mt-[15px] flex flex-wrap justify-evenly px-[3vw] text-sm sm:px-0 small:justify-normal small:px-[85px]">
-        <select
-          value={projType}
-          onChange={handleProjTypeChange}
-          className={`custom-select relative flex  max-w-[calc(33%-11px)] cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[130px] small:max-w-[auto]`}
-        >
-          <option className="border-[#eddfd0]" value="">
-            Available For
-          </option>
-          <option className="border-[#eddfd0]" value="buy">
-            Buy
-          </option>
-          <option className="border-[#eddfd0]" value="rent">
-            Rent
-          </option>
-        </select>
-
-        <div
-          className={`mx-[11px] ${s.hoverable} max-w-[calc(40%-11px)] small:min-w-[130px] small:max-w-[auto]`}
-        >
-          <input
-            type="text"
-            name="textSearch"
-            id="textSearch_input"
-            value={textSearch}
-            onChange={(e) => setTextSearch(e.target.value)}
-            className={`block 
+        {/* <div className="max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center flex px-[3vw] text-sm sm:px-0 ">
+          <div
+            className={`max-[639px]:flex-1 w-full max-w-[calc(50%%-11px)] pb-[8px] pl-[5px] small:w-[auto] small:min-w-[132px] small:max-w-[auto] ${propertyType === 'ready' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] ${s.hoverable} cursor-pointer`}
+            onClick={() => setPropertyType('ready')}
+          >
+            Ready
+          </div>
+          <div
+            className={`max-[639px]:flex-1 w-full max-w-[calc(50%%-11px)] pb-[8px] pl-[5px] sm:min-w-[132px] small:w-[auto] small:max-w-[auto] ${propertyType === 'upcoming' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] ${s.hoverable} cursor-pointer`}
+            onClick={() => setPropertyType('upcoming')}
+          >
+            New Projects
+          </div>
+        </div> */}
+        <div className="max-[639px]:w-full mt-[15px] flex flex-wrap justify-evenly px-[3vw] text-sm sm:px-0 small:justify-normal ">
+          {/* <select
+            value={projType}
+            onChange={handleProjTypeChange}
+            className={`custom-select relative flex  max-w-[calc(33%-11px)] cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[100px] small:max-w-[auto]`}
+          >
+            <option className="border-[#eddfd0]" value="">
+              Available For
+            </option>
+            <option className="border-[#eddfd0]" value="buy">
+              Buy
+            </option>
+            <option className="border-[#eddfd0]" value="rent">
+              Rent
+            </option>
+          </select> */}
+          <select
+            value={propertyType}
+            onChange={handleStatusChange}
+            className={`custom-select relative flex  max-w-[calc(33%-11px)] cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[100px] small:max-w-[auto]`}
+          >
+            <option className="border-[#eddfd0]" value="">
+              Status
+            </option>
+            <option className="border-[#eddfd0]" value="ready">
+              Ready
+            </option>
+            <option className="border-[#eddfd0]" value="upcoming">
+              New
+            </option>
+          </select>
+          <div className={`${s.line}`} />
+          <div
+            className={`mx-[11px] ${s.hoverable} max-w-[calc(40%-11px)] small:min-w-[100px] small:max-w-[auto]`}
+          >
+            <input
+              type="text"
+              name="textSearch"
+              id="textSearch_input"
+              value={textSearch}
+              onChange={(e) => setTextSearch(e.target.value)}
+              className={`block 
                             h-full 
                             w-full border-0 
                             bg-transparent 
@@ -118,61 +152,128 @@ export const HomeSearch = () => {
                     hover:ring-[#EDDFD0]/50 focus:ring-0 focus:ring-inset 
                      focus:ring-[#EDDFD0] 
                      sm:leading-6 small:min-w-[150px]`}
-            placeholder="Community or Building"
-          />
-        </div>
-        <div className={`${s.line}`} />
-        <div
-          className={`mx-[11px] ${s.hoverable} flex max-w-[calc(25%-11px)] justify-center small:min-w-[130px] small:max-w-[auto]`}
-        >
-          <input
-            type="text"
-            name="location"
-            id="location_input"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            className={`block h-full w-full border-0 bg-transparent py-1.5 text-center
+              placeholder="Emirate"
+            />
+          </div>
+          <div className={`${s.line}`} />
+          <div
+            className={`mx-[11px] ${s.hoverable} flex max-w-[calc(25%-11px)] justify-center small:min-w-[100px] small:max-w-[auto]`}
+          >
+            <input
+              type="text"
+              name="location"
+              id="location_input"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              className={`block h-full w-full border-0 bg-transparent py-1.5 text-center
                     text-[100%] placeholder-[#eddfd0] ring-0 ring-inset ring-transparent transition duration-200 ease-in-out
                     hover:ring-[#EDDFD0]/50 focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] sm:leading-6 small:w-[110px] ${s.hoverable}`}
-            placeholder="Location"
-          />
-        </div>
-        <div className={`${s.line}`} />
-        <div
-          className={`mx-[11px] ${s.hoverable} max-w-[calc(33.333%-11px)] small:min-w-[130px] small:max-w-[auto]`}
-        >
-          {visible && (
-            <PriceRange
-              setPr={setPr}
-              pr={pr}
-              setVisible={setVisible}
-              keyPrefix="home"
-              className="absolute bottom-[calc(100%-30px)] left-[-40%] z-[10] sm:bottom-[calc(100%+20px)] md:left-[-50%] msmall:left-[unset] msmall:right-[-20px] small:left-[-50%] small:right-[unset]"
+              placeholder="Location"
             />
-          )}
-          <button
-            className="mt-[30px] flex h-full w-full flex-row items-center justify-start px-[16px]
-                            py-[6px] pl-[13px] transition duration-200 ease-in-out sm:mt-0 sm:min-w-[150px] sm:justify-center lg:w-auto"
-            onClick={handlePriceClick}
+          </div>
+          <div className={`${s.line}`} />
+          <div
+            className={`mx-[11px] ${s.hoverable} max-w-[calc(40%-11px)] small:min-w-[100px] small:max-w-[auto]`}
           >
-            {!pr ? 'Price Range' : pr}
+            <input
+              type="text"
+              name="textSearch"
+              id="textSearch_input"
+              value={textSearch}
+              onChange={(e) => setTextSearch(e.target.value)}
+              className={`block 
+                            h-full 
+                            w-full border-0 
+                            bg-transparent 
+                            py-1.5 text-center
+                    text-[100%] 
+                    placeholder-[#eddfd0] ring-0 ring-inset ring-transparent transition duration-200 ease-in-out
+                    hover:ring-[#EDDFD0]/50 focus:ring-0 focus:ring-inset 
+                     focus:ring-[#EDDFD0] 
+                     sm:leading-6 small:min-w-[150px]`}
+              placeholder="Community"
+            />
+          </div>
+          <div className={`${s.line}`} />
+
+          <select
+            value={projType}
+            onChange={handleProjTypeChange}
+            className={`custom-select relative flex  max-w-[calc(33%-11px)] cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[100px] small:max-w-[auto] `}
+          >
+            <option className="border-[#eddfd0]" value="">
+              Project Type
+            </option>
+            <option className="border-[#eddfd0]" value="buy">
+              Buy
+            </option>
+            <option className="border-[#eddfd0]" value="rent">
+              Rent
+            </option>
+          </select>
+          <div className={`${s.line}`} />
+          <div
+            className={`mx-[11px] ${s.hoverable} max-w-[calc(33.333%-11px)] small:min-w-[100px] small:max-w-[auto]`}
+          >
+            {visibleNoOfBedrooms && (
+              <PriceRange
+                setPr={setBedroomRange}
+                pr={bedroomRange}
+                rangeType="other"
+                maxPlaceholder={'Max bedrooms'}
+                minPlaceholder={'Min bedrooms'}
+                setVisible={setVisibleNoOfBedrooms}
+                keyPrefix="home"
+                className="absolute bottom-[calc(100%-30px)] left-[-40%] z-[10] sm:bottom-[calc(100%+20px)] md:left-[-50%] msmall:left-[unset] msmall:right-[-20px] small:left-[-50%] small:right-[unset]"
+              />
+            )}
+            <button
+              className="mt-[30px] flex h-full w-full flex-row items-center justify-start px-[16px]
+                            py-[6px] pl-[13px] transition duration-200 ease-in-out sm:mt-0 sm:min-w-[150px] sm:justify-center lg:w-auto"
+              onClick={handleBedroomsClick}
+            >
+              {!pr ? 'Bedrooms' : pr}
+            </button>
+          </div>
+          <div className={`${s.line}`} />
+          <div
+            className={`mx-[11px] ${s.hoverable} max-w-[calc(33.333%-11px)] small:min-w-[100px] small:max-w-[auto]`}
+          >
+            {visible && (
+              <PriceRange
+                setPr={setPr}
+                pr={pr}
+                rangeType="price"
+                setVisible={setVisible}
+                maxPlaceholder={undefined}
+                minPlaceholder={undefined}
+                keyPrefix="home"
+                className="absolute bottom-[calc(100%-30px)] left-[-40%] z-[10] sm:bottom-[calc(100%+20px)] md:left-[-50%] msmall:left-[unset] msmall:right-[-20px] small:left-[-50%] small:right-[unset]"
+              />
+            )}
+            <button
+              className="mt-[30px] flex h-full w-full flex-row items-center justify-start px-[16px]
+                            py-[6px] pl-[13px] transition duration-200 ease-in-out sm:mt-0 sm:min-w-[150px] sm:justify-center lg:w-auto"
+              onClick={handlePriceClick}
+            >
+              {!pr ? 'Price Range' : pr}
+            </button>
+          </div>
+          <div className={`${s.line}`} />
+          <button
+            type="button"
+            onClick={handleSubmit}
+            className={`ml-[18px] mr-[0px] grid max-w-[calc(33.333%-11px)] grid-cols-2 place-items-center gap-1 py-3 pl-2 small:mx-[18px] small:min-w-[100px] small:max-w-[auto] ${s.hoverable}`}
+          >
+            <Image
+              src="/images/search.svg"
+              alt="Search icon"
+              width={0}
+              height={0}
+              className="ml-[20px] h-[41px] w-[41px]"
+            />
           </button>
         </div>
-        <div className={`${s.line}`} />
-        <button
-          type="button"
-          onClick={handleSubmit}
-          className={`ml-[18px] mr-[0px] grid max-w-[calc(33.333%-11px)] grid-cols-2 place-items-center gap-1 py-3 pl-2 small:mx-[18px] small:min-w-[130px] small:max-w-[auto] ${s.hoverable}`}
-        >
-          Search
-          <Image
-            src="/icons/search.svg"
-            alt="Search icon"
-            width={0}
-            height={0}
-            className="ml-[-20px] h-[17px] w-[17px]"
-          />
-        </button>
       </div>
     </div>
   ) : (
