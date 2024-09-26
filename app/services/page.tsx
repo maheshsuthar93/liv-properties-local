@@ -2,7 +2,7 @@ import '@/app/ui/index.css';
 import s from '@/app/ui/main.module.css';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { InvestmentAdvisory, Instagram, Loading } from '@/app/components';
+import { InvestmentAdvisory, SellYourProperty, Loading } from '@/app/components';
 import { OurServices } from '@/app/types';
 import { fetchData, getFieldValueByName } from '@/app/constants';
 
@@ -98,7 +98,9 @@ export default async function ServicesPage() {
                 <InvestmentAdvisory
                     data={ourServices?.personalisedinvestmentadvisory}
                 />
+
             </div>
+            <SellYourProperty />
             {/* <Instagram /> */}
         </div>
     );

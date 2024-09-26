@@ -20,3 +20,4 @@ export { PageSearch } from './PageSearch';
 export { Loading } from './Loading';
 export { ListProperties } from './ListProperties';
 export { MeetTheTeam } from './MeetTheTeam';
+export { SellYourProperty } from './SellYourProperty'

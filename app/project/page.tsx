@@ -227,55 +227,88 @@ function ProjectComponent() {
           <Gallery stateChanger={handlePopup} images={images} />
         )}
       </div>
-      <div className="flex w-full flex-wrap items-center justify-center border-b border-solid border-[#EDDFD0] border-opacity-50 py-[36px] xl:justify-normal">
-        <div className="flex w-[100%] flex-wrap justify-center gap-[28px] md:w-[auto]">
-          <div className="text-center">
-            <div onClick={handlePopup}>
-              <Image
-                src="/icons/add_a_photo.svg"
-                alt="Camera icon"
-                width={114}
-                height={114}
-                className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
-              />
-              Photos
+      <div className="w-[100%] flex w-full flex-wrap items-center justify-center border-b border-solid border-[#EDDFD0] border-opacity-50 xl:justify-normal">
+        <div className="border-r border-solid border-[#EDDFD0] border-opacity-50 py-[36px] pr-[45px]">
+          <div className="flex w-[100%] flex-wrap justify-center gap-[28px] md:w-[auto] ">
+
+            <div className="text-center">
+              <div onClick={handlePopup}>
+                <Image
+                  src="/icons/add_a_photo.svg"
+                  alt="Camera icon"
+                  width={114}
+                  height={114}
+                  className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                />
+                Photos
+              </div>
+            </div>
+            <div className="text-center">
+              <Link href={property[0].floor_plan ?? '/'} target="_blank">
+                <Image
+                  src="/icons/floor_lamp.svg"
+                  alt="Lamp icon"
+                  width={114}
+                  height={114}
+                  className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                />
+                Floor Plan
+              </Link>
+            </div>
+            <div className="text-center">
+              <Link href={property[0].video ?? '/'} target="_blank">
+                <Image
+                  src="/icons/play_circle.svg"
+                  alt="Play circle icon"
+                  width={114}
+                  height={114}
+                  className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                />
+                Video
+              </Link>
+            </div>
+            <div className="text-center">
+              <Link href={property[0].brochure ?? '/'} target="_blank">
+                <Image
+                  src="/icons/book.svg"
+                  alt="Book icon"
+                  width={114}
+                  height={114}
+                  className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                />
+                Brochure
+              </Link>
+            </div>
+            <div className="text-center">
+              <div onClick={handlePopup} className="cursor-pointer">
+                <Image
+                  src="/icons/rotate.svg"
+                  alt="Book icon"
+                  width={114}
+                  height={114}
+                  className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                />
+                360
+              </div>
             </div>
           </div>
-          <div className="text-center">
-            <Link href={property[0].floor_plan ?? '/'} target="_blank">
-              <Image
-                src="/icons/floor_lamp.svg"
-                alt="Lamp icon"
-                width={114}
-                height={114}
-                className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
-              />
-              Floor Plan
-            </Link>
-          </div>
-          <div className="text-center">
-            <Link href={property[0].video ?? '/'} target="_blank">
-              <Image
-                src="/icons/play_circle.svg"
-                alt="Play circle icon"
-                width={114}
-                height={114}
-                className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
-              />
-              Video
-            </Link>
-          </div>
-          <div className="text-center">
-            <Link href={property[0].brochure ?? '/'} target="_blank">
-              <Image
-                src="/icons/book.svg"
-                alt="Book icon"
-                width={114}
-                height={114}
-                className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
-              />
-              Brochure
-            </Link>
+
+        </div>
+        <div className="pl-[46px]">
+          <div className="flex w-[100%] flex-wrap justify-center gap-[28px] md:w-[auto] ">
+            <Image
+              src="/icons/qrCode.svg"
+              alt="QR Code"
+              width={145}
+              height={145}
+            />
+            <div className="grid grid-rows-[auto_1fr_auto]">
+              <p className="text-[30px] font-[700] leading-[34px]">DLD Permit Number:</p>
+              <p className="text-[16px] font-[500] leading-[19.54px] mt-[12px]">632752507835</p>
+              <p className="text-[16px] font-[500] leading-[22.4px] mt-[12px] row-start-3">This property listing has been reviewed and <br />
+                verified by Dubai Land Department</p>
+            </div>
+
           </div>
         </div>
         {/* <div> */}
