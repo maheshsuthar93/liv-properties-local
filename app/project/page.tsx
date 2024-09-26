@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import s from '@/app/ui/main.module.css';
 import { Suspense, useEffect, useState } from 'react';
 import { gmapsApiKey, apiUrl, fetcher } from '@/app/constants';
@@ -30,6 +30,7 @@ function ProjectComponent() {
   const [id, setId] = useState<string | null>(null);
   const [isClient, setIsClient] = useState(false);
   const [visibleReadMore, setVisibleReadMore] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsClient(true);
@@ -94,7 +95,9 @@ function ProjectComponent() {
   const handleShare = () => {
     setShareButton((prevCheck) => !prevCheck);
   };
-
+  const handleGoBack = () => {
+    router.back();
+  };
   return (
     <div className="w-full 3xl:max-w-[1200px]">
       <div className="mt-0 flex w-full flex-wrap gap-8 border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] xl:flex-nowrap xl:gap-0">
@@ -107,6 +110,18 @@ function ProjectComponent() {
           </div>
           <div className="relative mt-[16px] flex w-full items-center justify-normal sm:w-[100%] md:mt-[40px] xl:mt-[50px] xl:w-[auto]">
             <button
+              className="mr-[10px] grid grid-cols-2 place-items-center gap-[11px] rounded-3xl border border-solid border-[#EDDFD0] px-[25px] py-[9px] pl-[15px] text-sm transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
+              onClick={handleGoBack}
+            >
+              <Image
+                src="/images/arrow_back.svg"
+                alt="back icon"
+                width={29}
+                height={29}
+              />
+              Back
+            </button>
+            <button
               className="grid grid-cols-2 place-items-center gap-[11px] rounded-3xl border border-solid border-[#EDDFD0] px-[25px] py-[9px] pl-[15px] text-sm transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
               onClick={handleShare}
             >
@@ -118,6 +133,7 @@ function ProjectComponent() {
               />
               Share
             </button>
+
             {shareButton && (
               <ul
                 className="share_options -top-[35px] right-0 ml-[30px] flex list-none gap-[30px] sm:absolute sm:ml-0 xl:left-0 xl:right-[unset]"
@@ -218,12 +234,14 @@ function ProjectComponent() {
             {property[0].description ?? ''}
           </div>
           {property[0].description && (
-            <button
-              onClick={() => setVisibleReadMore(true)}
-              className={`mt-[6px] block w-fit ${s.hoverable} text-sm leading-[202%]`}
-            >
-              {'Read More'}
-            </button>
+            <div className="relative mt-[16px] flex w-full items-center justify-normal sm:w-[100%] md:mt-[40px] xl:mt-[50px] xl:w-[auto]">
+              <button
+                className="place-items-center gap-[11px] rounded-3xl border border-solid border-[#EDDFD0] px-[25px] py-[9px] pl-[15px] text-sm transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
+                onClick={() => setVisibleReadMore(true)}
+              >
+                Read full description
+              </button>
+            </div>
           )}
         </div>
         {images && (
@@ -341,7 +359,7 @@ function ProjectComponent() {
           </div>
         )}
         <div className="my-auto w-full xl:w-[auto] xl:min-w-[400px]">
-          <div className="text-[20px] font-[700]">Current Services</div>
+          <div className="text-[20px] font-[700]">Property Features</div>
           <div className="text-normal mt-[16px] grid grid-cols-2">
             {services &&
               services?.map((service: number | string) => {
