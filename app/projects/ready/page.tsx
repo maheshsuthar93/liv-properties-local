@@ -16,7 +16,7 @@ export default async function ReadyProjectsPage() {
   return (
     <div className="mb-[30px] w-full sm:mb-[60px] small:mb-[83px] 3xl:max-w-[1200px]">
       <div className="flex flex-wrap gap-8">
-        <div className="text-[40px] font-[700] leading-[38px] small:text-[69px] small:leading-[88px]">
+        <div className="text-[30px] font-[700] leading-[38px] small:text-[59px] small:leading-[88px]">
           <h1 className="relative z-[1] inline-block max-w-[220px] capitalize small:max-w-[270px]">
             Luxury Properties for Sale
           </h1>
