@@ -21,3 +21,4 @@ export { Loading } from './Loading';
 export { ListProperties } from './ListProperties';
 export { MeetTheTeam } from './MeetTheTeam';
 export { MediaPopup } from './MediaPopup';
+export { SellYourProperty } from './SellYourProperty';

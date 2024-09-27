@@ -383,6 +383,28 @@ function ProjectComponent() {
             </div>
           </a>
         </div>
+        <div className="pl-[46px]">
+          <div className="flex w-[100%] flex-wrap justify-center gap-[28px] md:w-[auto] ">
+            <Image
+              src="/icons/qrCode.svg"
+              alt="QR Code"
+              width={145}
+              height={145}
+            />
+            <div className="grid grid-rows-[auto_1fr_auto]">
+              <p className="text-[30px] font-[700] leading-[34px]">
+                DLD Permit Number:
+              </p>
+              <p className="mt-[12px] text-[16px] font-[500] leading-[19.54px]">
+                632752507835
+              </p>
+              <p className="row-start-3 mt-[12px] text-[16px] font-[500] leading-[22.4px]">
+                This property listing has been reviewed and <br />
+                verified by Dubai Land Department
+              </p>
+            </div>
+          </div>
+        </div>
         {/* <div> */}
         {/* <button className='pt-[13px] pr-[26px] pb-[17px] pl-[24px] rounded-3xl border border-solid border-[#EDDFD0] text-sm hover:bg-white/30 active:bg-white/60 hover:text-gray-700 active:text-black transition duration-200 ease-in-out'>
                         Payment Terms
