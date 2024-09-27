@@ -1,6 +1,6 @@
 export const AboutLiv = () => {
   return (
-    <div className="mt-[100px] flex flex-wrap justify-between gap-x-[30px] gap-y-[20px] border-b border-solid border-[#eddfd0] border-opacity-60 pb-[35px] sm:flex-nowrap md:gap-x-[50px] lg:gap-x-[100px] ">
+    <div className="mt-[100px] flex flex-wrap justify-between gap-x-[30px] gap-y-[20px] border-b border-solid border-[#eddfd0] border-opacity-60 pb-[35px] sm:flex-nowrap md:gap-x-[50px] lg:gap-x-[100px] small:px-[85px]">
       <div>
         <div className="home-sec_title text-[30px] font-[700] leading-[94%] small:text-[45px]">
           <h2 className="inline-block  capitalize ">
