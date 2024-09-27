@@ -126,7 +126,7 @@ export const HomeSearch = () => {
             </option>
           </select> */}
           <select
-            value={propertyType}
+            value={projectStatus}
             onChange={handleStatusChange}
             className={`custom-select relative flex  max-w-[calc(40%-11px)] cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[100px] small:max-w-[auto]`}
           >
