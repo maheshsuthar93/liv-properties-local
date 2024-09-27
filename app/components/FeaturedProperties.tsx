@@ -44,9 +44,9 @@ export const FeaturedProperties = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
+  // small:px-[85px]
   return (
-    <div className="verticalPanelInner featured-properties mt-[100px] flex flex-col px-[3vw]  sm:px-0 small:px-[85px]">
+    <div className="verticalPanelInner featured-properties mt-[100px] flex flex-col px-[3vw]  sm:px-0 ">
       <div className="max-[1024px]:justify-between mb-[30px] flex flex-wrap items-end justify-normal gap-8 small:mb-0">
         <div className="home-sec_title text-[30px] font-[700] leading-[94%] small:text-[45px]">
           <h2 className="inline-block  capitalize ">Featured Properties</h2>

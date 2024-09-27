@@ -2,7 +2,12 @@
 
 import { Fragment, useEffect, useState } from 'react';
 import Image from 'next/image';
-import { InvestmentAdvisory, Loading, MeetTheTeam } from '@/app/components';
+import {
+  Instagram,
+  InvestmentAdvisory,
+  Loading,
+  MeetTheTeam,
+} from '@/app/components';
 import { AboutUs, TeamMember } from '@/app/types';
 import { fetchGeneral } from '../constants';
 
@@ -45,19 +50,25 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
         </h2>
       </div>
       {/* Who we are */}
+      {/* Who we are */}
       {activeTab === 'who' && (
-        <div className="mt-[47px] flex w-full flex-wrap gap-[26px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] text-xs">
-          <div
-            className="who-desc"
-            dangerouslySetInnerHTML={{
-              __html: props.data?.aboutussection2[3].field_value as string,
-            }}
-          ></div>
-        </div>
+        <>
+          <div className="mt-[47px] flex w-full flex-wrap gap-[26px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] text-xs ">
+            <div
+              className="who-desc"
+              dangerouslySetInnerHTML={{
+                __html: props.data?.aboutussection2[3].field_value as string,
+              }}
+            ></div>
+          </div>
+          <div className="mb-[30px] mt-[50px] flex flex-wrap sm:mb-[60px]">
+            <Instagram />
+          </div>
+        </>
       )}
       {/* Misson & Vision */}
       {(activeTab === 'mission' || activeTab === 'vision') && (
-        <div className="mb-[33px] mt-[33px] flex w-full flex-wrap gap-[25px] text-xs">
+        <div className="mb-[33px] mt-[33px] flex w-full flex-wrap gap-[25px] text-xs ">
           <div className="lg:w-[calc(50%-13px)]">
             <h3 className="mb-[11px] text-[20px] leading-[120%]">
               {props.data?.aboutusmission[4].field_value}

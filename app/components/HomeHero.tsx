@@ -31,7 +31,7 @@ export const HomeHero = () => {
     <div className="min-[1630px]:min-w-[1440px] max-[1629px]:w-full verticalPanelInner flex h-full flex-col justify-between overflow-hidden lg:pb-[50px] xl:pb-[60px] small:pb-[40px]">
       <div className="flex flex-row">
         <div className="home-sec_title relative z-[2] flex w-[100vw] text-[30px] font-[700] leading-[43px] small:text-[59px] small:leading-[50px]">
-          <div className="px-[3vw] sm:px-0 small:px-[85px]">
+          <div className="px-[3vw] sm:px-0 ">
             <h1 className="max-[767px]:ml-[3vw] custom-wordbreak inline-block">
               {home?.['section-1'][0].field_value}
             </h1>
