@@ -46,9 +46,9 @@ export const FeaturedProperties = () => {
   }, []);
   // small:px-[85px]
   return (
-    <div className="verticalPanelInner featured-properties mt-[100px] flex flex-col px-[3vw]  sm:px-0 3xl:max-w-[1200px]">
+    <div className="verticalPanelInner featured-properties mt-[10px] flex flex-col px-[3vw]  sm:px-0 3xl:max-w-[1200px]">
       <div className="max-[1024px]:justify-between mb-[30px] flex flex-wrap justify-normal gap-8 small:mb-0">
-        <div className="home-sec_title text-[30px] font-[700] leading-[94%] small:text-[45px]">
+        <div className="home-sec_title text-[20px] font-[700] leading-[94%] small:text-[30px]">
           <h2 className="inline-block  capitalize ">Featured Properties</h2>
         </div>
         {isLargeScreen ? (

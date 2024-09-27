@@ -12,6 +12,7 @@ import {
   FeaturedProperties,
   OurServices,
   Instagram,
+  EnquireForm,
 } from '@/app/components';
 import { AboutLiv } from './AboutLiv';
 
@@ -163,6 +164,10 @@ export const ScrollingSections = () => {
         <HomeHero />
         <FeaturedProperties />
         <AboutLiv />
+        <div className="gotham home-sec_title mt-[45px] text-[20px] font-[700] leading-[94%] small:text-[30px]">
+          <h2 className="inline-block  capitalize ">How Can We Help You?</h2>
+        </div>
+        <EnquireForm />
       </div>
     </>
   );

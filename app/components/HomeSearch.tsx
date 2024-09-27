@@ -90,7 +90,7 @@ export const HomeSearch = () => {
   return isLargeScreen ? (
     <div className="home-search z-[3] mt-[250px] md:mt-[300px] small:mt-[30px]  ">
       <div className="gradient-from bg-gradient-to-r  small:p-[20px]">
-        <div className=" max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center  mb-[10px] flex px-[3vw] text-[30px] text-sm font-[700] leading-[94%] sm:px-0 small:text-[39px]">
+        <div className=" max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center  mb-[10px] flex px-[3vw] text-[20px] font-[700] leading-[94%] sm:px-0 small:text-[30px]">
           <h2 className="inline-block capitalize">
             Luxury Properties for Sale
           </h2>
