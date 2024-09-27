@@ -41,11 +41,15 @@ function ProjectComponent() {
     setId(id);
   }, []);
   const handleImagePopup = () => {
-    setViewImagePopup((prevCheck) => !prevCheck);
+    if (property[0].view360 != undefined) {
+      setViewImagePopup((prevCheck) => !prevCheck);
+    }
   };
 
   const handleVideoPopup = () => {
-    setViewVideo((prevCheck) => !prevCheck);
+    if (property[0].video != undefined) {
+      setViewVideo((prevCheck) => !prevCheck);
+    }
   };
   const {
     data: property,
@@ -106,6 +110,7 @@ function ProjectComponent() {
   const handleGoBack = () => {
     router.back();
   };
+
   return (
     <div className="w-full 3xl:max-w-[1200px]">
       <div className="mt-0 flex w-full flex-wrap gap-8 border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] xl:flex-nowrap xl:gap-0">
@@ -290,7 +295,7 @@ function ProjectComponent() {
       <div className="flex w-full flex-wrap items-center justify-center border-b border-solid border-[#EDDFD0] border-opacity-50 py-[36px] xl:justify-normal">
         <div className="flex w-[100%] flex-wrap justify-center gap-[28px] md:w-[auto]">
           <div className="text-center">
-            <div onClick={handlePopup}>
+            <button onClick={handlePopup}>
               <Image
                 src="/icons/add_a_photo.svg"
                 alt="Camera icon"
@@ -299,7 +304,7 @@ function ProjectComponent() {
                 className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
               />
               Photos
-            </div>
+            </button>
           </div>
 
           <Tooltip id="my-tooltip" />
@@ -311,16 +316,29 @@ function ProjectComponent() {
             }
           >
             <div className="text-center">
-              <Link href={property[0].floor_plan ?? '/'} target="_blank">
-                <Image
-                  src="/icons/floor_lamp.svg"
-                  alt="Lamp icon"
-                  width={114}
-                  height={114}
-                  className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
-                />
-                Floor Plan
-              </Link>
+              {property[0].floor_plan != undefined ? (
+                <Link href={property[0].floor_plan ?? '/'} target="_blank">
+                  <Image
+                    src="/icons/floor_lamp.svg"
+                    alt="Lamp icon"
+                    width={114}
+                    height={114}
+                    className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                  />
+                  Floor Plan
+                </Link>
+              ) : (
+                <button>
+                  <Image
+                    src="/icons/floor_lamp.svg"
+                    alt="Lamp icon"
+                    width={114}
+                    height={114}
+                    className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                  />
+                  Floor Plan
+                </button>
+              )}
             </div>
           </a>
 
@@ -351,22 +369,35 @@ function ProjectComponent() {
             }
           >
             <div className="text-center">
-              <Link href={property[0].brochure ?? '/'} target="_blank">
-                <Image
-                  src="/icons/book.svg"
-                  alt="Book icon"
-                  width={114}
-                  height={114}
-                  className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
-                />
-                Brochure
-              </Link>
+              {property[0].brochure != undefined ? (
+                <Link href={property[0].brochure ?? '/'} target="_blank">
+                  <Image
+                    src="/icons/book.svg"
+                    alt="Book icon"
+                    width={114}
+                    height={114}
+                    className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                  />
+                  Brochure
+                </Link>
+              ) : (
+                <button>
+                  <Image
+                    src="/icons/book.svg"
+                    alt="Book icon"
+                    width={114}
+                    height={114}
+                    className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                  />
+                  Brochure
+                </button>
+              )}
             </div>
           </a>
           <a
             data-tooltip-id="my-tooltip"
             data-tooltip-content={
-              property[0].video != undefined ? '' : 'Not Available'
+              property[0].view360 != undefined ? '' : 'Not Available'
             }
           >
             <div className="text-center">
@@ -452,16 +483,14 @@ function ProjectComponent() {
       {viewImagePopup && (
         <MediaPopup
           stateChanger={handleImagePopup}
-          url={
-            'https://fastly.picsum.photos/id/272/800/600.jpg?hmac=Si-HAYLaQ3WaGRUeA3_AGOt2Wco07TDtbbLH97g7lZ4'
-          }
+          url={property[0].view360}
           isVideo={false}
         />
       )}
       {viewVideo && (
         <MediaPopup
           stateChanger={handleVideoPopup}
-          url={'https://www.youtube.com/embed/dQw4w9WgXcQ'}
+          url={property[0].video}
           isVideo={true}
         />
       )}
