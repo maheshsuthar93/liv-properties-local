@@ -12,7 +12,8 @@ import { HomeSearchText } from '@/app/types';
 
 type ProjType = 'buy' | 'rent' | '';
 
-type PropertyType = 'ready' | 'upcoming' | '';
+type ProjectStatusType = 'ready' | 'upcoming' | '';
+type PropertyType = 'villa' | 'apartment' | '';
 
 export const HomeSearch = () => {
   const router = useRouter();
@@ -26,8 +27,11 @@ export const HomeSearch = () => {
   //   'ready',
   // );
   const [propertyType, setPropertyType] = useState<PropertyType>('');
+  const [projectStatus, setProjectStatus] = useState<ProjectStatusType>('');
 
   const [textSearch, setTextSearch] = useState('');
+  const [emirate, setEmirate] = useState('');
+
   const [visible, setVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState(false);
   const [visibleNoOfBedrooms, setVisibleNoOfBedrooms] = useState(false);
@@ -43,9 +47,11 @@ export const HomeSearch = () => {
     setProjType(event.target.value as ProjType);
   };
 
-  const handleStatusChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    // setProjType(event.target.value as ProjType);
+  const handlePropertyTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setPropertyType(event.target.value as PropertyType);
+  };
+  const handleStatusChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setProjectStatus(event.target.value as ProjectStatusType);
   };
 
   const buildQueryString = (params: Record<string, string | undefined>) => {
@@ -59,14 +65,16 @@ export const HomeSearch = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const params: HomeSearchText = {
-      construction_status: propertyType,
-      availablefor: projType,
+      construction_status: projectStatus,
+      // availablefor: projType,
+      emirate: emirate,
+      property_type: propertyType,
       price_range: pr,
       location: location,
       search_text: textSearch,
     };
     const queryString = buildQueryString(params);
-    console.log(queryString);
+    console.log(`Query ${queryString}`);
     const page = params.construction_status ?? 'ready';
 
     router.push(`/projects/${page}${queryString}`);
@@ -140,8 +148,8 @@ export const HomeSearch = () => {
               type="text"
               name="textSearch"
               id="textSearch_input"
-              value={textSearch}
-              onChange={(e) => setTextSearch(e.target.value)}
+              value={emirate}
+              onChange={(e) => setEmirate(e.target.value)}
               className={`block 
                             h-full 
                             w-full border-0 
@@ -198,18 +206,18 @@ export const HomeSearch = () => {
 
           <select
             value={projType}
-            onChange={handleProjTypeChange}
+            onChange={handlePropertyTypeChange}
             className={`custom-select mx-[11px]  max-w-[calc(33.333%-11px)] cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent focus:ring-0 focus:ring-inset small:min-w-[100px] small:max-w-[auto] `}
             //className={`custom-select relative flex  max-w-[calc(40%-11px)] cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[100px] small:max-w-[auto] `}
           >
             <option className="border-[#eddfd0]" value="">
-              Project Type
+              Property Type
             </option>
             <option className="border-[#eddfd0]" value="buy">
-              Buy
+              Villa
             </option>
             <option className="border-[#eddfd0]" value="rent">
-              Rent
+              Apartment
             </option>
           </select>
           <div className={`${s.line}`} />
@@ -281,14 +289,14 @@ export const HomeSearch = () => {
     <>
       <div className="mt-[300px] flex w-full px-[3vw] text-center text-sm xl:mt-[200px] ">
         <div
-          className={`min-w-[132px] flex-1 ${propertyType === 'ready' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] pb-[8px]`}
-          onClick={() => setPropertyType('ready')}
+          className={`min-w-[132px] flex-1 ${projectStatus === 'ready' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] pb-[8px]`}
+          onClick={() => setProjectStatus('ready')}
         >
           Ready
         </div>
         <div
-          className={`min-w-[132px] flex-1 ${propertyType === 'upcoming' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] pb-[8px]`}
-          onClick={() => setPropertyType('upcoming')}
+          className={`min-w-[132px] flex-1 ${projectStatus === 'upcoming' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] pb-[8px]`}
+          onClick={() => setProjectStatus('upcoming')}
         >
           New Projects
         </div>

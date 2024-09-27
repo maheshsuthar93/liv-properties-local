@@ -233,9 +233,11 @@ export interface Career {
 }
 
 export interface HomeSearchText {
-  availablefor: string;
+  //availablefor: string;
   price_range: string;
+  property_type: string;
   location: string;
+  emirate: string;
   construction_status: string | undefined;
   search_text: string;
   [key: string]: string | undefined; // Add index signature
