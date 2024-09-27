@@ -373,6 +373,9 @@ export const HomeSearch = () => {
               pr={pr}
               setVisible={setVisible}
               keyPrefix="homemob"
+              rangeType="price"
+              minPlaceholder={undefined}
+              maxPlaceholder={undefined}
               className="absolute bottom-[50px] left-[0%] z-[10]"
             />
           )}
