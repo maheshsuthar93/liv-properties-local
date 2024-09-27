@@ -198,6 +198,28 @@ function ProjectComponent() {
               </ul>
             )}
           </div>
+
+          <div className="mt-[21px] flex w-full items-center justify-start gap-[22px] text-sm sm:w-[50%] xl:w-[auto]">
+            <div>{property[0].property_type ?? ''}</div>
+            <div className={`${s.line}`} />
+            <div>{property[0].construction_status}</div>
+            <div className={`${s.line}`} />
+            <div>{property[0].availability_date ?? 'Coming soon'}</div>
+          </div>
+          <div className="mt-[21px] flex w-full items-center justify-start gap-[22px] text-sm sm:w-[50%] xl:w-[auto]">
+            <div>
+              AED{' '}
+              {(property[0].price ?? '').toLocaleString('en-US', {
+                minimumIntegerDigits: 2,
+                maximumFractionDigits: 2,
+              }) + '.000'}{' '}
+            </div>
+            <div className={`${s.line}`} />
+            <div>
+              {property[0].area ?? ''} {','}
+              {property[0].emirate ?? ''}
+            </div>
+          </div>
           <div className="mt-[21px] flex w-full items-center justify-start gap-[22px] text-sm sm:w-[50%] xl:w-[auto]">
             <div>
               <Image
@@ -230,6 +252,7 @@ function ProjectComponent() {
               {property[0].area_in_sqft ?? '0'} Sqft
             </div>
           </div>
+
           <div className="description mt-[31px] w-full max-w-[100%] text-sm leading-[202%] xl:w-[auto] xl:max-w-[483px]">
             {property[0].description ?? ''}
           </div>
