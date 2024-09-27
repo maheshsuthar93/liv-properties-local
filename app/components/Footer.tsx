@@ -11,11 +11,11 @@ export const Footer = async () => {
   const contactUs: ContactUs = await fetchData(6);
   return (
     <footer
-      className={`min-[1440px]-h-[477px] relative bg-cover  bg-right-bottom sm:bg-top`}
+      className={`min-[1440px]-h-[477px] relative bg-cover  bg-right-bottom sm:bg-top `}
       style={{ backgroundImage: 'url("/images/ft-bg.jpg")' }}
     >
       <div className={`z-[1] ${styles.tint} z-[1]`}></div>
-      <div className="relative z-[2] flex flex-wrap gap-x-[30px] gap-y-[30px] px-[3vw] pt-[40px] sm:justify-between sm:px-[80px] lg:pt-[80px] small:gap-y-[50px] bigtab:flex-nowrap">
+      <div className="bigtab:flex-nowrap] relative z-[2] flex flex-wrap gap-x-[30px] gap-y-[30px] px-[3vw] pt-[40px] sm:justify-between sm:px-[80px] lg:pt-[80px] small:gap-y-[50px]">
         <div className="order-1 w-[100%] max-w-full bigtab:mr-[6%] bigtab:w-[40%]">
           <h2 className="gotham mr-auto text-[20px] font-[200] leading-[164%] sm:text-[25px] xl:max-w-[80%]">
             A World of Leading Expertise Exclusively yours

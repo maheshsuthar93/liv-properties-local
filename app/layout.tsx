@@ -21,7 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="helveticaNeue relative overflow-hidden bg-[#827161] bg-[url(/images/bg.jpg)] bg-contain bg-repeat font-[200] text-[#eddfd0]">
-          <Header />
+          <div className="mx-auto w-full 3xl:max-w-[1200px]">
+            <Header />
+          </div>
+
           {/* <Image
                         src='/images/bg.jpg'
                         alt='Background'
