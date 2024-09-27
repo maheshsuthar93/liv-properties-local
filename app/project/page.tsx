@@ -116,12 +116,6 @@ function ProjectComponent() {
     <div className="w-full 3xl:max-w-[1200px]">
       <div className="mt-0 flex w-full flex-wrap gap-8 border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] xl:flex-nowrap xl:gap-0">
         <div className="z-[1] flex w-[100%] flex-row flex-wrap xl:mr-[-5%] xl:w-[40%] xl:flex-col xl:flex-nowrap">
-          <div className="w-[100%] text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px]">
-            <h2>{property[0].property_name ?? 'Property Name'}</h2>
-          </div>
-          <div className="mt-[10px] w-[100%] text-lg">
-            {property[0].location ?? 'Property Location'}
-          </div>
           <div className="relative mt-[16px] flex w-full items-center justify-normal sm:w-[100%] md:mt-[40px] xl:mt-[50px] xl:w-[auto]">
             <button
               className="mr-[10px] grid grid-cols-2 place-items-center gap-[11px] rounded-3xl border border-solid border-[#EDDFD0] px-[25px] py-[9px] pl-[15px] text-sm transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
@@ -211,6 +205,12 @@ function ProjectComponent() {
                 </li>
               </ul>
             )}
+          </div>
+          <div className="w-[100%] text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px]">
+            <h2>{property[0].property_name ?? 'Property Name'}</h2>
+          </div>
+          <div className="mt-[10px] w-[100%] text-lg">
+            {property[0].location ?? 'Property Location'}
           </div>
 
           <div className="mt-[21px] flex w-full items-center justify-start gap-[22px] text-sm sm:w-[50%] xl:w-[auto]">
