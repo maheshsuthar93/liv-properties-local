@@ -292,8 +292,8 @@ function ProjectComponent() {
           <Gallery stateChanger={handlePopup} images={images} />
         )}
       </div>
-      <div className="flex w-full flex-wrap items-center justify-center border-b border-solid border-[#EDDFD0] border-opacity-50 py-[36px] xl:justify-normal">
-        <div className="flex w-[100%] flex-wrap justify-center gap-[28px] md:w-[auto]">
+      <div className="flex w-full flex-wrap items-center  border-b border-solid border-[#EDDFD0] border-opacity-50 py-[36px]">
+        <div className="flex w-[100%] flex-wrap  gap-[28px] md:w-[auto] md:w-[calc(50%-26px)] msm:w-[calc(50%-15px)]">
           <div className="text-center">
             <button onClick={handlePopup}>
               <Image
@@ -414,8 +414,9 @@ function ProjectComponent() {
             </div>
           </a>
         </div>
-        <div className="pl-[46px]">
-          <div className="flex w-[100%] flex-wrap justify-center gap-[28px] md:w-[auto] ">
+        <div className={`${s.line}`} />
+        <div className="w-full md:w-[calc(50%-26px)] msm:w-[calc(50%-15px)]">
+          <div className="flex w-[100%] flex-wrap justify-end gap-[28px] md:w-[auto] ">
             <Image
               src="/icons/qrCode.svg"
               alt="QR Code"
