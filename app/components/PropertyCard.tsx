@@ -33,17 +33,17 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
 
   return (
     <div
-      className={`${isLargeScreen ? s.propPic : ''} property-card mr-[14px] mt-[20px] w-full flex-1 md:mt-[43px] smlap:w-[300px] smlap:flex-none`}
+      className={`${isLargeScreen ? s.propPic : ''} property-card mr-[14px] mt-[20px] w-full flex-1 md:mt-[43px] smlap:w-[417px] smlap:flex-none`}
     >
       <Link href={`/project?unique_id=${uniqueId}`} className="relative">
-        <div className="relative  block h-[293px] w-full min-w-[300px] overflow-hidden smlap:w-[300px]">
+        <div className="relative  block h-[384px] w-full min-w-[300px] overflow-hidden smlap:w-[417px]">
           <Image
             src={imageUrl || ''}
             alt={altText}
-            width={300}
-            height={293}
+            width={417}
+            height={384}
             onLoad={() => setImageLoaded(true)}
-            className={`property-card_img absolute h-[293px] w-full object-cover transition-opacity smlap:w-[300px] ${!imageLoaded ? 'opacity-0' : 'opacity-100'}}`}
+            className={`property-card_img absolute h-[384px] w-full object-cover transition-opacity smlap:w-[417px] ${!imageLoaded ? 'opacity-0' : 'opacity-100'}}`}
           />
           {/* <Skeleton
             className={`absolute top-[-5px] w-full transition-opacity smlap:w-[300px] ${imageLoaded ? 'loaded opacity-0' : ''}`}
