@@ -7,7 +7,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { gmapsApiKey, apiUrl, fetcher } from '@/app/constants';
 import Link from 'next/link';
 import useSWR from 'swr';
-import { Loading } from '../components';
+import { Loading, MediaPopup } from '../components';
 import renderService from './renderService';
 import Gallery from './Gallery';
 import ProjectImages from './ProjectImages';
@@ -31,6 +31,8 @@ function ProjectComponent() {
   const [isClient, setIsClient] = useState(false);
   const [visibleReadMore, setVisibleReadMore] = useState(false);
   const router = useRouter();
+  const [viewImagePopup, setViewImagePopup] = useState(false);
+  const [viewVideo, setViewVideo] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -38,7 +40,13 @@ function ProjectComponent() {
     const id = searchParams.get('unique_id');
     setId(id);
   }, []);
+  const handleImagePopup = () => {
+    setViewImagePopup((prevCheck) => !prevCheck);
+  };
 
+  const handleVideoPopup = () => {
+    setViewVideo((prevCheck) => !prevCheck);
+  };
   const {
     data: property,
     error,
@@ -323,7 +331,7 @@ function ProjectComponent() {
             }
           >
             <div className="text-center">
-              <Link href={property[0].video ?? '/'} target="_blank">
+              <button onClick={handleVideoPopup}>
                 <Image
                   src="/icons/play_circle.svg"
                   alt="Play circle icon"
@@ -332,7 +340,7 @@ function ProjectComponent() {
                   className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
                 />
                 Video
-              </Link>
+              </button>
             </div>
           </a>
 
@@ -353,6 +361,25 @@ function ProjectComponent() {
                 />
                 Brochure
               </Link>
+            </div>
+          </a>
+          <a
+            data-tooltip-id="my-tooltip"
+            data-tooltip-content={
+              property[0].video != undefined ? '' : 'Not Available'
+            }
+          >
+            <div className="text-center">
+              <button onClick={handleImagePopup}>
+                <Image
+                  src="/icons/degree.svg"
+                  alt="Play circle icon"
+                  width={114}
+                  height={114}
+                  className="mb-4 rounded-full border border-solid border-[#EDDFD0] p-[30px] md:p-[41px]"
+                />
+                360{'\u00b0'}
+              </button>
             </div>
           </a>
         </div>
@@ -398,6 +425,22 @@ function ProjectComponent() {
           description={property[0].description}
           visible={visibleReadMore}
           setVisible={setVisibleReadMore}
+        />
+      )}
+      {viewImagePopup && (
+        <MediaPopup
+          stateChanger={handleImagePopup}
+          url={
+            'https://fastly.picsum.photos/id/272/800/600.jpg?hmac=Si-HAYLaQ3WaGRUeA3_AGOt2Wco07TDtbbLH97g7lZ4'
+          }
+          isVideo={false}
+        />
+      )}
+      {viewVideo && (
+        <MediaPopup
+          stateChanger={handleVideoPopup}
+          url={'https://www.youtube.com/embed/dQw4w9WgXcQ'}
+          isVideo={true}
         />
       )}
     </div>
