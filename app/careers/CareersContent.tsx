@@ -25,8 +25,8 @@ export const CareersContent = () => {
           careersData.map((career) => (
             <CareerCard key={career.id} career={career} />
           ))}
-        <div className="mt-[30px] w-full text-[40px] font-[700] leading-[38px] lg:mt-[65px] small:text-[45px] small:leading-[60px]">
-          <h2>Enquire Now</h2>
+        <div className="mt-[30px] w-full  text-[20px] font-[700] leading-[38px] lg:mt-[65px] small:text-[35px]  small:leading-[60px]">
+          Enquire Now
         </div>
         <EnquireForm />
       </Fragment>

@@ -6,8 +6,8 @@ export const Instagram = () => {
   return (
     <div className="verticalPanelInner instagram-sec flex flex-col px-[3vw] sm:px-[0px]">
       <div className="home-sec_title">
-        <div className="text-[30px] font-[700] leading-[94%] small:text-[59px]">
-          <h2>Instagram</h2>
+        <div className="text-[20px] font-[700] leading-[94%] small:text-[35px]">
+          Instagram
         </div>
       </div>
       <div className="text-sm font-[200] leading-[177%] small:mt-[13px]">

@@ -48,7 +48,7 @@ export const FeaturedProperties = () => {
   return (
     <div className="verticalPanelInner featured-properties mt-[10px] flex flex-col px-[3vw]  sm:px-0 3xl:max-w-[1200px]">
       <div className="max-[1024px]:justify-between mb-[30px] flex flex-wrap justify-normal gap-8 small:mb-0">
-        <div className="home-sec_title text-[20px] font-[700] leading-[94%] small:text-[30px]">
+        <div className="home-sec_title text-[20px] font-[700] leading-[94%] small:text-[35px]">
           <h2 className="inline-block  capitalize ">Featured Properties</h2>
         </div>
         {isLargeScreen ? (
@@ -179,6 +179,7 @@ export const FeaturedProperties = () => {
               />
             </Fragment>
           ))}
+
         {/* {isLargeScreen ? (
           <div className="property-card explore-all mt-[43px] w-full sm:w-[304px]">
             <div className={`${s.lastProperty}`}>
@@ -202,6 +203,15 @@ export const FeaturedProperties = () => {
             View&nbsp;All
           </button>
         )} */}
+      </div>
+      <div className="w-full">
+        <button
+          type="submit"
+          className="mx-auto mt-[39px] block rounded-3xl border border-solid border-[#EDDFD0] px-[50px] py-[15px] text-sm transition
+                        duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
+        >
+          Load More
+        </button>
       </div>
     </div>
   );

@@ -55,8 +55,8 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
         </div>
       </Link>
       <div className="ml-[10px] mt-[15px]">
-        <div className=" text-[15px] font-[700]">{title}</div>
-        <div className="text-xs">{location}</div>
+        <div className="helveticaNeue text-[15px] font-[700]">{title}</div>
+        <div className="helveticaNeue text-[13px] font-[400]">{location}</div>
         {/* <div className='text-xs'>{description}</div> */}
         <div className="mt-[4px] flex gap-[17px] text-xs">
           <div>
@@ -90,7 +90,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
             {area} sqft
           </div>
         </div>
-        <div className="mt-[3px] text-[15px] font-[700]">
+        <div className="helveticaNeue mt-[3px] text-[15px] font-[700]">
           AED{' '}
           {price.toLocaleString('en-US', {
             minimumIntegerDigits: 2,

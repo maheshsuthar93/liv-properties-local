@@ -128,7 +128,7 @@ export const HomeSearch = () => {
           <select
             value={projectStatus}
             onChange={handleStatusChange}
-            className={`custom-select relative  flex max-w-[calc(40%-11px)]  cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-sm text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[100px] small:max-w-[auto]`}
+            className={`custom-select relative  flex max-w-[calc(40%-11px)]  cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-sm text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[70px] small:max-w-[auto]`}
           >
             <option className="border-[#eddfd0]" value="">
               Status
@@ -142,7 +142,7 @@ export const HomeSearch = () => {
           </select>
           <div className={`${s.line}`} />
           <div
-            className={`mx-[11px] ${s.hoverable} max-w-[calc(40%-11px)] small:min-w-[100px] small:max-w-[auto]`}
+            className={`mx-[11px] ${s.hoverable} max-w-[calc(40%-11px)] small:min-w-[70px] small:max-w-[auto]`}
           >
             <input
               type="text"
@@ -165,7 +165,7 @@ export const HomeSearch = () => {
           </div>
           <div className={`${s.line}`} />
           <div
-            className={`mx-[11px] ${s.hoverable} flex max-w-[calc(25%-11px)] justify-center small:min-w-[100px] small:max-w-[auto]`}
+            className={`mx-[11px] ${s.hoverable} flex max-w-[calc(25%-11px)] justify-center small:min-w-[70px] small:max-w-[auto]`}
           >
             <input
               type="text"
@@ -181,7 +181,7 @@ export const HomeSearch = () => {
           </div>
           <div className={`${s.line}`} />
           <div
-            className={`mx-[11px] ${s.hoverable} max-w-[calc(40%-11px)] small:min-w-[100px] small:max-w-[auto]`}
+            className={`mx-[11px] ${s.hoverable} max-w-[calc(40%-11px)] small:min-w-[70px] small:max-w-[auto]`}
           >
             <input
               type="text"
@@ -207,7 +207,7 @@ export const HomeSearch = () => {
           <select
             value={projType}
             onChange={handlePropertyTypeChange}
-            className={`custom-select  mx-[11px] max-w-[calc(33.333%-11px)]  cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent text-sm focus:ring-0 focus:ring-inset small:min-w-[100px] small:max-w-[auto] `}
+            className={`custom-select  mx-[11px] max-w-[calc(33.333%-11px)]  cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent text-sm focus:ring-0 focus:ring-inset small:min-w-[70px] small:max-w-[auto] `}
             //className={`custom-select relative flex  max-w-[calc(40%-11px)] cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[100px] small:max-w-[auto] `}
           >
             <option className="border-[#eddfd0]" value="">
@@ -222,7 +222,7 @@ export const HomeSearch = () => {
           </select>
           <div className={`${s.line}`} />
           <div
-            className={`mx-[11px] ${s.hoverable} max-w-[calc(33.333%-11px)] small:min-w-[100px] small:max-w-[auto]`}
+            className={`mx-[11px] ${s.hoverable} max-w-[calc(33.333%-11px)] small:min-w-[70px] small:max-w-[auto]`}
           >
             {visibleNoOfBedrooms && (
               <PriceRange
@@ -246,7 +246,7 @@ export const HomeSearch = () => {
           </div>
           <div className={`${s.line}`} />
           <div
-            className={`mx-[11px] ${s.hoverable} max-w-[calc(33.333%-11px)] small:min-w-[100px] small:max-w-[auto]`}
+            className={`mx-[11px] ${s.hoverable} max-w-[calc(33.333%-11px)] small:min-w-[70px] small:max-w-[auto]`}
           >
             {visible && (
               <PriceRange
@@ -272,7 +272,7 @@ export const HomeSearch = () => {
           <button
             type="button"
             onClick={handleSubmit}
-            className={`ml-[18px] mr-[0px] grid max-w-[calc(33.333%-11px)] grid-cols-2 place-items-center gap-1 py-3 pl-2 small:mx-[18px] small:min-w-[100px] small:max-w-[auto] ${s.hoverable}`}
+            className={`ml-[18px] mr-[0px] grid max-w-[calc(33.333%-11px)] grid-cols-2 place-items-center gap-1 py-3 pl-2 small:mx-[18px] small:min-w-[70px] small:max-w-[auto] ${s.hoverable}`}
           >
             <Image
               src="/images/search.svg"

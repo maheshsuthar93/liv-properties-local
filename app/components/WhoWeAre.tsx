@@ -23,7 +23,7 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
 
   return (
     <>
-      <div className="mt-[100px] flex flex-wrap text-xs xl:mt-[50px] msm:flex-nowrap mdlap:mt-[136px]">
+      <div className="helveticaNeue mt-[100px] flex flex-wrap xl:mt-[50px] msm:flex-nowrap small:text-[17px] mdlap:mt-[136px]">
         <h2
           className={`w-[93px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'who' ? 'border-b-[4px]' : ''}`}
           onClick={() => setActiveTab('who')}
@@ -53,7 +53,7 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
       {/* Who we are */}
       {activeTab === 'who' && (
         <>
-          <div className="mt-[47px] flex w-full flex-wrap gap-[26px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] text-xs ">
+          <div className="helveticaNeue mt-[47px] flex w-full flex-wrap gap-[26px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] small:text-[16px] ">
             <div
               className="who-desc"
               dangerouslySetInnerHTML={{
@@ -68,7 +68,7 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
       )}
       {/* Misson & Vision */}
       {(activeTab === 'mission' || activeTab === 'vision') && (
-        <div className="mb-[33px] mt-[33px] flex w-full flex-wrap gap-[25px] text-xs ">
+        <div className="helveticaNeue mb-[33px] mt-[33px] flex w-full flex-wrap gap-[25px] small:text-[16px]">
           <div className="lg:w-[calc(50%-13px)]">
             <h3 className="mb-[11px] text-[20px] leading-[120%]">
               {props.data?.aboutusmission[4].field_value}
@@ -96,9 +96,9 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
       )}
       {activeTab === 'meet' && (
         <div className="mt-[36px]">
-          <h3 className="text-[40px] font-[700] leading-[38px] small:text-[69px] small:leading-[88px]">
+          <div className="text-[20px] font-[700] leading-[38px] small:text-[40px] small:leading-[88px]">
             {props.data?.meettheteam[13].field_value}
-          </h3>
+          </div>
           <div className="mt-[47px] flex flex-wrap gap-[20px]">
             <MeetTheTeam />
           </div>

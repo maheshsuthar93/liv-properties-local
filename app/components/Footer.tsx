@@ -19,16 +19,16 @@ export const Footer = async () => {
       <div className="flex justify-center">
         <div className="bigtab:flex-nowrap] relative z-[2] flex flex-wrap gap-y-[30px]  pt-[40px] sm:justify-between  lg:pt-[80px] small:gap-y-[10px] 3xl:max-w-[1200px]">
           <div className="order-1 w-[100%] max-w-full bigtab:mr-[6%] bigtab:w-[40%]">
-            <h2 className="gotham mr-auto text-[20px] font-[200] leading-[164%] sm:text-[25px] xl:max-w-[80%]">
+            <div className=" mr-auto text-[20px] font-[400] leading-[164%] sm:text-[25px] xl:max-w-[80%]">
               A World of Leading Expertise Exclusively yours
-            </h2>
-            <h3 className="mr-auto mt-[5px] text-[14px] font-[400] leading-[147%] sm:text-[25px] xl:mt-[38px] xl:max-w-[90%]">
+            </div>
+            <div className=" mr-auto mt-[5px] text-[14px] font-[500] leading-[147%] sm:text-[25px] xl:mt-[38px] xl:max-w-[90%]">
               Sign up for our newsletter to stay updated with what’s new in UAE
               real estate
-            </h3>
+            </div>
             <FooterEmailForm />
           </div>
-          <div className="order-2 w-full text-sm font-[200] sm:w-[calc(30%-20px)] xl:w-[18%] bigtab:w-[15%]">
+          <div className="order-2 w-full font-[200] sm:w-[calc(30%-20px)] sm:text-[16px] xl:w-[18%] bigtab:w-[15%]">
             <div className="font-[700]">EXPLORE RESIDENTIAL IN</div>
             <a
               href="/projects/ready?availablefor=buy&construction_status=ready&location=Palm%20Jumeirah"
@@ -73,7 +73,7 @@ export const Footer = async () => {
               City Walk
             </a>
           </div>
-          <div className="order-3 w-full text-sm font-[200] sm:w-[calc(30%-20px)] xl:w-[18%] bigtab:w-[15%]">
+          <div className="order-3 w-full font-[200] sm:w-[calc(30%-20px)] xl:w-[18%] small:text-[16px] bigtab:w-[15%]">
             <div className="font-[700]">LIV Squared Properties</div>
             <Link
               href="/about"

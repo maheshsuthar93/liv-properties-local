@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ReadyProjectsPage() {
   return (
     <div className="mb-[30px] w-full sm:mb-[60px] small:mb-[83px] 3xl:max-w-[1200px]">
-      <div className="flex flex-wrap gap-8">
+      {/* <div className="flex flex-wrap gap-8">
         <div className="text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px]">
           <h1 className="relative z-[1] inline-block max-w-[220px] capitalize small:max-w-[270px]">
             Luxury Properties for Sale
@@ -28,9 +28,16 @@ export default async function ReadyProjectsPage() {
             className="pointer-events-none absolute right-0 top-[180px] z-[0] max-w-[120dvw] translate-y-[-25%] sm:top-[200px] sm:max-w-full sm:translate-y-[-45%] lg:top-[340px] lg:translate-y-[-60%]"
           />
         </div>
-      </div>
+      </div> */}
       <Providers>
-        <PageSearch type="ready" />
+        <div className="gradient-from bg-gradient-to-r  small:p-[20px]">
+          <div className=" max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center  mb-[10px] flex px-[3vw] text-[20px] font-[700] leading-[94%] sm:px-0 small:text-[30px]">
+            <h2 className="inline-block capitalize">
+              Luxury Properties for Sale
+            </h2>
+          </div>
+          <PageSearch type="ready" />
+        </div>
         <ListProperties />
       </Providers>
     </div>
