@@ -12,7 +12,7 @@ export const Footer = async () => {
   return (
     <footer
       className={`min-[1440px]-h-[477px] relative bg-cover  bg-right-bottom sm:bg-top`}
-      style={{ backgroundImage: 'url("/images/ft-bg.webp")' }}
+      style={{ backgroundImage: 'url("/images/ft-bg.jpg")' }}
     >
       <div className={`z-[1] ${styles.tint} z-[1]`}></div>
       <div className="relative z-[2] flex flex-wrap gap-x-[30px] gap-y-[30px] px-[3vw] pt-[40px] sm:justify-between sm:px-[80px] lg:pt-[80px] small:gap-y-[50px] bigtab:flex-nowrap">
