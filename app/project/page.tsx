@@ -13,6 +13,7 @@ import Gallery from './Gallery';
 import ProjectImages from './ProjectImages';
 import { Tooltip as ReactTooltip, Tooltip } from 'react-tooltip';
 import InfoModal from '../components/InfoModal';
+import AgentContact from './agent';
 
 export default function ProjectPage() {
   return (
@@ -291,6 +292,9 @@ function ProjectComponent() {
         {images.length > 0 && viewGallery && (
           <Gallery stateChanger={handlePopup} images={images} />
         )}
+      </div>
+      <div className="flex w-full flex-wrap items-center  border-b border-solid border-[#EDDFD0] border-opacity-50 py-[20px]">
+        <AgentContact propert={property[0]} />
       </div>
       <div className="flex w-full flex-wrap items-center  border-b border-solid border-[#EDDFD0] border-opacity-50 py-[36px]">
         <div className="flex w-[100%] flex-wrap  gap-[28px] md:w-[auto] md:w-[calc(50%-26px)] msm:w-[calc(50%-15px)]">
