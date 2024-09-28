@@ -297,7 +297,7 @@ function ProjectComponent() {
         <AgentContact propert={property[0]} />
       </div>
       <div className="flex w-full flex-wrap items-center  border-b border-solid border-[#EDDFD0] border-opacity-50 py-[36px]">
-        <div className="flex w-[100%] flex-wrap  gap-[28px] md:w-[auto] md:w-[calc(50%-26px)] msm:w-[calc(50%-15px)]">
+        <div className="flex w-[100%] flex-wrap  gap-[18px] md:w-[auto] md:w-[calc(50%)] msm:w-[calc(57%-5px)]">
           <div className="text-center">
             <button onClick={handlePopup}>
               <Image
@@ -419,7 +419,7 @@ function ProjectComponent() {
           </a>
         </div>
         <div className={`${s.line}`} />
-        <div className="w-full md:w-[calc(50%-26px)] msm:w-[calc(50%-15px)]">
+        <div className="w-full md:w-[calc(50%)] msm:w-[calc(43%)]">
           <div className="flex w-[100%] flex-wrap justify-end gap-[28px] md:w-[auto] ">
             <Image
               src="/icons/qrCode.svg"
