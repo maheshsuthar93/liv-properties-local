@@ -160,7 +160,7 @@ export const ScrollingSections = () => {
 
   return (
     <>
-      <div className="verticalSection section mt-[200px] w-full flex-col 3xl:max-w-[1200px]">
+      <div className="verticalSection section  w-full flex-col 3xl:max-w-[1200px]">
         <HomeHero />
         <FeaturedProperties />
         <AboutLiv />
