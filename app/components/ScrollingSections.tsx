@@ -171,37 +171,37 @@ export const ScrollingSections = () => {
       </div>
     </>
   );
-  return (
-    <>
-      <div
-        className="verticalSection section w-full flex-col"
-        ref={verticalSection}
-      >
-        <div
-          className="verticalPanel"
-          ref={(el) => (sectionsRefs.current[0] = el!)}
-        >
-          <HomeHero />
-        </div>
-        <div
-          className="verticalPanel"
-          ref={(el) => (sectionsRefs.current[1] = el!)}
-        >
-          <FeaturedProperties />
-        </div>
-        <div
-          className="verticalPanel"
-          ref={(el) => (sectionsRefs.current[2] = el!)}
-        >
-          <OurServices />
-        </div>
-        <div
-          className="verticalPanel"
-          ref={(el) => (sectionsRefs.current[3] = el!)}
-        >
-          <Instagram />
-        </div>
-      </div>
-    </>
-  );
+  // return (
+  //   <>
+  //     <div
+  //       className="verticalSection section w-full flex-col"
+  //       ref={verticalSection}
+  //     >
+  //       <div
+  //         className="verticalPanel"
+  //         ref={(el) => (sectionsRefs.current[0] = el!)}
+  //       >
+  //         <HomeHero />
+  //       </div>
+  //       <div
+  //         className="verticalPanel"
+  //         ref={(el) => (sectionsRefs.current[1] = el!)}
+  //       >
+  //         <FeaturedProperties />
+  //       </div>
+  //       <div
+  //         className="verticalPanel"
+  //         ref={(el) => (sectionsRefs.current[2] = el!)}
+  //       >
+  //         <OurServices />
+  //       </div>
+  //       <div
+  //         className="verticalPanel"
+  //         ref={(el) => (sectionsRefs.current[3] = el!)}
+  //       >
+  //         <Instagram />
+  //       </div>
+  //     </div>
+  //   </>
+  // );
 };

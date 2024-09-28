@@ -394,8 +394,8 @@ export const HomeSearch = () => {
     </div>
   ) : (
     <>
-      <div className="mt-[300px] flex w-full px-[3vw] text-center text-sm xl:mt-[200px] ">
-        <div
+      <div className="mt-[100px] flex w-full px-[3vw] text-center text-sm xl:mt-[200px] ">
+        {/* <div
           className={`min-w-[132px] flex-1 ${projectStatus === 'ready' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] pb-[8px]`}
           onClick={() => setProjectStatus('ready')}
         >
@@ -406,10 +406,71 @@ export const HomeSearch = () => {
           onClick={() => setProjectStatus('upcoming')}
         >
           New Projects
-        </div>
+        </div> */}
       </div>
-      <div className="mt-[15px] flex flex-col px-[3vw] text-sm">
-        <select
+      <div className="mt-[15px] flex flex-col px-[3vw] text-sm ">
+        <Select
+          value={projectStatus}
+          onChange={(v) => setProjectStatus(v as ProjectStatusType)}
+          className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
+          options={[
+            {
+              value: 'Status',
+              label: 'Status',
+            },
+            {
+              value: 'ready',
+              label: 'Ready',
+            },
+            {
+              value: 'upcoming',
+              label: 'New',
+            },
+          ]}
+        >
+          {/* <option className="border-[#eddfd0]" value="">
+              Status
+            </option>
+            <option className="border-[#eddfd0]" value="ready">
+              Ready
+            </option>
+            <option className="border-[#eddfd0]" value="upcoming">
+              New
+            </option> */}
+        </Select>
+        <Select
+          value={propertyType}
+          onChange={(v) => setPropertyType(v as PropertyType)}
+          className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
+          options={[
+            {
+              value: 'propertyType',
+              label: 'Property Type',
+            },
+            {
+              value: 'villa',
+              label: 'Villa',
+            },
+            {
+              value: 'apartment',
+              label: 'Apartment',
+            },
+            {
+              value: 'pentouse',
+              label: 'Pentouse',
+            },
+            {
+              value: 'townhouse',
+              label: 'Townhouse',
+            },
+            {
+              value: 'duplex',
+              label: 'Duplex',
+            },
+          ]}
+        ></Select>
+
+        {/* <select
           value={projType}
           onChange={handleProjTypeChange}
           className={`custom-select relative flex w-full cursor-pointer flex-row items-center justify-between border-0 border-b-[1px] border-[#eddfd0] border-opacity-60 bg-transparent py-3 pl-[0]  text-[#eddfd0] focus:border-0 focus:border-b-[1px] focus:border-[#eddfd0] focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0]`}
@@ -423,7 +484,7 @@ export const HomeSearch = () => {
           <option className="border-[#eddfd0]" value="rent">
             Rent
           </option>
-        </select>
+        </select> */}
         <input
           type="text"
           name="textSearch"
@@ -439,7 +500,7 @@ export const HomeSearch = () => {
                     hover:ring-[#EDDFD0]/50 focus:border-0 focus:border-b-[1px] focus:border-[#eddfd0] focus:outline-none focus:ring-0 focus:ring-inset 
                     focus:ring-[#EDDFD0] 
                     sm:leading-6`}
-          placeholder="Community or Building"
+          placeholder="Community"
         />
         <div className="relative">
           <input
@@ -466,6 +527,26 @@ export const HomeSearch = () => {
             height={24}
             className="absolute right-[0px] top-[calc(50%-10px)] mr-[5px]"
           />
+        </div>
+        <div className={`relative`}>
+          {visibleNoOfBedrooms && (
+            <PriceRange
+              setPr={setBedroomRange}
+              pr={bedroomRange}
+              rangeType="other"
+              maxPlaceholder={'Max bedrooms'}
+              minPlaceholder={'Min bedrooms'}
+              setVisible={setVisibleNoOfBedrooms}
+              keyPrefix="home"
+              className="absolute bottom-[50px] left-[0%] z-[10]"
+            />
+          )}
+          <button
+            className="w-full border-b border-solid border-[#eddfd0] border-opacity-60 pb-[15px] pt-[24px] text-left"
+            onClick={handleBedroomsClick}
+          >
+            {!bedroomRange ? 'Bedrooms' : bedroomRange}
+          </button>
         </div>
         {/* <button
                     className='flex border-b border-solid border-[#eddfd0] border-opacity-60 pb-[15px] pt-[24px] transition duration-200 ease-in-out
