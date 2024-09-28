@@ -37,26 +37,28 @@ export const ListProperties = () => {
                             </div>
                         </div>
                     )}
+                <div className="flex flex-wrap">
 
-                {searchProperty.data &&
-                    !searchProperty.isLoading &&
-                    Array.isArray(searchProperty.data.data) &&
-                    searchProperty.data.data.map((p: Property) => (
-                        <Fragment key={p.id}>
-                            <PropertyCard
-                                id={p.id}
-                                uniqueId={p.unique_id ?? ''}
-                                imageUrl={p.main_image}
-                                altText={`Photo of ${p.property_name}`}
-                                title={p.property_name}
-                                location={p.location}
-                                bedrooms={p.number_of_bedroom}
-                                bathrooms={p.number_of_bathroom}
-                                area={p.area_in_sqft}
-                                price={p.price}
-                            />
-                        </Fragment>
-                    ))}
+                    {searchProperty.data &&
+                        !searchProperty.isLoading &&
+                        Array.isArray(searchProperty.data.data) &&
+                        searchProperty.data.data.map((p: Property) => (
+                            <Fragment key={p.id}>
+                                <PropertyCard
+                                    id={p.id}
+                                    uniqueId={p.unique_id ?? ''}
+                                    imageUrl={p.main_image}
+                                    altText={`Photo of ${p.property_name}`}
+                                    title={p.property_name}
+                                    location={p.location}
+                                    bedrooms={p.number_of_bedroom}
+                                    bathrooms={p.number_of_bathroom}
+                                    area={p.area_in_sqft}
+                                    price={p.price}
+                                />
+                            </Fragment>
+                        ))}
+                </div>
             </div>
         );
     }
