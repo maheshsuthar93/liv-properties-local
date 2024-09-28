@@ -115,7 +115,7 @@ function ProjectComponent() {
   return (
     <div className="w-full 3xl:max-w-[1200px]">
       <div className="mt-0 flex w-full flex-wrap gap-8 border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] xl:flex-nowrap xl:gap-0">
-        <div className="z-[1] flex w-[100%] flex-row flex-wrap xl:mr-[-5%] xl:w-[40%] xl:flex-col xl:flex-nowrap">
+        <div className="flex w-[100%] flex-row flex-wrap xl:w-[40%] xl:flex-col xl:flex-nowrap msm:w-[calc(40%)]">
           <div className="relative mt-[16px] flex w-full items-center justify-normal sm:w-[100%] md:mt-[40px] xl:mt-[50px] xl:w-[auto]">
             <button
               className="mr-[10px] grid grid-cols-2 place-items-center gap-[11px] rounded-3xl border border-solid border-[#EDDFD0] px-[25px] py-[9px] pl-[15px] text-sm transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
@@ -124,8 +124,8 @@ function ProjectComponent() {
               <Image
                 src="/images/arrow_back.svg"
                 alt="back icon"
-                width={29}
-                height={29}
+                width={25}
+                height={25}
               />
               Back
             </button>
@@ -136,8 +136,8 @@ function ProjectComponent() {
               <Image
                 src="/icons/share.svg"
                 alt="Share icon"
-                width={29}
-                height={29}
+                width={25}
+                height={25}
               />
               Share
             </button>
@@ -206,35 +206,35 @@ function ProjectComponent() {
               </ul>
             )}
           </div>
-          <div className="w-[100%] text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px]">
-            <h2>{property[0].property_name ?? 'Property Name'}</h2>
+          <div className="mt-[31px] w-[100%] text-[30px] font-[700] leading-[38px] small:text-[30px] small:leading-[30px]">
+            {property[0].property_name ?? ''}
           </div>
           <div className="mt-[10px] w-[100%] text-lg">
-            {property[0].location ?? 'Property Location'}
+            {property[0].location ?? ''}
           </div>
 
-          <div className="mt-[21px] flex w-full items-center justify-start gap-[22px] text-sm sm:w-[50%] xl:w-[auto]">
+          <div className="helveticaNeue mt-[15px] flex w-full items-center justify-start gap-[10px] text-[16px]  font-[500] sm:w-[50%] xl:w-[auto]">
             <div>{property[0].property_type ?? ''}</div>
-            <div className={`${s.line}`} />
+            <div className={`${s.line2}`} />
             <div>{property[0].construction_status}</div>
-            <div className={`${s.line}`} />
-            <div>{property[0].availability_date ?? 'Coming soon'}</div>
+            <div className={`${s.line2}`} />
+            <div>{property[0].availability_date ?? ''}</div>
           </div>
-          <div className="mt-[21px] flex w-full items-center justify-start gap-[22px] text-sm sm:w-[50%] xl:w-[auto]">
+          <div className="mt-[15px] flex w-full items-center justify-start gap-[10px] text-sm sm:w-[50%] xl:w-[auto]">
             <div>
               AED{' '}
               {(property[0].price ?? '').toLocaleString('en-US', {
                 minimumIntegerDigits: 2,
                 maximumFractionDigits: 2,
-              }) + '.000'}{' '}
+              })}{' '}
             </div>
-            <div className={`${s.line}`} />
+            {<div className={`${s.line2}`} />}
             <div>
               {property[0].area ?? ''} {','}
               {property[0].emirate ?? ''}
             </div>
           </div>
-          <div className="mt-[21px] flex w-full items-center justify-start gap-[22px] text-sm sm:w-[50%] xl:w-[auto]">
+          <div className="mt-[15px] flex w-full items-center justify-start gap-[22px] text-sm sm:w-[50%] xl:w-[auto]">
             <div>
               <Image
                 src="/icons/bed.svg"
@@ -281,22 +281,24 @@ function ProjectComponent() {
             </div>
           )}
         </div>
-        {images && (
-          <ProjectImages
-            property={property[0]}
-            stateChanger={handlePopup}
-            images={images}
-          />
-        )}
+        <div className="w-full msm:w-[calc(60%)]">
+          {images && (
+            <ProjectImages
+              property={property[0]}
+              stateChanger={handlePopup}
+              images={images}
+            />
+          )}
 
-        {images.length > 0 && viewGallery && (
-          <Gallery stateChanger={handlePopup} images={images} />
-        )}
+          {images.length > 0 && viewGallery && (
+            <Gallery stateChanger={handlePopup} images={images} />
+          )}
+        </div>
       </div>
       <div className="flex w-full flex-wrap items-center  border-b border-solid border-[#EDDFD0] border-opacity-50 py-[20px]">
         <AgentContact propert={property[0]} />
       </div>
-      <div className="flex w-full flex-wrap items-center  border-b border-solid border-[#EDDFD0] border-opacity-50 py-[36px]">
+      <div className="flex w-full flex-wrap items-center  border-b border-solid border-[#EDDFD0] border-opacity-50 ">
         <div className="flex w-[100%] flex-wrap  gap-[18px] md:w-[auto] md:w-[calc(50%)] msm:w-[calc(57%-5px)]">
           <div className="text-center">
             <button onClick={handlePopup}>
@@ -418,7 +420,7 @@ function ProjectComponent() {
             </div>
           </a>
         </div>
-        <div className={`${s.line}`} />
+        <div className={`${s.fullHeightline}`} />
         <div className="w-full md:w-[calc(50%)] msm:w-[calc(43%)]">
           <div className="flex w-[100%] flex-wrap justify-end gap-[28px] md:w-[auto] ">
             <Image

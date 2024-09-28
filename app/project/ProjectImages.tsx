@@ -13,7 +13,8 @@ const ProjectImages = ({
 }) => {
   const maxVisibleImages = 3;
   return (
-    <div className="flex w-full flex-col items-end gap-[15px] xl:w-[65%] xl:translate-y-[-100px]">
+    <div className="flex w-full flex-col items-end gap-[15px] ">
+      {/* <div className="flex w-full flex-col items-end gap-[15px] xl:w-[65%] xl:translate-y-[-100px]"> */}
       <Image
         src={property.main_image ?? ''}
         alt={property.property_name ?? 'property image'}
