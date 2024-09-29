@@ -103,12 +103,12 @@ export const Header = () => {
   return isLargeScreen ? (
     <div
       ref={stickyHeaderRef}
-      className={`] fixed top-0 z-[99] mb-[50px] flex h-auto  w-full pt-[30px] sm:mb-0 lg:flex-row lg:pt-[60px]  `}
+      className={`] fixed top-0 z-[99] mb-[50px] flex h-auto  w-full pt-[${!isVisible ? '0x' : '30px'}] sm:mb-0 lg:flex-row lg:pt-[${!isVisible ? '0px' : '60px'}]  `}
 
       //      className={`${isRouteActive('/', path) ? 'fixed h-auto ' : 'sticky h-[180px] '}w-full ] top-0 z-[99] mb-[50px]  flex pt-[30px] sm:mb-0 lg:flex-row lg:pt-[60px]`}
     >
       <div
-        className={`flex lg:flex-row ${!isVisible ? 'gradient-from bg-gradient-to-r' : ''}`}
+        className={`flex lg:flex-row ${!isVisible ? 'gradient-from2 bg-gradient-to-r  px-[10px] py-[px]' : ''}  w-[1200px]`}
       >
         <Link href="/" className="w-fit">
           <Image
