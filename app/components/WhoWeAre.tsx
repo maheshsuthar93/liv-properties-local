@@ -23,7 +23,7 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
 
   return (
     <>
-      <div className="helveticaNeue mt-[100px] flex flex-wrap font-[500] xl:mt-[50px] msm:flex-nowrap small:text-[17px] mdlap:mt-[136px]">
+      <div className="helveticaNeue mt-[100px] flex flex-wrap font-[500] xl:mt-[50px] msm:flex-nowrap small:text-[17px] ">
         <div
           className={`w-[93px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'who' ? 'border-b-[4px]' : ''}`}
           onClick={() => setActiveTab('who')}
