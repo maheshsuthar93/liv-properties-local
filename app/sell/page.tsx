@@ -152,7 +152,7 @@ export default async function SellPage() {
     //         <EnquireForm />
     //     </div>
     // </div>
-    <div className="mx-auto mb-[30px] w-full sm:mb-[60px] xl:mb-[84px] 3xl:max-w-[1200px]">
+    <div className="mx-auto mb-[30px] w-full sm:mb-[60px] xl:mb-[84px] 3xl:max-w-[1200px] ">
       {/* <div className="relative mb-[82px]">
         <div className="text-[40px] font-[700] leading-[38px] small:text-[69px] small:leading-[88px]">
           <h1 className="relative z-[1] inline-block max-w-[220px] capitalize small:max-w-[300px]">

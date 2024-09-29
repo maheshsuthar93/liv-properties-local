@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function CareersPage() {
   return (
-    <div className="mb-[30px] w-full sm:mb-[60px] sm:mt-[-50px] lg:mt-0 xl:mb-[70px] 3xl:max-w-[1200px]">
+    <div className="mb-[30px] mt-[200px] w-full sm:mb-[60px] xl:mb-[70px] 3xl:max-w-[1200px]">
       <div
         className="w-full border-b border-solid border-[#eddfd0] border-opacity-60 pb-[30px] text-start  text-[20px]
                 font-[700] leading-[38px]  md:pb-[50px] xl:pb-[79px] small:text-[35px] small:leading-[88px]"
