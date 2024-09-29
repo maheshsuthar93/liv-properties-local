@@ -113,7 +113,7 @@ function ProjectComponent() {
   };
 
   return (
-    <div className="w-full 3xl:max-w-[1200px]">
+    <div className="mt-[200px] w-full 3xl:max-w-[1200px]">
       <div className="mt-0 flex w-full flex-wrap gap-8 border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] xl:flex-nowrap xl:gap-0">
         <div className="flex w-[100%] flex-row flex-wrap xl:w-[40%] xl:flex-col xl:flex-nowrap msm:w-[calc(40%)]">
           <div className="relative mt-[16px] flex w-full items-center justify-normal sm:w-[100%] md:mt-[40px] xl:mt-[50px] xl:w-[auto]">
