@@ -155,7 +155,7 @@ export const PageSearch = ({ type = 'ready' }) => {
   //if (projectStatus === 'ready')
   return (
     <div className="text-[12px]">
-      <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+      <div className="flex flex-col gap-4 text-[20px] font-[500] sm:flex-row sm:flex-wrap small:text-[16px]">
         <Select
           value={projectStatus}
           //onChange={handleStatusChange}
@@ -320,7 +320,7 @@ export const PageSearch = ({ type = 'ready' }) => {
         </Select>
         <div className={`${s.line}`} />
         <div
-          className={` ${s.hoverable} max-w-[calc(33.333%-11px)] small:min-w-[80px] small:max-w-[auto]`}
+          className={` ${s.hoverable} max-w-[calc(33.333%-11px)]  font-[500] small:min-w-[80px] small:max-w-[auto] small:text-[16px]`}
         >
           {visibleNoOfBedrooms && (
             <PriceRange
@@ -361,7 +361,7 @@ export const PageSearch = ({ type = 'ready' }) => {
           )}
           <button
             className="mt-[30px] flex w-full flex-row items-center justify-start px-[16px]
-                            py-3 pl-[13px] text-xs transition duration-200 ease-in-out sm:mt-0 sm:min-w-[75px] sm:justify-center lg:w-auto"
+                            py-3 pl-[13px]  transition duration-200 ease-in-out sm:mt-0 sm:min-w-[75px] sm:justify-center lg:w-auto"
             onClick={handlePriceClick}
           >
             {!pr ? 'Price Range' : pr}

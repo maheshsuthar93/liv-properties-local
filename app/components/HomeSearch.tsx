@@ -116,7 +116,7 @@ export const HomeSearch = () => {
             New Projects
           </div>
         </div> */}
-        <div className="max-[639px]:w-full mt-[15px] flex flex-wrap justify-evenly gap-4 px-[3vw] text-sm sm:px-0 small:justify-normal">
+        <div className="max-[639px]:w-full mt-[15px] flex flex-wrap justify-evenly gap-4 px-[3vw] text-[16px] text-sm font-[500] sm:px-0 small:justify-normal small:text-[14px]">
           {/* <select
             value={projType}
             onChange={handleProjTypeChange}
