@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 export default async function ReadyProjectsPage() {
   return (
-    <div className="mb-[30px] w-full sm:mb-[60px] small:mb-[83px] 3xl:max-w-[1200px]">
+    <div className="mb-[30px] mt-[200px] w-full sm:mb-[60px] small:mb-[83px] 3xl:max-w-[1200px]">
       {/* <div className="flex flex-wrap gap-8">
         <div className="text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px]">
           <h1 className="relative z-[1] inline-block max-w-[220px] capitalize small:max-w-[270px]">

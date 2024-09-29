@@ -29,7 +29,7 @@ export default async function ServicesPage() {
   }
   return (
     <div className="mx-auto mb-[30px] w-full sm:mb-[60px] xl:mb-[84px] 3xl:max-w-[1200px]">
-      <div className="min-[1630px]:min-w-[1440px] max-[1629px]:w-full relative mb-[82px]">
+      {/* <div className="min-[1630px]:min-w-[1440px] max-[1629px]:w-full relative mb-[82px]">
         <div className="text-[30px] font-[700] leading-[38px] small:text-[59px] small:leading-[88px]">
           <h1 className="relative z-[1] capitalize">
             {ourServices?.['our-services-section-1'][0].field_value ?? ''}
@@ -46,6 +46,23 @@ export default async function ServicesPage() {
             />
           </div>
         </div>
+      </div> */}
+      <div className="flex flex-row items-center text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px] ">
+        <div className="absolute z-[1] ">
+          <h1 className="inline-block  capitalize ">
+            {ourServices?.['our-services-section-1'][0].field_value ?? ''}
+          </h1>
+        </div>
+        <Image
+          src={
+            ourServices?.['our-services-section-1'][1].field_value ??
+            '/images/services_building.webp'
+          }
+          alt="Home"
+          className="max-[1366px]:w-[90dvw] w-[100dvw] 4xlh:w-[100dvw] 4xlh:origin-bottom-right 4xlh:scale-[1.5]"
+          width={1100}
+          height={885}
+        />
       </div>
       <div className="gotham">
         <div className="mt-[11px] text-[25px] font-[200] leading-[120%] sm:w-[480px]">
