@@ -113,13 +113,13 @@ export const Header = () => {
           priority={true}
         />
       </Link>
-      <nav className="z-50 mx-[-1rem] ml-[20px] mt-[21px] flex flex-wrap gap-[1px] text-sm">
+      <nav className="helveticaNeue z-50 mx-[-1rem] ml-[20px] mt-[21px] flex flex-wrap gap-[1px] text-[16px] text-sm font-[500]">
         {routes.map((route) => (
           <Link key={route} href={route + '/'}>
             <div
               className={`${isRouteActive(route, path) ? s.navActive : ''} ${sMain.headerNav} cursor-pointer rounded-xl px-4 py-2`}
             >
-              <span>{routeNameMapping[route]}</span>
+              <span>{routeNameMapping[route].toUpperCase()}</span>
             </div>
           </Link>
         ))}
