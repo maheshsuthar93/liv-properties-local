@@ -21,9 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="helveticaNeue relative overflow-hidden bg-[#827161] bg-[url(/images/bg.jpg)] bg-contain bg-repeat font-[200] text-[#eddfd0]">
-          <div className="mx-auto w-full 3xl:max-w-[1200px]">
+          {/* <div className="mx-auto w-full 3xl:max-w-[1200px]">
             <Header />
-          </div>
+          </div> */}
 
           {/* <Image
                         src='/images/bg.jpg'
@@ -34,6 +34,9 @@ export default function RootLayout({
                     /> */}
           <main>
             <div className="flex flex-col items-center px-[3vw] sm:px-[85px]">
+              <div className="mx-auto w-full 3xl:max-w-[1200px]">
+                <Header />
+              </div>
               <SmoothScrolling>{children}</SmoothScrolling>
             </div>
           </main>

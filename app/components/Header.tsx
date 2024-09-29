@@ -81,7 +81,8 @@ export const Header = () => {
     } else if (!isVisible && stickyHeaderRef.current) {
       gsap.to(stickyHeaderRef.current, {
         duration: 0.5,
-        y: -stickyHeaderRef.current.offsetHeight,
+        y: 0,
+        // y: -stickyHeaderRef.current.offsetHeight,
         ease: 'power3.inOut',
       }); // Hide header
     }
@@ -101,29 +102,35 @@ export const Header = () => {
   return isLargeScreen ? (
     <div
       ref={stickyHeaderRef}
-      className={`${isRouteActive('/', path) ? 'fixed h-auto ' : 'sticky h-[180px] '}w-full ] top-0 z-[99] mb-[50px]  flex pt-[30px] sm:mb-0 lg:flex-row lg:pt-[60px]`}
+      className={`] fixed top-0 z-[99] mb-[50px] flex h-auto  w-full pt-[30px] sm:mb-0 lg:flex-row lg:pt-[60px]  `}
+
+      //      className={`${isRouteActive('/', path) ? 'fixed h-auto ' : 'sticky h-[180px] '}w-full ] top-0 z-[99] mb-[50px]  flex pt-[30px] sm:mb-0 lg:flex-row lg:pt-[60px]`}
     >
-      <Link href="/" className="w-fit">
-        <Image
-          src="/logos/logo.svg"
-          alt="LIV Squared Properties logo"
-          width={95}
-          height={87}
-          className="ml-[-4px] h-auto w-auto"
-          priority={true}
-        />
-      </Link>
-      <nav className="z-50 mx-[-1rem] ml-[20px] mt-[21px] flex flex-wrap gap-[1px] text-sm">
-        {routes.map((route) => (
-          <Link key={route} href={route + '/'}>
-            <div
-              className={`${isRouteActive(route, path) ? s.navActive : ''} ${sMain.headerNav} cursor-pointer rounded-xl px-4 py-2`}
-            >
-              <span>{routeNameMapping[route]}</span>
-            </div>
-          </Link>
-        ))}
-      </nav>
+      <div
+        className={`flex lg:flex-row ${!isVisible ? 'gradient-from bg-gradient-to-r' : ''}`}
+      >
+        <Link href="/" className="w-fit">
+          <Image
+            src="/logos/logo.svg"
+            alt="LIV Squared Properties logo"
+            width={95}
+            height={87}
+            className="ml-[-4px] h-auto w-auto"
+            priority={true}
+          />
+        </Link>
+        <nav className="z-50 mx-[-1rem] ml-[20px] mt-[21px] flex flex-wrap gap-[1px] text-sm">
+          {routes.map((route) => (
+            <Link key={route} href={route + '/'}>
+              <div
+                className={`${isRouteActive(route, path) ? s.navActive : ''} ${sMain.headerNav} cursor-pointer rounded-xl px-4 py-2`}
+              >
+                <span>{routeNameMapping[route]}</span>
+              </div>
+            </Link>
+          ))}
+        </nav>
+      </div>
     </div>
   ) : (
     <div
