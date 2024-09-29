@@ -19,8 +19,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Contact() {
   return (
-    <div className="mb-[30px] w-full sm:mb-[60px] xl:mb-[84px] 3xl:max-w-[1200px]">
-      <div className="relative w-full 3xl:max-w-[1200px]">
+    <div className="relative mb-[30px] w-full  sm:mb-[60px] xl:mb-[84px] 3xl:max-w-[1200px]">
+      {/* <div className="relative w-full 3xl:max-w-[1200px]">
         <div className="text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px]">
           <h1 className="relative z-[1] inline-block max-w-[220px] capitalize small:max-w-[270px]">
             {contactUs?.['contact-us-section-1'][0].field_value ?? 'Contact us'}
@@ -37,6 +37,23 @@ export default async function Contact() {
             />
           </div>
         </div>
+      </div> */}
+      <div className="flex flex-row items-center text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px] ">
+        <div className="absolute z-[1] ">
+          <h1 className="inline-block max-w-[220px] capitalize small:max-w-[270px]">
+            {contactUs?.['contact-us-section-1'][0].field_value ?? 'Contact us'}
+          </h1>
+        </div>
+        <Image
+          src={
+            (contactUs?.['contact-us-section-1'][1].field_value as string) ??
+            '/images/contact_building.webp'
+          }
+          alt={contactUs.header[0].metadescription}
+          className="max-[1366px]:w-[90dvw] w-[100dvw] 4xlh:w-[100dvw] 4xlh:origin-bottom-right 4xlh:scale-[1.5]"
+          width={1100}
+          height={885}
+        />
       </div>
       <div className="mb-[30px] mt-[30px] flex flex-wrap items-center justify-between gap-[50px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[43px] md:mt-[80px] lg:mt-[120px] lg:flex-wrap lg:gap-[0px]">
         <div className="w-[252px] text-sm leading-[29px] lg:w-[calc(30%-25px)]">

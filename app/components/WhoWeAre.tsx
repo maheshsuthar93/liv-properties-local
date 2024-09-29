@@ -23,31 +23,33 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
 
   return (
     <>
-      <div className="helveticaNeue mt-[100px] flex flex-wrap xl:mt-[50px] msm:flex-nowrap small:text-[17px] mdlap:mt-[136px]">
-        <h2
+      <div className="helveticaNeue mt-[100px] flex flex-wrap font-[500] xl:mt-[50px] msm:flex-nowrap small:text-[17px] mdlap:mt-[136px]">
+        <div
           className={`w-[93px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'who' ? 'border-b-[4px]' : ''}`}
           onClick={() => setActiveTab('who')}
         >
           {props.data?.aboutussection2[2].field_value}
-        </h2>
-        <h2
-          className={`w-[93px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'mission' ? 'border-b-[4px]' : ''}`}
+        </div>
+        <div
+          className={`w-[155px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'mission' ? 'border-b-[4px]' : ''}`}
           onClick={() => setActiveTab('mission')}
         >
           {props.data?.aboutusmission[4].field_value}
-        </h2>
-        <h2
+          {' & '}
+          {props.data?.aboutusvision[6].field_value}
+        </div>
+        {/* <div
           className={`w-[83px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'vision' ? 'border-b-[4px]' : ''}`}
           onClick={() => setActiveTab('vision')}
         >
           {props.data?.aboutusvision[6].field_value}
-        </h2>
-        <h2
-          className={`w-[103px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'meet' ? 'border-b-[4px]' : ''}`}
+        </div> */}
+        <div
+          className={`w-[125px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'meet' ? 'border-b-[4px]' : ''}`}
           onClick={() => setActiveTab('meet')}
         >
           {props.data?.meettheteam[13].field_value}
-        </h2>
+        </div>
       </div>
       {/* Who we are */}
       {/* Who we are */}

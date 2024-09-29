@@ -101,7 +101,7 @@ export const Header = () => {
   return isLargeScreen ? (
     <div
       ref={stickyHeaderRef}
-      className={`${isRouteActive('/', path) ? 'fixed h-auto ' : 'sticky h-[180px] '}w-full ] top-0 z-[99] mb-[50px]  flex pt-[30px] sm:mb-0 lg:flex-row lg:pt-[60px]`}
+      className={`${isRouteActive('/', path) ? 'fixed h-auto ' : 'sticky h-[180px] '}w-full ] top-0 z-[99] mb-[50px]  flex pt-[30px] sm:mb-0 lg:flex-row lg:pt-[60px] `}
     >
       <Link href="/" className="w-fit">
         <Image
