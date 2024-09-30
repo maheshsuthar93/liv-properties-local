@@ -96,7 +96,7 @@ export const HomeSearch = () => {
   // small:px-[85px]
   return isLargeScreen ? (
     <div className="home-search z-[3] mt-[250px] md:mt-[300px] small:mt-[30px]  ">
-      <div className="gradient-from bg-gradient-to-r  small:p-[20px] ">
+      <div className="gradient-from  bg-gradient-to-r small:p-[20px]">
         <div className=" max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center  mb-[10px] flex px-[3vw] text-[20px] font-[700] leading-[94%] sm:px-0 small:text-[30px]">
           <h2 className="inline-block capitalize">
             Luxury Properties for Sale
@@ -116,7 +116,7 @@ export const HomeSearch = () => {
             New Projects
           </div>
         </div> */}
-        <div className="max-[639px]:w-full mt-[15px] flex flex-wrap justify-evenly gap-4 px-[3vw] text-[16px] text-sm font-[500] sm:px-0 small:justify-normal small:text-[14px]">
+        <div className="max-[639px]:w-full  mt-[15px] flex flex-wrap items-center justify-evenly gap-4 px-[3vw] text-[16px] text-sm font-[500] sm:px-0 small:justify-normal small:text-[14px]">
           {/* <select
             value={projType}
             onChange={handleProjTypeChange}

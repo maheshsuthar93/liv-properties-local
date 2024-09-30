@@ -155,7 +155,7 @@ export const PageSearch = ({ type = 'ready' }) => {
   //if (projectStatus === 'ready')
   return (
     <div className="text-[12px]">
-      <div className="flex flex-col gap-4 text-[20px] font-[500] sm:flex-row sm:flex-wrap small:text-[16px]">
+      <div className="flex flex-col items-center gap-4 text-[20px] font-[500] sm:flex-row sm:flex-wrap small:text-[16px] ">
         <Select
           value={projectStatus}
           //onChange={handleStatusChange}
@@ -367,7 +367,7 @@ export const PageSearch = ({ type = 'ready' }) => {
             {!pr ? 'Price Range' : pr}
           </button>
         </div>
-        <div className={`${s.line}`} />
+        {/* <div className={`${s.line}`} /> */}
         {/* <Select
           options={[
             {
