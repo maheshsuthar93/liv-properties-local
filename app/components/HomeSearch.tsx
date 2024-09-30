@@ -441,7 +441,7 @@ export const HomeSearch = () => {
         <Select
           value={propertyType}
           onChange={(v) => setPropertyType(v as PropertyType)}
-          className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
+          className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[75px] small:min-w-[80px]`}
           options={[
             {
               value: 'propertyType',
