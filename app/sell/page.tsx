@@ -174,7 +174,7 @@ export default async function SellPage() {
       </div> */}
       <div className="flex flex-row items-center text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px] ">
         <div className="absolute z-[1] ">
-          <h1 className="inline-block max-w-[220px] capitalize small:max-w-[270px]">
+          <h1 className="inline-block  capitalize ">
             {sellYourProperty?.['sell-your-property-section-1'][0]
               .field_value ?? ''}
           </h1>
@@ -288,7 +288,7 @@ export default async function SellPage() {
         </div>
       </div>
       <div className="mt-[72px]">
-        <div className="text-[45px] font-[700] leading-[42.3px] small:text-[69px] small:leading-[88px]">
+        <div className="text-[45px] font-[700] leading-[42.3px] small:text-[50px] small:leading-[88px]">
           Request a Market Appraisal
         </div>
         <EnquireForm />
