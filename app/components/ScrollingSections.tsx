@@ -164,7 +164,7 @@ export const ScrollingSections = () => {
         <HomeHero />
         <FeaturedProperties />
         <AboutLiv />
-        <div className="gotham home-sec_title mt-[45px] text-[20px] font-[700] leading-[94%] small:text-[30px]">
+        <div className="gotham home-sec_title mt-[45px] text-[40px] gothamBold leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
           <h2 className="inline-block  capitalize ">How Can We Help You?</h2>
         </div>
         <EnquireForm />

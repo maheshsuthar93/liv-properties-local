@@ -41,24 +41,24 @@ export default function CareerDetail({ params }: CareerDetailProps) {
   return (
     <div className="mb-[30px] mt-[200px] w-full sm:mb-[60px] xl:mb-[70px] 3xl:max-w-[1200px]">
       <div
-        className="w-full border-b border-solid border-[#eddfd0] border-opacity-60 pb-[30px] text-start text-[40px] font-[700] leading-[38px]
-            md:pb-[50px] xl:pb-[79px] small:text-[69px] small:leading-[88px]"
+        className="w-full border-b border-solid border-[#eddfd0] border-opacity-60 pb-[30px] text-start text-[40px] gothamBold leading-[39px] sm:text-[45px] sm:leading-[42.3px]
+            md:pb-[50px] xl:pb-[79px] "
       >
-        <h1 className="inline-block max-w-[220px] capitalize small:max-w-[300px]">
+        <div className="inline-block max-w-[220px] capitalize small:max-w-[300px]">
           {careers?.['careers-section-1'][0].field_value ?? 'Careers'}
-        </h1>
+        </div>
       </div>
       <div className="mt-[21px] flex flex-wrap justify-between gap-x-[30px] gap-y-[20px] sm:flex-nowrap md:gap-x-[50px] lg:gap-x-[100px]">
         <div>
-          <h2 className="text-[25px] font-[200]">{career?.heading}</h2>
-          <h4 className="mt-[7px] text-[20px] font-[200]">
+          <div className="helveticaNeue text-[30px] font-[400] leading-[39px]">{career?.heading}</div>
+          <div className="mt-[7px] gothamMedium text-[20px] leading-[26px]">
             {career?.subheading}
-          </h4>
+          </div>
           <div className="mt-[38px] flex gap-[15px]">
             {/* {career?.remote && ( */}
             <button
               className="flex items-center gap-[7px] rounded-3xl border border-solid border-[#EDDFD0] px-[16px] pb-[10px] pl-[13px] pt-[10px]
-                            text-xs transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
+                            helveticaNeue text-[12px] font-[400] leading-[19.44px] transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
             >
               <Image
                 src="/icons/location.svg"
@@ -72,7 +72,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                         {career?.fulltime && ( */}
             <button
               className="flex items-center gap-[7px] rounded-3xl border border-solid border-[#EDDFD0] px-[16px] pb-[10px] pl-[13px] pt-[10px]
-                            text-xs transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
+                            helveticaNeue text-[12px] font-[400] leading-[19.44px] transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
             >
               <Image
                 src="/icons/alarm.svg"
@@ -85,7 +85,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
             {/* )} */}
           </div>
           <div
-            className="mt-[10px] text-xs leading-[162%]"
+            className="mt-[10px] helveticaNeue text-[16px] font-[400] leading-[25.92px]"
             dangerouslySetInnerHTML={{
               __html: career?.description,
             }}
@@ -93,7 +93,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
         </div>
         <Link href={`#apply-now`} className="hidden sm:block">
           <div
-            className="flex h-fit flex-row items-center rounded-3xl p-2 text-[25px] font-[200] transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700
+            className="flex h-fit flex-row items-center rounded-3xl p-2 helveticaNeue text-[12px] font-[400] leading-[19.44px] transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700
                 active:bg-white/60 active:text-black sm:flex-col sm:items-end"
           >
             <Image
@@ -108,7 +108,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
         </Link>
       </div>
       <div
-        className="mt-[30px] w-full text-[40px] font-[700] leading-[38px] lg:mt-[65px] small:text-[69px] small:leading-[88px]"
+        className="mt-[30px] w-full text-[44px] gothamBold leading-[39px] sm:text-[50px] sm:leading-[47px]"
         id="apply-now"
       >
         <h2>

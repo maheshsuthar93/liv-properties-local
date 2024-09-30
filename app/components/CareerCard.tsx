@@ -7,12 +7,14 @@ const CareerCard: React.FC<CareerCardProps> = ({ career }) => {
     return (
         <div className='mt-[21px] flex flex-wrap justify-between gap-x-[30px] gap-y-[20px] border-b border-solid border-[#eddfd0] border-opacity-60 pb-[35px] sm:flex-nowrap md:gap-x-[50px] lg:gap-x-[100px]'>
             <div>
-                <h3 className='text-[25px] font-[200]'>{career.heading}</h3>
-                <h4 className='mt-[7px] text-[20px] font-[200]'>
+                <div className='helveticaNeue text-[30px] font-[400] leading-[39px]'>{career.heading}</div>
+                <div className='mt-[7px] gothamMedium text-[20px] leading-[26px]
+
+'>
                     {career.subheading}
-                </h4>
+                </div>
                 <div
-                    className='ellipse-text ellipse-text-2 mt-[10px] text-xs leading-[162%]'
+                    className='ellipse-text ellipse-text-2 mt-[10px] helveticaNeue text-[16px] font-[400] leading-[25.92px]'
                     dangerouslySetInnerHTML={{
                         __html: career.description
                     }}
@@ -21,7 +23,7 @@ const CareerCard: React.FC<CareerCardProps> = ({ career }) => {
                     {/* {career.remote && ( */}
                     <button
                         className='flex items-center gap-[7px] rounded-3xl border border-solid border-[#EDDFD0] px-[16px] pb-[10px] pl-[13px] pt-[10px]
-                            text-xs transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black'
+                            helveticaNeue text-[12px] font-[400] leading-[19.44px] transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black'
                     >
                         <Image
                             src='/icons/location.svg'
@@ -35,7 +37,7 @@ const CareerCard: React.FC<CareerCardProps> = ({ career }) => {
                     {/* {career.fulltime && ( */}
                     <button
                         className='flex items-center gap-[7px] rounded-3xl border border-solid border-[#EDDFD0] px-[16px] pb-[10px] pl-[13px] pt-[10px]
-                            text-xs transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black'
+                             helveticaNeue text-[12px] font-[400] leading-[19.44px] transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black'
                     >
                         <Image
                             src='/icons/alarm.svg'
@@ -50,7 +52,7 @@ const CareerCard: React.FC<CareerCardProps> = ({ career }) => {
             </div>
             <Link href={`/careers/${career.id}`}>
                 <div
-                    className='flex h-fit flex-row items-center rounded-3xl p-2 text-[25px] font-[200] transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700
+                    className='flex h-fit flex-row items-center rounded-3xl p-2  helveticaNeue text-[25px] gothamRegular leading-[32.5px] transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700
                     active:bg-white/60 active:text-black sm:flex-col sm:items-end'
                 >
                     <Image

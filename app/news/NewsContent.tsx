@@ -42,18 +42,18 @@ export const NewsContent = () => {
                         fill={true}
                     />
                 </Link>
-                <h2 className='mt-[33px] text-[25px] font-[200]'>
+                <h2 className='mt-[33px] helveticaNeue text-[16px] font-[700] leading-[23.2px]'>
                     {latestNews.heading}
                 </h2>
                 <button
                     type='submit'
-                    className='mr-auto mt-[16px] block rounded-3xl border border-solid border-[#EDDFD0] px-[16px] py-[9px] text-xs transition
+                    className='mr-auto mt-[16px] block rounded-3xl border border-solid border-[#EDDFD0] px-[16px] py-[9px] helveticaNeue text-[18px] font-[400] leading-[21.47px] transition
                 duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black'
                 >
                     {formatDate(latestNews.created_at)}
                 </button>
                 <div
-                    className='ellipse-text-container news-desc mt-[14px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[30px] text-xs'
+                    className='ellipse-text-container news-desc mt-[14px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[30px] helveticaNeue text-[16px] font-[400] leading-[25.92px]'
                     dangerouslySetInnerHTML={{
                         __html: latestNews.description
                     }}

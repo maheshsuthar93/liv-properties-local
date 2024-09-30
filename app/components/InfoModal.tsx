@@ -49,9 +49,9 @@ export default function InfoModal(props: InfoModalProps) {
                   </DialogTitle> */}
 
                   <div className="mt-2">
-                    <p className="modal-header text-[30px] ">{title}</p>
+                    <p className="modal-header text-[28px] gothamBold leading-[30px] sm:text-[30px] sm:leading-[32.7px] ">{title}</p>
                     <div style={{ marginTop: '10px' }} />
-                    <p className="modal-desc text-[16px]">{description}</p>
+                    <p className="modal-desc helveticaNeue text-[16px] font-[400] leading-[32.4px]">{description}</p>
                   </div>
                 </div>
               </div>

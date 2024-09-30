@@ -48,8 +48,8 @@ export const FeaturedProperties = () => {
   return (
     <div className="verticalPanelInner featured-properties mt-[10px] flex flex-col px-[3vw]  sm:px-0 3xl:max-w-[1200px]">
       <div className="max-[1024px]:justify-between mb-[30px] flex flex-wrap justify-normal gap-8 small:mb-0">
-        <div className="home-sec_title text-[20px] font-[700] leading-[94%] small:text-[35px]">
-          <h2 className="inline-block  capitalize ">Featured Properties</h2>
+        <div className="home-sec_title text-[40px] gothamBold leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
+          <div className="inline-block  capitalize ">Featured Properties</div>
         </div>
         {isLargeScreen ? (
           <div className="helveticaNeue mt-[39px] flex-wrap text-[18px] font-[500] sm:mb-[14px] sm:mt-0">
@@ -96,7 +96,7 @@ export const FeaturedProperties = () => {
           </div>
         ) : (
           <>
-            <div className="flex w-full items-stretch text-center text-sm">
+            <div className="flex helveticaNeue w-full items-stretch text-center text-[18px] font-[500] ">
               <div
                 className={`min-w-[100px] flex-1 pb-[8px] sm:min-w-[132px] ${s.prop} ${s.hoverable} ${propType === 'all' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] ${s.hoverable}`}
                 onClick={() => setPropType('all')}
@@ -116,7 +116,7 @@ export const FeaturedProperties = () => {
                 Apartments
               </div>
             </div>
-            <div className="flex w-full text-center text-sm">
+            <div className="flex w-full text-center text-[18px] font-[500] helveticaNeue">
               <div
                 className={`min-w-[100px] flex-1 pb-[8px] sm:min-w-[132px] ${s.prop} ${s.hoverable} ${action === 'rent' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] ${s.hoverable}`}
                 onClick={() => setAction('rent')}

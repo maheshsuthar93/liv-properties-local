@@ -23,7 +23,7 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
 
   return (
     <>
-      <div className="helveticaNeue mt-[100px] flex flex-wrap font-[500] xl:mt-[50px] msm:flex-nowrap small:text-[18px] ">
+      <div className="helveticaNeue mt-[100px] flex flex-wrap text-[18px] font-[500] leading-[35.55px] xl:mt-[50px] msm:flex-nowrap ">
         <div
           className={`w-[100px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'who' ? 'border-b-[4px]' : ''}`}
           onClick={() => setActiveTab('who')}
@@ -55,7 +55,7 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
       {/* Who we are */}
       {activeTab === 'who' && (
         <>
-          <div className="helveticaNeue mt-[47px] flex w-full flex-wrap gap-[26px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] small:text-[16px] ">
+          <div className="helveticaNeue mt-[47px] flex w-full flex-wrap gap-[26px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[37px] text-[16px] font-[400] leading-[25.92px] ">
             <div
               className="who-desc"
               dangerouslySetInnerHTML={{
@@ -72,20 +72,20 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
       {(activeTab === 'mission' || activeTab === 'vision') && (
         <div className="helveticaNeue mb-[33px] mt-[33px] flex w-full flex-wrap gap-[25px] small:text-[16px]">
           <div className="lg:w-[calc(50%-13px)]">
-            <h3 className="mb-[11px] text-[20px] leading-[120%]">
+            <div className="mb-[11px] text-[30px] font-[500] leading-[36.15px]">
               {props.data?.aboutusmission[4].field_value}
-            </h3>
-            <div
+            </div>
+            <div className="text-[16px] font-[400] leading-[25.92px]"
               dangerouslySetInnerHTML={{
                 __html: props.data?.aboutusmission[5].field_value as string,
               }}
             ></div>
           </div>
           <div className="lg:w-[calc(50%-13px)]">
-            <h3 className="mb-[11px] text-[20px] leading-[120%]">
+            <h3 className="mb-[11px] text-[30px] font-[500] leading-[36.15px]">
               {props.data?.aboutusvision[6].field_value}
             </h3>
-            <div
+            <div className="text-[16px] font-[400] leading-[25.92px]"
               dangerouslySetInnerHTML={{
                 __html: props.data?.aboutusvision[7].field_value as string,
               }}

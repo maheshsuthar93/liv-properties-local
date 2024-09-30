@@ -24,14 +24,14 @@ export const SellYourProperty = (data: any) => {
   return (
     <Link href="/sell" className="services-cta">
       <div
-        className={`relative w-full bg-cover bg-center bg-no-repeat text-white xl:w-[1200px]`}
+        className={`helveticaNeue relative w-full bg-cover bg-center bg-no-repeat text-white xl:w-[1200px]`}
         style={{ backgroundImage: 'url(/images/sell_property-bg.png)' }}
       >
         <div className={styles.tint}></div>
-        <div className="relative z-10 text-[28px] leading-[123%] small:text-[38px]">
+        <div className="relative z-10 text-[38px] font-[400] leading-[46.86px]">
           Sell your property
         </div>
-        <div className="max-[639px]:mt-[8px] max-[639px[:text-sm relative z-10 font-[200] leading-[21px] small:w-[480px] small:leading-[2]">
+        <div className="max-[639px]:mt-[8px] max-[639px[:text-sm relative z-10 text-[14px] font-[400] leading-[22px] small:w-[480px] small:leading-[2]">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry'sh end needs
         </div>

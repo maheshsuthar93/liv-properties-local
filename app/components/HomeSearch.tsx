@@ -97,7 +97,7 @@ export const HomeSearch = () => {
   return isLargeScreen ? (
     <div className="home-search z-[3] mt-[250px] md:mt-[300px] small:mt-[30px]  ">
       <div className="gradient-from  bg-gradient-to-r small:p-[20px]">
-        <div className=" max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center  mb-[10px] flex px-[3vw] text-[20px] font-[700] leading-[94%] sm:px-0 small:text-[30px]">
+        <div className=" max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center  mb-[10px] flex text-[40px] gothamBold leading-[65px] sm:text-[45px] sm:leading-[42.3px]">
           <h2 className="inline-block capitalize">
             Luxury Properties for Sale
           </h2>
@@ -116,7 +116,7 @@ export const HomeSearch = () => {
             New Projects
           </div>
         </div> */}
-        <div className="max-[639px]:w-full  mt-[15px] flex flex-wrap items-center justify-evenly gap-4 px-[3vw] text-[16px] text-sm font-[500] sm:px-0 small:justify-normal small:text-[14px]">
+        <div className="max-[639px]:w-full  mt-[15px] ml-[-10px] flex flex-wrap items-center justify-evenly gap-2 text-[16px] helveticaNeue font-[500] leading-[32px] sm:text-[18px] sm:leading-[35.55px]">
           {/* <select
             value={projType}
             onChange={handleProjTypeChange}
@@ -261,7 +261,7 @@ export const HomeSearch = () => {
               onChange={(e) => setTextSearch(e.target.value)}
               className={`block h-full border-0 bg-transparent py-1.5 text-center
                     text-[100%] placeholder-[#eddfd0] ring-0 ring-inset ring-transparent transition duration-200 ease-in-out
-                    hover:ring-[#EDDFD0]/50 focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] sm:leading-6 small:w-[110px] ${s.hoverable}`}
+                    hover:ring-[#EDDFD0]/50 focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] sm:leading-6 small:w-[120px] ${s.hoverable}`}
               placeholder="Community"
             />
           </div>

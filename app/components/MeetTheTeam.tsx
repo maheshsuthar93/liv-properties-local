@@ -46,10 +46,10 @@ export const MeetTheTeam = () => {
                 height={319}
                 className="border border-solid border-[#EDDFD0] border-opacity-50"
               />
-              <div className="mt-[11px] text-[23px] font-[700]">
+              <div className="mt-[11px] helveticaNeue text-[22px] font-[700] leading-[26.51px]">
                 {member.heading}
               </div>
-              <div className="text-xs">{member.subheading}</div>
+              <div className="helveticaNeue text-[18px] font-[400] leading-[21.69px]">{member.subheading}</div>
               <div className="mt-[10px] h-[3px] w-[28px] bg-[#EDDFD0]" />
             </div>
           ))}

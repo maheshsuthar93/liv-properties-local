@@ -16,20 +16,20 @@ export const Footer = async () => {
       style={{ backgroundImage: 'url("/images/ft-bg.jpg")' }}
     >
       <div className={`z-[1] ${styles.tint} z-[1]`}></div>
-      <div className="flex justify-center">
+      <div className="flex justify-center m-[8px]">
         <div className="bigtab:flex-nowrap] relative z-[2] flex flex-wrap gap-y-[30px]  pt-[40px] sm:justify-between  lg:pt-[80px] small:gap-y-[10px] 3xl:max-w-[1200px]">
           <div className="order-1 w-[100%] max-w-full bigtab:mr-[6%] bigtab:w-[40%]">
-            <div className=" gotham mr-auto text-[20px] font-[400] font-[400] leading-[164%] sm:text-[25px] xl:max-w-[80%]">
+            <div className=" gotham mr-auto gothamRegular text-[22px] leading-[38px] sm:text-[25px] sm:leading-[41px] xl:max-w-[80%]">
               A World of Leading Expertise Exclusively yours
             </div>
-            <div className=" mr-auto mt-[5px] text-[14px] font-[500] leading-[147%] sm:text-[25px] xl:mt-[38px] xl:max-w-[90%]">
+            <div className=" mr-auto mt-[5px] helveticaNeue font-[500] text-[22px] leading-[33px] sm:text-[25px] sm:leading-[36.75px] xl:mt-[38px] xl:max-w-[90%]">
               Sign up for our newsletter to stay updated with what’s new in UAE
               real estate
             </div>
             <FooterEmailForm />
           </div>
-          <div className="helveticaNeue order-2 w-full font-[200] sm:w-[calc(30%-20px)] sm:text-[16px] xl:w-[18%] bigtab:w-[15%]">
-            <div className="font-[700]">EXPLORE RESIDENTIAL IN</div>
+          <div className="helveticaNeue order-2 w-full text-[16px] leading-[19.54px] font-[400] sm:w-[calc(30%-20px)]  xl:w-[18%] bigtab:w-[15%]">
+            <div className="font-[700] leading-[26px]">EXPLORE RESIDENTIAL IN</div>
             <a
               href="/projects/ready?availablefor=buy&construction_status=ready&location=Palm%20Jumeirah "
               className={`mt-[7px] block w-fit ${s.hoverable} `}
@@ -73,8 +73,8 @@ export const Footer = async () => {
               City Walk
             </a>
           </div>
-          <div className="order-3 w-full font-[200] sm:w-[calc(30%-20px)] xl:w-[18%] small:text-[16px] bigtab:w-[15%]">
-            <div className="font-[700]">LIV Squared Properties</div>
+          <div className="order-3 w-full helveticaNeue font-[400] text-[16px] leading-[26px] sm:w-[calc(30%-20px)] xl:w-[18%]  bigtab:w-[15%]">
+            <div className="font-[700] leading-[19.54px]">LIV Squared Properties</div>
             <Link
               href="/about"
               className={`mt-[7px] block w-fit ${s.hoverable}`}
@@ -118,7 +118,7 @@ export const Footer = async () => {
               Contact us
             </Link>
           </div>
-          <div className="order-4 text-sm font-[200] sm:w-[calc(40%-20px)] bigtab:w-[20%]">
+          <div className="order-4 text-[16px] gothamBold leading-[26px] font-[400] sm:w-[calc(40%-20px)] bigtab:w-[20%]">
             <Link href="/">
               <Image
                 src="/logos/logo.svg"
@@ -165,12 +165,11 @@ export const Footer = async () => {
             </Link>
             <div className="mt-[22px] flex">
               <Link
-                href={`${
-                  getFieldValueByName(
-                    contactUs?.['contact-us-section-1'],
-                    'Facebook Url',
-                  ) ?? 'https://www.facebook.com/'
-                }`}
+                href={`${getFieldValueByName(
+                  contactUs?.['contact-us-section-1'],
+                  'Facebook Url',
+                ) ?? 'https://www.facebook.com/'
+                  }`}
                 target="_blank"
               >
                 <Image
@@ -182,12 +181,11 @@ export const Footer = async () => {
                 />
               </Link>
               <Link
-                href={`${
-                  getFieldValueByName(
-                    contactUs?.['contact-us-section-1'],
-                    'Twitter Url',
-                  ) ?? 'https://x.com/'
-                }`}
+                href={`${getFieldValueByName(
+                  contactUs?.['contact-us-section-1'],
+                  'Twitter Url',
+                ) ?? 'https://x.com/'
+                  }`}
                 target="_blank"
               >
                 <Image
@@ -216,12 +214,11 @@ export const Footer = async () => {
               />
             </Link> */}
               <Link
-                href={`${
-                  getFieldValueByName(
-                    contactUs?.['contact-us-section-1'],
-                    'Linkedin Url',
-                  ) ?? 'https://www.linkedin.com/'
-                }`}
+                href={`${getFieldValueByName(
+                  contactUs?.['contact-us-section-1'],
+                  'Linkedin Url',
+                ) ?? 'https://www.linkedin.com/'
+                  }`}
                 target="_blank"
               >
                 <Image

@@ -47,7 +47,7 @@ export default async function ServicesPage() {
           </div>
         </div>
       </div> */}
-      <div className="flex flex-row items-center text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px] ">
+      <div className="flex flex-row items-center text-[40px] gothamBold leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
         <div className="absolute z-[1] ">
           <h1 className="inline-block  capitalize ">
             {ourServices?.['our-services-section-1'][0].field_value ?? ''}
@@ -64,22 +64,22 @@ export default async function ServicesPage() {
           height={885}
         />
       </div>
-      <div className="gotham">
-        <div className="mt-[11px] text-[25px] font-[200] leading-[120%] sm:w-[480px]">
-          <h3>
+      <div className="">
+        <div className="mt-[11px] text-[23px] gothamRegular leading-[28px] sm:text-[25px] sm:leading-[30.13px] sm:w-[480px]">
+          <div>
             {ourServices?.['our-services-section-1']?.[2]?.field_value ?? ''}
-          </h3>
+          </div>
         </div>
       </div>
       <div className="mb-[48px] max-w-[100%]">
-        <div className="investment-experience xs mb-[35px] mt-[35px] flex flex-col flex-wrap justify-between gap-y-[20px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[30px] sm:gap-x-[30px] sm:pb-[37px] md:flex-row md:gap-y-14 xl:justify-normal xl:gap-x-[60px] 3xl:gap-x-2">
+        <div className="helveticaNeue investment-experience xs mb-[35px] mt-[35px] flex flex-col flex-wrap justify-between gap-y-[20px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[30px] sm:gap-x-[30px] sm:pb-[37px] md:flex-row md:gap-y-14 xl:justify-normal xl:gap-x-[60px] 3xl:gap-x-2">
           <div
-            className={`${s.serviceBlock} relative flex-1 3xl:max-w-[380px] 3xl:flex-[auto]`}
+            className={`${s.serviceBlock} relative flex-1 3xl:max-w-[380px] 3xl:flex-[auto] `}
           >
-            <h2 className="text-[20px]">
+            <div className="text-[30px] font-[500] leading-[36.15px]">
               {ourServices?.['our-services-section-2']?.[3]?.field_value ?? ''}
-            </h2>
-            <div className="mt-[20px] font-[400] leading-[170%] text-white small:text-[16px]">
+            </div>
+            <div className="mt-[20px] text-[16px] font-[400] leading-[27.2px] text-white ">
               <p>
                 {ourServices?.['our-services-section-2']?.[4]?.field_value ??
                   ''}
@@ -89,11 +89,11 @@ export default async function ServicesPage() {
           <div
             className={`${s.serviceBlock} relative flex-1 3xl:max-w-[380px] 3xl:flex-[auto]`}
           >
-            <h2 className="text-[20px]">
+            <div className="text-[30px] font-[500] leading-[36.15px]">
               {ourServices?.['our-services-section-2']?.[5]?.field_value ?? ''}
-            </h2>
+            </div>
             <div
-              className="mt-[20px] text-[20px] font-[400] leading-[170%] text-white small:text-[16px]"
+              className="mt-[20px] text-[16px] font-[400] leading-[27.2px]  text-white"
               dangerouslySetInnerHTML={{
                 __html: ourServices['our-services-section-2']?.[6]
                   ?.field_value as string,
@@ -101,10 +101,10 @@ export default async function ServicesPage() {
             ></div>
           </div>
           <div className={`flex-1 3xl:max-w-[380px] 3xl:flex-[auto]`}>
-            <h2 className="text-[20px]">
+            <div className="text-[30px] font-[500] leading-[36.15px]">
               {ourServices?.['our-services-section-2']?.[7]?.field_value ?? ''}
-            </h2>
-            <p className="mt-[20px] font-[400] leading-[170%] text-white small:text-[16px]">
+            </div>
+            <p className="mt-[20px] text-[16px] font-[400] leading-[27.2px]  text-white">
               {ourServices?.['our-services-section-2']?.[8]?.field_value ?? ''}
             </p>
           </div>

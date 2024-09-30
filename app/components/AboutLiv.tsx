@@ -2,12 +2,12 @@ export const AboutLiv = () => {
   return (
     <div className="mt-[100px] flex flex-wrap justify-between gap-x-[30px] gap-y-[20px] border-b border-solid border-[#eddfd0] border-opacity-60 pb-[35px] sm:flex-nowrap md:gap-x-[50px] lg:gap-x-[100px] ">
       <div>
-        <div className="home-sec_title text-[20px] font-[700] leading-[94%] small:text-[35px] ">
-          <h2 className="inline-block  capitalize ">
+        <div className="home-sec_title text-[40px] gothamBold leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
+          <div className="inline-block  capitalize ">
             About Liv squared Properties
-          </h2>
+          </div>
         </div>
-        <div className=" helveticaNeue mt-[10px] text-[10px] text-[13px] leading-[162%] small:text-[16px]">
+        <div className=" helveticaNeue mt-[10px] text-[16px] font-[400] leading-[26.24px]">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and

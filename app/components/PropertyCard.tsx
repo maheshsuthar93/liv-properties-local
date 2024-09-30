@@ -62,10 +62,10 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
         </div>
       </Link>
       <div className="ml-[10px] mt-[15px]">
-        <div className="helveticaNeue text-[15px] font-[700]">{title}</div>
-        <div className="helveticaNeue text-[13px] font-[400]">{location}</div>
+        <div className="helveticaNeue text-[15px] font-[700] leading-[23.2px]">{title}</div>
+        <div className="helveticaNeue text-[16px] font-[400] leading-[24px]">{location}</div>
         {/* <div className='text-xs'>{description}</div> */}
-        <div className="mt-[4px] flex gap-[17px] text-xs">
+        <div className="mt-[4px] flex gap-[17px] helveticaNeue text-[16px] font-[400] leading-[19.09px]">
           <div>
             <Image
               src="/icons/bed.svg"
@@ -97,7 +97,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
             {area} sqft
           </div>
         </div>
-        <div className="helveticaNeue mt-[3px] text-[15px] font-[700]">
+        <div className="helveticaNeue mt-[3px] text-[20px] font-[700] leading-[39.5px] ">
           AED{' '}
           {price.toLocaleString('en-US', {
             minimumIntegerDigits: 2,
