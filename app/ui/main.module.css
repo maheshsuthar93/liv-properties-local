@@ -61,7 +61,7 @@
 }
 
 .line {
-  margin-top: 9px;
+  /* margin-top: 9px; */
   width: 1px;
   height: 31px;
   background: #eddfd0;

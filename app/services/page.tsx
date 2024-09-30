@@ -79,7 +79,7 @@ export default async function ServicesPage() {
             <h2 className="text-[20px]">
               {ourServices?.['our-services-section-2']?.[3]?.field_value ?? ''}
             </h2>
-            <div className="mt-[20px] text-xs leading-[170%] text-white">
+            <div className="mt-[20px] font-[400] leading-[170%] text-white small:text-[16px]">
               <p>
                 {ourServices?.['our-services-section-2']?.[4]?.field_value ??
                   ''}
@@ -93,7 +93,7 @@ export default async function ServicesPage() {
               {ourServices?.['our-services-section-2']?.[5]?.field_value ?? ''}
             </h2>
             <div
-              className="mt-[20px] text-xs leading-[170%] text-white"
+              className="mt-[20px] text-[20px] font-[400] leading-[170%] text-white small:text-[16px]"
               dangerouslySetInnerHTML={{
                 __html: ourServices['our-services-section-2']?.[6]
                   ?.field_value as string,
@@ -104,7 +104,7 @@ export default async function ServicesPage() {
             <h2 className="text-[20px]">
               {ourServices?.['our-services-section-2']?.[7]?.field_value ?? ''}
             </h2>
-            <p className="mt-[20px] text-xs leading-[170%] text-white">
+            <p className="mt-[20px] font-[400] leading-[170%] text-white small:text-[16px]">
               {ourServices?.['our-services-section-2']?.[8]?.field_value ?? ''}
             </p>
           </div>

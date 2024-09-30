@@ -215,9 +215,11 @@ function ProjectComponent() {
 
           <div className="helveticaNeue mt-[15px] flex w-full items-center justify-start gap-[10px] text-[16px]  font-[500] sm:w-[50%] xl:w-[auto]">
             <div>{property[0].property_type ?? ''}</div>
-            <div className={`${s.line2}`} />
+            {property[0].property_type && <div className={`${s.line2}`} />}
             <div>{property[0].construction_status}</div>
-            <div className={`${s.line2}`} />
+            {property[0].construction_status && (
+              <div className={`${s.line2}`} />
+            )}
             <div>{property[0].availability_date ?? ''}</div>
           </div>
           <div className="mt-[15px] flex w-full items-center justify-start gap-[10px] text-sm sm:w-[50%] xl:w-[auto]">

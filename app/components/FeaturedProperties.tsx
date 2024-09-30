@@ -52,7 +52,7 @@ export const FeaturedProperties = () => {
           <h2 className="inline-block  capitalize ">Featured Properties</h2>
         </div>
         {isLargeScreen ? (
-          <div className="mt-[39px] flex-wrap text-[12px] sm:mb-[15px] sm:mt-0">
+          <div className="helveticaNeue mt-[39px] flex-wrap text-[18px] font-[500] sm:mb-[14px] sm:mt-0">
             <div className="flex">
               <div
                 className={`border-solid border-[#eddfd0] ${s.prop} ${s.hoverable} ${propType === 'all' ? 'border-b-[3px]' : 'border-b'}`}

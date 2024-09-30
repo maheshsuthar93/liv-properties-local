@@ -23,9 +23,9 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
 
   return (
     <>
-      <div className="helveticaNeue mt-[100px] flex flex-wrap font-[500] xl:mt-[50px] msm:flex-nowrap small:text-[17px] ">
+      <div className="helveticaNeue mt-[100px] flex flex-wrap font-[500] xl:mt-[50px] msm:flex-nowrap small:text-[18px] ">
         <div
-          className={`w-[93px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'who' ? 'border-b-[4px]' : ''}`}
+          className={`w-[100px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'who' ? 'border-b-[4px]' : ''}`}
           onClick={() => setActiveTab('who')}
         >
           {props.data?.aboutussection2[2].field_value}
@@ -45,7 +45,7 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
           {props.data?.aboutusvision[6].field_value}
         </div> */}
         <div
-          className={`w-[125px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'meet' ? 'border-b-[4px]' : ''}`}
+          className={`w-[150px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'meet' ? 'border-b-[4px]' : ''}`}
           onClick={() => setActiveTab('meet')}
         >
           {props.data?.meettheteam[13].field_value}
