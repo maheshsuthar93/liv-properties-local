@@ -33,7 +33,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
 
   return (
     <div
-      className={`${isLargeScreen ? s.propPic : ''} property-card mr-[14px] mt-[20px] w-full flex-1 md:mt-[43px] smlap:w-[386px] mdlap:w-[23rem] smlap:flex-none`}
+      className={`${isLargeScreen ? s.propPic : ''} property-card mr-[14px] mt-[20px] w-full flex-1 md:mt-[43px] smlap:w-[386px] smlap:flex-none mdlap:w-[23rem]`}
     >
       <Link href={`/project?unique_id=${uniqueId}`} className="relative">
         <div className="relative  block h-[384px] w-full min-w-[300px] overflow-hidden smlap:w-[386px] mdlap:w-[23rem]">
@@ -95,7 +95,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
           {price.toLocaleString('en-US', {
             minimumIntegerDigits: 2,
             maximumFractionDigits: 2,
-          }) + '.000'}
+          })}
         </div>
       </div>
     </div>

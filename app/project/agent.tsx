@@ -14,7 +14,7 @@ const AgentContact = (property: any) => {
 
   const renderContact = (icon: string, iconLabel: string, value: string) => {
     return (
-      <div className="mb-[10px] flex xl:flex-row ">
+      <div className="mb-[10px] flex justify-between xl:flex-row">
         <div className="w-50 flex xl:flex-row">
           <Image
             src={icon}

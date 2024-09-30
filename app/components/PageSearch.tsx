@@ -165,7 +165,7 @@ export const PageSearch = ({ type = 'ready' }) => {
           //className={`custom-select relative  flex max-w-[calc(40%-11px)]  cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-sm text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[70px] small:max-w-[auto]`}
           options={[
             {
-              value: 'Status',
+              value: 'status',
               label: 'Status',
             },
             {
