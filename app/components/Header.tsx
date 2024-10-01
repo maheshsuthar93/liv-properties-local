@@ -107,7 +107,9 @@ export const Header = () => {
 
       //      className={`${isRouteActive('/', path) ? 'fixed h-auto ' : 'sticky h-[180px] '}w-full ] top-0 z-[99] mb-[50px]  flex pt-[30px] sm:mb-0 lg:flex-row lg:pt-[60px]`}
     >
-      <div className={`} flex w-full py-[10px] lg:flex-row 3xl:max-w-[1200px]`}>
+      <div
+        className={`} flex w-full px-[3vw] py-[10px] sm:px-[85px] lg:flex-row 3xl:max-w-[1200px]`}
+      >
         <Link href="/" className="w-fit">
           <Image
             src="/logos/logo.svg"

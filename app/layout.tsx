@@ -20,8 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="helveticaNeue relative overflow-hidden bg-[#827161] bg-[url(/images/bg.jpg)] bg-contain bg-repeat font-[200] text-[#eddfd0]">
-          <div className="absolute mx-auto flex  w-full flex-row justify-center">
+        <div className="helveticaNeue relative overflow-hidden bg-[#827161] bg-[url(/images/bg.jpg)] bg-contain bg-repeat font-[200] text-[#eddfd0] ">
+          <div className="absolute mx-auto flex  w-full flex-row justify-center ">
             {/* <div className="absolute mx-auto w-full 3xl:max-w-[1200px] ">
               <Header />
             </div> */}
