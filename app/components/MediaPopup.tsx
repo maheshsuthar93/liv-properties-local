@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 
-import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
 export const MediaPopup = ({
   url,
   isVideo,
@@ -27,11 +26,7 @@ export const MediaPopup = ({
                       allowFullScreen
                     ></iframe>
                   ) : (
-                    <ReactPhotoSphereViewer
-                      src={url}
-                      height={'500px'}
-                      width={'1000px'}
-                    ></ReactPhotoSphereViewer>
+                    <div></div>
                   )}
                 </div>
               </div>
