@@ -152,33 +152,33 @@ export const PageSearch = ({ type = 'ready' }) => {
     projectStatus,
   ]);
 
-  //if (projectStatus === 'ready')
-  return (
-    <div className="text-[12px]">
-      <div className="flex flex-col items-center gap-4 text-[20px] font-[500] sm:flex-row sm:flex-wrap small:text-[16px] ">
-        <Select
-          value={projectStatus}
-          //onChange={handleStatusChange}
+  if (projectStatus === 'ready')
+    return (
+      <div className="text-[12px]">
+        <div className="flex flex-col items-center gap-4 text-[20px] font-[500] sm:flex-row sm:flex-wrap small:text-[16px] ">
+          <Select
+            value={projectStatus}
+            //onChange={handleStatusChange}
 
-          onChange={(v) => setProjectStatus(v as ProjectStatusType)}
-          className={`page-search  mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[80px]`}
-          //className={`custom-select relative  flex max-w-[calc(40%-11px)]  cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-sm text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[70px] small:max-w-[auto]`}
-          options={[
-            {
-              value: 'status',
-              label: 'Status',
-            },
-            {
-              value: 'ready',
-              label: 'Ready',
-            },
-            {
-              value: 'upcoming',
-              label: 'New',
-            },
-          ]}
-        >
-          {/* <option className="border-[#eddfd0]" value="">
+            onChange={(v) => setProjectStatus(v as ProjectStatusType)}
+            className={`page-search  mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[80px]`}
+            //className={`custom-select relative  flex max-w-[calc(40%-11px)]  cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-sm text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[70px] small:max-w-[auto]`}
+            options={[
+              {
+                value: 'status',
+                label: 'Status',
+              },
+              {
+                value: 'ready',
+                label: 'Ready',
+              },
+              {
+                value: 'upcoming',
+                label: 'New',
+              },
+            ]}
+          >
+            {/* <option className="border-[#eddfd0]" value="">
               Status
             </option>
             <option className="border-[#eddfd0]" value="ready">
@@ -187,12 +187,12 @@ export const PageSearch = ({ type = 'ready' }) => {
             <option className="border-[#eddfd0]" value="upcoming">
               New
             </option> */}
-        </Select>
-        <div className={`${s.line}`} />
-        <div
-          className={` ${s.hoverable} max-w-[25%-11px] small:min-w-[80px] small:max-w-[auto]`}
-        >
-          {/* <input
+          </Select>
+          <div className={`${s.line}`} />
+          <div
+            className={` ${s.hoverable} max-w-[25%-11px] small:min-w-[80px] small:max-w-[auto]`}
+          >
+            {/* <input
             type="text"
             name="textSearch"
             id="textSearch_input"
@@ -210,39 +210,39 @@ export const PageSearch = ({ type = 'ready' }) => {
                      sm:leading-6 small:min-w-[70px]`}
             placeholder="Emirate"
           /> */}
-          <input
-            type="text"
-            name="textSearch"
-            id="textSearch_input"
-            value={emirate}
-            onChange={(e) => setEmirate(e.target.value)}
-            className={`block h-full border-0 bg-transparent py-1.5 text-center
+            <input
+              type="text"
+              name="textSearch"
+              id="textSearch_input"
+              value={emirate}
+              onChange={(e) => setEmirate(e.target.value)}
+              className={`block h-full border-0 bg-transparent py-1.5 text-center
                     text-[100%] placeholder-[#eddfd0] ring-0 ring-inset ring-transparent transition duration-200 ease-in-out
                     hover:ring-[#EDDFD0]/50 focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] sm:leading-6 small:w-[110px] ${s.hoverable}`}
-            placeholder="Emirate"
-          />
-        </div>
-        <div className={`${s.line}`} />
-        <div
-          className={` ${s.hoverable} flex max-w-[calc(25%-11px)] justify-center small:min-w-[80px] small:max-w-[auto]`}
-        >
-          <input
-            type="text"
-            name="location"
-            id="location_input"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            className={`block h-full border-0 bg-transparent py-1.5 text-center
+              placeholder="Emirate"
+            />
+          </div>
+          <div className={`${s.line}`} />
+          <div
+            className={` ${s.hoverable} flex max-w-[calc(25%-11px)] justify-center small:min-w-[80px] small:max-w-[auto]`}
+          >
+            <input
+              type="text"
+              name="location"
+              id="location_input"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              className={`block h-full border-0 bg-transparent py-1.5 text-center
                     text-[100%] placeholder-[#eddfd0] ring-0 ring-inset ring-transparent transition duration-200 ease-in-out
                     hover:ring-[#EDDFD0]/50 focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] sm:leading-6 small:w-[110px] ${s.hoverable}`}
-            placeholder="Location"
-          />
-        </div>
-        <div className={`${s.line}`} />
-        <div
-          className={`${s.hoverable} max-w-[calc(25%-11px)] small:min-w-[75px] small:max-w-[auto]`}
-        >
-          {/* <input
+              placeholder="Location"
+            />
+          </div>
+          <div className={`${s.line}`} />
+          <div
+            className={`${s.hoverable} max-w-[calc(25%-11px)] small:min-w-[75px] small:max-w-[auto]`}
+          >
+            {/* <input
             type="text"
             name="textSearch"
             id="textSearch_input"
@@ -261,54 +261,54 @@ export const PageSearch = ({ type = 'ready' }) => {
             placeholder="Community"
           /> */}
 
-          <input
-            type="text"
-            name="textSearch"
-            id="textSearch_input"
-            value={textSearch}
-            onChange={(e) => setTextSearch(e.target.value)}
-            className={`block h-full border-0 bg-transparent py-1.5 text-center
+            <input
+              type="text"
+              name="textSearch"
+              id="textSearch_input"
+              value={textSearch}
+              onChange={(e) => setTextSearch(e.target.value)}
+              className={`block h-full border-0 bg-transparent py-1.5 text-center
                     text-[100%] placeholder-[#eddfd0] ring-0 ring-inset ring-transparent transition duration-200 ease-in-out
                     hover:ring-[#EDDFD0]/50 focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] sm:leading-6 small:w-[110px] ${s.hoverable}`}
-            placeholder="Community"
-          />
-        </div>
-        <div className={`${s.line}`} />
-        <Select
-          value={propertyType}
-          //onChange={handleStatusChange}
+              placeholder="Community"
+            />
+          </div>
+          <div className={`${s.line}`} />
+          <Select
+            value={propertyType}
+            //onChange={handleStatusChange}
 
-          onChange={(v) => setPropertyType(v as PropertyType)}
-          className={`page-search  mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[75px] small:min-w-[80px]`}
-          //className={`custom-select relative  flex max-w-[calc(40%-11px)]  cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-sm text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[70px] small:max-w-[auto]`}
-          options={[
-            {
-              value: 'propertyType',
-              label: 'Property Type',
-            },
-            {
-              value: 'villa',
-              label: 'Villa',
-            },
-            {
-              value: 'apartment',
-              label: 'Apartment',
-            },
-            {
-              value: 'pentouse',
-              label: 'Pentouse',
-            },
-            {
-              value: 'townhouse',
-              label: 'Townhouse',
-            },
-            {
-              value: 'duplex',
-              label: 'Duplex',
-            },
-          ]}
-        >
-          {/* <option className="border-[#eddfd0]" value="">
+            onChange={(v) => setPropertyType(v as PropertyType)}
+            className={`page-search  mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[75px] small:min-w-[80px]`}
+            //className={`custom-select relative  flex max-w-[calc(40%-11px)]  cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-sm text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[70px] small:max-w-[auto]`}
+            options={[
+              {
+                value: 'propertyType',
+                label: 'Property Type',
+              },
+              {
+                value: 'villa',
+                label: 'Villa',
+              },
+              {
+                value: 'apartment',
+                label: 'Apartment',
+              },
+              {
+                value: 'pentouse',
+                label: 'Pentouse',
+              },
+              {
+                value: 'townhouse',
+                label: 'Townhouse',
+              },
+              {
+                value: 'duplex',
+                label: 'Duplex',
+              },
+            ]}
+          >
+            {/* <option className="border-[#eddfd0]" value="">
               Status
             </option>
             <option className="border-[#eddfd0]" value="ready">
@@ -317,58 +317,58 @@ export const PageSearch = ({ type = 'ready' }) => {
             <option className="border-[#eddfd0]" value="upcoming">
               New
             </option> */}
-        </Select>
-        <div className={`${s.line}`} />
-        <div
-          className={` ${s.hoverable} max-w-[calc(33.333%-11px)]  font-[500] small:min-w-[80px] small:max-w-[auto] small:text-[16px]`}
-        >
-          {visibleNoOfBedrooms && (
-            <PriceRange
-              setPr={setBedroomRange}
-              pr={bedroomRange}
-              rangeType="other"
-              maxPlaceholder={'Max bedrooms'}
-              minPlaceholder={'Min bedrooms'}
-              setVisible={setVisibleNoOfBedrooms}
-              keyPrefix="home"
-              className="absolute bottom-[calc(100%-30px)] left-[-40%] z-[10] sm:bottom-[calc(100%+20px)] md:left-[-50%] msmall:left-[unset] msmall:right-[-20px] small:left-[-50%] small:right-[unset]"
-            />
-          )}
-          <button
-            className="mt-[30px] flex h-full w-full flex-row items-center justify-start px-[16px]
+          </Select>
+          <div className={`${s.line}`} />
+          <div
+            className={` ${s.hoverable} max-w-[calc(33.333%-11px)]  font-[500] small:min-w-[80px] small:max-w-[auto] small:text-[16px]`}
+          >
+            {visibleNoOfBedrooms && (
+              <PriceRange
+                setPr={setBedroomRange}
+                pr={bedroomRange}
+                rangeType="other"
+                maxPlaceholder={'Max bedrooms'}
+                minPlaceholder={'Min bedrooms'}
+                setVisible={setVisibleNoOfBedrooms}
+                keyPrefix="home"
+                className="absolute bottom-[calc(100%-30px)] left-[-40%] z-[10] sm:bottom-[calc(100%+20px)] md:left-[-50%] msmall:left-[unset] msmall:right-[-20px] small:left-[-50%] small:right-[unset]"
+              />
+            )}
+            <button
+              className="mt-[30px] flex h-full w-full flex-row items-center justify-start px-[16px]
                             py-[6px] pl-[13px] transition duration-200 ease-in-out sm:mt-0 sm:min-w-[75px] sm:justify-center lg:w-auto"
-            onClick={handleBedroomsClick}
-          >
-            {!bedroomRange ? 'Bedrooms' : bedroomRange}
-          </button>
-        </div>
-        <div className={`${s.line}`} />
+              onClick={handleBedroomsClick}
+            >
+              {!bedroomRange ? 'Bedrooms' : bedroomRange}
+            </button>
+          </div>
+          <div className={`${s.line}`} />
 
-        <div
-          className={`!py-3 ${s.propFilter} ${s.hoverable} min-w-[calc(33.333%-0.8rem)] lg:min-w-[auto]`}
-        >
-          {visible && (
-            <PriceRange
-              setPr={setPr}
-              pr={pr}
-              setVisible={setVisible}
-              keyPrefix="page"
-              rangeType="price"
-              minPlaceholder={undefined}
-              maxPlaceholder={undefined}
-              className="absolute bottom-[calc(100%-30px)] z-[10] sm:bottom-[calc(100%-10px)] sm:left-[-50%]"
-            />
-          )}
-          <button
-            className="mt-[30px] flex w-full flex-row items-center justify-start px-[16px]
-                            py-3 pl-[13px]  transition duration-200 ease-in-out sm:mt-0 sm:min-w-[75px] sm:justify-center lg:w-auto"
-            onClick={handlePriceClick}
+          <div
+            className={`!py-3 ${s.propFilter} ${s.hoverable} min-w-[calc(33.333%-0.8rem)] lg:min-w-[auto]`}
           >
-            {!pr ? 'Price Range' : pr}
-          </button>
-        </div>
-        {/* <div className={`${s.line}`} /> */}
-        {/* <Select
+            {visible && (
+              <PriceRange
+                setPr={setPr}
+                pr={pr}
+                setVisible={setVisible}
+                keyPrefix="page"
+                rangeType="price"
+                minPlaceholder={undefined}
+                maxPlaceholder={undefined}
+                className="absolute bottom-[calc(100%-30px)] z-[10] sm:bottom-[calc(100%-10px)] sm:left-[-50%]"
+              />
+            )}
+            <button
+              className="mt-[30px] flex w-full flex-row items-center justify-start px-[16px]
+                            py-3 pl-[13px]  transition duration-200 ease-in-out sm:mt-0 sm:min-w-[75px] sm:justify-center lg:w-auto"
+              onClick={handlePriceClick}
+            >
+              {!pr ? 'Price Range' : pr}
+            </button>
+          </div>
+          {/* <div className={`${s.line}`} /> */}
+          {/* <Select
           options={[
             {
               value: 'Bedroom',
@@ -416,7 +416,7 @@ export const PageSearch = ({ type = 'ready' }) => {
           onChange={(b) => setBedroom(b as BedroomOption)}
         />
         <div className={`${s.line}`} /> */}
-        {/* <Select
+          {/* <Select
             options={[
               {
                 value: 'Bathroom',
@@ -460,7 +460,7 @@ export const PageSearch = ({ type = 'ready' }) => {
             onChange={(bt) => setBathroom(bt as BathroomOption)}
           />
           <div className={`${s.line}`} /> */}
-        {/* <Select
+          {/* <Select
             options={[
               {
                 value: 'Home Type',
@@ -491,7 +491,7 @@ export const PageSearch = ({ type = 'ready' }) => {
             className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
             onChange={(v) => setHometype(v as HomeTypeOption)}
           /> */}
-        {/* <Select
+          {/* <Select
                         options={[
                             {
                                 value: 'Price low to high',
@@ -506,8 +506,8 @@ export const PageSearch = ({ type = 'ready' }) => {
                         className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
                         onChange={(v) => setSelectedOption(v as SelectedOption)}
                     /> */}
-      </div>
-      {/* <div className={`${s.line}`} />
+        </div>
+        {/* <div className={`${s.line}`} />
         <div className="mt-[17px] flex flex-row flex-wrap text-center lg:flex-nowrap">
           <div
             className={`max-[639px]:flex-1 min-w-[50%] py-3 lg:min-w-[160px] ${projType === 'rent' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] ${s.hoverable} cursor-pointer`}
@@ -532,8 +532,8 @@ export const PageSearch = ({ type = 'ready' }) => {
             </button>
           )}
         </div> */}
-    </div>
-  );
+      </div>
+    );
   return (
     <div className="mt-[130px] text-[12px] sm:mt-[80px] small:mt-[50px]">
       <div className="flex flex-wrap gap-4">
