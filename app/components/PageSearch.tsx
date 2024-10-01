@@ -55,8 +55,9 @@ export const PageSearch = ({ type = 'ready' }) => {
   const [emirate, setEmirate] = useState('');
   const [propertyType, setPropertyType] =
     useState<PropertyType>('propertyType');
-  const [projectStatus, setProjectStatus] =
-    useState<ProjectStatusType>('status');
+  const [projectStatus, setProjectStatus] = useState<ProjectStatusType>(
+    type as ProjectStatusType,
+  );
 
   //const [hometype, setHometype] = useState<HomeTypeOption>('Home Type');
   const [selectedOption, setSelectedOption] =
