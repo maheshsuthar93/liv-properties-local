@@ -2,7 +2,7 @@ export const AboutLiv = () => {
   return (
     <div className="mt-[100px] flex flex-wrap justify-between gap-x-[30px] gap-y-[20px] border-b border-solid border-[#eddfd0] border-opacity-60 pb-[35px] sm:flex-nowrap md:gap-x-[50px] lg:gap-x-[100px] ">
       <div>
-        <div className="home-sec_title text-[40px] gothamBold leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
+        <div className="home-sec_title gotham text-[35px] font-[700] leading-[39px] sm:text-[35px] sm:leading-[42.3px]">
           <div className="inline-block  capitalize ">
             About Liv squared Properties
           </div>

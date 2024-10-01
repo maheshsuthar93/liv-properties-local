@@ -38,7 +38,7 @@ export default async function InvestPage() {
           </div>
         </div>
       </div> */}
-      <div className="flex flex-row items-center text-[40px] gothamBold leading-[39px] sm:text-[45px] sm:leading-[42.3px] ">
+      <div className="gotham flex flex-row items-center text-[40px] font-[700] leading-[39px] sm:text-[45px] sm:leading-[42.3px] ">
         <div className="absolute z-[1] ">
           <div className="inline-block max-w-[220px] capitalize small:max-w-[270px]">
             {investment?.['investment-section-1'][0].field_value ?? ''}
@@ -56,13 +56,13 @@ export default async function InvestPage() {
         />
       </div>
       <div
-        className="two-col-desc mt:[50px] ] flex flex-col flex-nowrap gap-[30px] sm:mt-[10px] lg:mt-[10px] lg:flex-row lg:flex-wrap helveticaNeue text-[16px] font-[400] leading-[25.92px]"
+        className="two-col-desc mt:[50px] ] helveticaNeue flex flex-col flex-nowrap gap-[30px] text-[16px] font-[400] leading-[25.92px] sm:mt-[10px] lg:mt-[10px] lg:flex-row lg:flex-wrap"
         dangerouslySetInnerHTML={{
           __html: investment?.['investment-section-1'][2].field_value as string,
         }}
       ></div>
       <div className="mt-[72px]">
-        <div className="text-[44px] gothamBold leading-[42px] sm:text-[50px] sm:leading-[47px]">
+        <div className="gotham text-[44px] font-[700] leading-[42px] sm:text-[50px] sm:leading-[47px]">
           <div className="inline-block max-w-[220px] capitalize small:max-w-[270px]">
             {investment?.['investment-section-1'][3].field_value ?? ''}
           </div>

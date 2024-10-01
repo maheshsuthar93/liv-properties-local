@@ -23,7 +23,7 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
 
   return (
     <>
-      <div className="helveticaNeue mt-[100px] flex flex-wrap text-[18px] font-[500] leading-[35.55px] xl:mt-[50px] msm:flex-nowrap ">
+      <div className="helveticaNeue mt-[100px] flex flex-wrap text-[16px] font-[500] leading-[35.55px] xl:mt-[50px] msm:flex-nowrap ">
         <div
           className={`w-[100px] cursor-pointer border-b border-solid border-[#eddfd0] border-opacity-60 py-[10px] text-center ${activeTab === 'who' ? 'border-b-[4px]' : ''}`}
           onClick={() => setActiveTab('who')}
@@ -75,7 +75,8 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
             <div className="mb-[11px] text-[30px] font-[500] leading-[36.15px]">
               {props.data?.aboutusmission[4].field_value}
             </div>
-            <div className="text-[16px] font-[400] leading-[25.92px]"
+            <div
+              className="text-[16px] font-[400] leading-[25.92px]"
               dangerouslySetInnerHTML={{
                 __html: props.data?.aboutusmission[5].field_value as string,
               }}
@@ -85,7 +86,8 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
             <h3 className="mb-[11px] text-[30px] font-[500] leading-[36.15px]">
               {props.data?.aboutusvision[6].field_value}
             </h3>
-            <div className="text-[16px] font-[400] leading-[25.92px]"
+            <div
+              className="text-[16px] font-[400] leading-[25.92px]"
               dangerouslySetInnerHTML={{
                 __html: props.data?.aboutusvision[7].field_value as string,
               }}

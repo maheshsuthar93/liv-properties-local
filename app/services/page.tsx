@@ -47,7 +47,7 @@ export default async function ServicesPage() {
           </div>
         </div>
       </div> */}
-      <div className="flex flex-row items-center text-[40px] gothamBold leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
+      <div className="gotham flex flex-row items-center text-[40px] font-[700] leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
         <div className="absolute z-[1] ">
           <h1 className="inline-block  capitalize ">
             {ourServices?.['our-services-section-1'][0].field_value ?? ''}
@@ -65,7 +65,7 @@ export default async function ServicesPage() {
         />
       </div>
       <div className="">
-        <div className="mt-[11px] text-[23px] gothamRegular leading-[28px] sm:text-[25px] sm:leading-[30.13px] sm:w-[480px]">
+        <div className="gothamRegular mt-[11px] text-[23px] leading-[28px] sm:w-[480px] sm:text-[25px] sm:leading-[30.13px]">
           <div>
             {ourServices?.['our-services-section-1']?.[2]?.field_value ?? ''}
           </div>

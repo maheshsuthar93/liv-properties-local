@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Helvetica Neue';
   src: url('/fonts/HelveticaNeueMedium.otf') format('truetype');
   font-weight: 400;
@@ -8,55 +8,59 @@
   font-family: 'Helvetica Neue';
   src: url('/fonts/HelveticaNeueBold.otf') format('truetype');
   font-weight: 700;
-}
+} */
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('/fonts/HelveticaNeueRoman.otf') format('truetype');
+  src: url('/fonts/HelveticaNeue.ttc') format('truetype');
   font-weight: 300;
 }
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('/fonts/HelveticaNeueRoman.otf') format('truetype');
+  src: url('/fonts/HelveticaNeue.ttc') format('truetype');
   font-weight: 300;
 }
-
 @font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/fonts/HelveticaNeue.ttc') format('truetype');
+  font-weight: 500;
+}
+/* @font-face {
   font-family: 'Gotham';
   src: url('/fonts/GothamMedium.ttf') format('truetype');
   font-weight: 400;
-}
+} */
 
 @font-face {
   font-family: 'Gotham';
-  src: url('/fonts/GothamBook.ttf') format('truetype');
+  src: url('/fonts/GothamXLight.otf') format('truetype');
   font-weight: 200;
 }
 
 @font-face {
-  font-family: 'GothamBold';
-  src: url('/fonts/Gotham-Bold.otf') format('truetype');
+  font-family: 'Gotham';
+  src: url('/fonts/GothamBold.otf') format('truetype');
   font-weight: 700;
 }
 
 @font-face {
-  font-family: 'GothamMedium';
-  src: url('/fonts/Gotham-Medium.otf') format('truetype');
-  font-weight: 700;
+  font-family: 'Gotham';
+  src: url('/fonts/GothamMedium.otf') format('truetype');
+  font-weight: 500;
 }
 
 @font-face {
-  font-family: 'GothamRegular';
-  src: url('/fonts/Gotham-Book.otf') format('truetype');
+  font-family: 'Gotham';
+  src: url('/fonts/GothamBook.otf') format('truetype');
   font-weight: 400;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'GothamMedium';
   src: url('/fonts/Gotham-Medium.otf') format('truetype');
   font-weight: 500;
-}
+} */
 
 /* .helveticaNeue {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -70,7 +74,7 @@
   font-family: 'Gotham';
 }
 
-.gothamBold {
+/* .gothamBold {
   font-family: 'GothamMedium';
 }
 
@@ -84,7 +88,7 @@
 
 .gothamMedium {
   font-family: 'GothamMedium';
-}
+} */
 
 body {
   max-width: 100vw;
@@ -150,12 +154,12 @@ body {
   }
 }
 
-.services-cta>div {
+.services-cta > div {
   padding: 50px 40px;
 }
 
 @media screen and (max-width: 619px) {
-  .services-cta>div {
+  .services-cta > div {
     padding: 30px 30px 20px;
   }
 }
@@ -179,7 +183,7 @@ body {
 }
 
 @media screen and (min-width: 620px) and (max-height: 880px) {
-  .services-cta>div {
+  .services-cta > div {
     padding: 45px 30px;
   }
 }
@@ -189,7 +193,7 @@ body {
     gap: 20px;
   }
 
-  .services-cta>div {
+  .services-cta > div {
     padding: 35px 30px;
   }
 
@@ -203,7 +207,7 @@ body {
 }
 
 @media screen and (min-width: 620px) and (max-height: 768px) {
-  .services-cta>div {
+  .services-cta > div {
     padding: 20px 30px;
   }
 }
@@ -219,13 +223,13 @@ body {
 }
 
 @media screen and (min-width: 920px) and (min-height: 1000px) {
-  .services-cta>div {
+  .services-cta > div {
     padding: 80px 40px;
   }
 }
 
 @media screen and (min-width: 620px) and (min-height: 1081px) {
-  .services-cta>div {
+  .services-cta > div {
     padding: 80px 40px 150px;
   }
 }
@@ -247,19 +251,19 @@ body {
 }
 
 @media screen and (min-width: 920px) and (max-width: 1023px) and (max-height: 1000px) {
-  .featured-properties_grid>div:nth-child(n + 2):not(.explore-all) {
+  .featured-properties_grid > div:nth-child(n + 2):not(.explore-all) {
     display: none;
   }
 }
 
 @media screen and (min-width: 1301px) and (max-width: 1400px) {
-  .featured-properties_grid>div {
+  .featured-properties_grid > div {
     flex: 1;
     width: 25% !important;
   }
 
-  .featured-properties_grid>div a>div,
-  .featured-properties_grid>div a img {
+  .featured-properties_grid > div a > div,
+  .featured-properties_grid > div a img {
     width: auto !important;
     height: 293px !important;
   }
@@ -270,27 +274,26 @@ body {
 }
 
 @media screen and (min-width: 920px) and (max-width: 1300px) and (max-height: 1080px) {
-  .featured-properties_grid>div:nth-child(n + 3):not(.explore-all) {
+  .featured-properties_grid > div:nth-child(n + 3):not(.explore-all) {
     display: none;
   }
 }
 
 @media screen and (min-width: 920px) and (max-width: 1023px) and (max-height: 1000px) {
-
-  .featured-properties_grid>div:nth-child(n + 2):not(.explore-all),
-  .featured-properties_grid>div:nth-child(n + 3):not(.explore-all) {
+  .featured-properties_grid > div:nth-child(n + 2):not(.explore-all),
+  .featured-properties_grid > div:nth-child(n + 3):not(.explore-all) {
     display: none;
   }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1100px) {
-  .featured-properties_grid>div {
+  .featured-properties_grid > div {
     width: 100% !important;
     min-width: 285px !important;
     height: 350px !important;
   }
 
-  .featured-properties_grid a>div,
+  .featured-properties_grid a > div,
   .featured-properties_grid .property-card_img,
   .featured-properties_grid .react-loading-skeleton {
     width: 100% !important;
@@ -303,9 +306,10 @@ body {
 }
 
 @media screen and (max-width: 919px) {
-  .featured-properties_grid {}
+  .featured-properties_grid {
+  }
 
-  .featured-properties_grid>div {
+  .featured-properties_grid > div {
     height: 350px !important;
   }
 
@@ -317,7 +321,7 @@ body {
     width: 100% !important;
   }
 
-  .featured-properties_grid a>div,
+  .featured-properties_grid a > div,
   .featured-properties_grid .property-card_img,
   .featured-properties_grid .react-loading-skeleton {
     width: 100% !important;
@@ -348,7 +352,7 @@ body {
     row-gap: 20px;
   }
 
-  .featured-properties_grid>div {
+  .featured-properties_grid > div {
     height: auto !important;
   }
 
@@ -358,7 +362,7 @@ body {
     position: relative;
   }
 
-  .featured-properties_grid a>div,
+  .featured-properties_grid a > div,
   .featured-properties_grid .react-loading-skeleton {
     width: 100% !important;
     height: 250px !important;
@@ -497,7 +501,7 @@ input.autofill-input:-webkit-autofill:focus {
   padding: 20px;
 }
 
-.gallery-images>div {
+.gallery-images > div {
   max-width: 1600px;
 }
 
@@ -615,11 +619,11 @@ input.autofill-input:-webkit-autofill:focus {
   opacity: 1;
 }
 
-.news-desc>p:nth-child(n + 2) {
+.news-desc > p:nth-child(n + 2) {
   display: none;
 }
 
-.news-detail-desc>p {
+.news-detail-desc > p {
   margin-top: 14px;
 }
 

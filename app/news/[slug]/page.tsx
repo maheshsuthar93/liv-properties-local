@@ -49,7 +49,7 @@ export default function NewsDetailPage({ params }: NewsPageProps) {
 
   return (
     <div className="mb-[30px] mt-[200px] w-full sm:mb-[60px] xl:mb-[70px] 3xl:max-w-[1200px]">
-      <div className="text-[40px] gothamBold leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
+      <div className="gotham text-[40px] font-[700] leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
         <h1>News & Events</h1>
       </div>
       <Image
@@ -59,10 +59,12 @@ export default function NewsDetailPage({ params }: NewsPageProps) {
         height={480}
         className="mt-[50px] min-w-full"
       />
-      <h2 className="mt-[33px] helveticaNeue text-[30px] font-[700] leading-[43px]">{newsItem.heading}</h2>
+      <h2 className="helveticaNeue mt-[33px] text-[30px] font-[700] leading-[43px]">
+        {newsItem.heading}
+      </h2>
       <button
         type="submit"
-        className="mr-auto mt-[23px] block rounded-3xl border border-solid border-[#EDDFD0] px-[16px] py-[9px] helveticaNeue text-[18px] font-[400] leading-[21.47px] transition
+        className="helveticaNeue mr-auto mt-[23px] block rounded-3xl border border-solid border-[#EDDFD0] px-[16px] py-[9px] text-[18px] font-[400] leading-[21.47px] transition
                 duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
       >
         {formatDate(newsItem.created_at)}

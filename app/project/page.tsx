@@ -206,10 +206,10 @@ function ProjectComponent() {
               </ul>
             )}
           </div>
-          <div className="mt-[31px] w-[100%] text-[28px] gothamBold leading-[31px] sm:text-[30px] sm:leading-[34px]">
+          <div className="gotham mt-[31px] w-[100%] text-[28px] font-[700] leading-[31px] sm:text-[30px] sm:leading-[34px]">
             {property[0].property_name ?? ''}
           </div>
-          <div className="mt-[10px] w-[100%] text-[16px] leading-[24px] font-[500] helveticaNeue">
+          <div className="helveticaNeue mt-[10px] w-[100%] text-[16px] font-[500] leading-[24px]">
             {property[0].location ?? ''}
           </div>
 
@@ -222,7 +222,7 @@ function ProjectComponent() {
             )}
             <div>{property[0].availability_date ?? ''}</div>
           </div>
-          <div className="mt-[15px] flex w-full items-center justify-start gap-[10px] text-[28px] gothamBold leading-[30px] sm:text-[30px] sm:leading-[32.7px] sm:w-[50%] xl:w-[auto]">
+          <div className="gotham mt-[15px] flex w-full items-center justify-start gap-[10px] text-[28px] font-[700] leading-[30px] sm:w-[50%] sm:text-[30px] sm:leading-[32.7px] xl:w-[auto]">
             <div>
               AED{' '}
               {(property[0].price ?? '').toLocaleString('en-US', {
@@ -236,7 +236,7 @@ function ProjectComponent() {
               {property[0].emirate ?? ''}
             </div>
           </div>
-          <div className="mt-[15px] flex w-full items-center justify-start gap-[22px] text-[16px] helveticaNeue leading-[19.54px] font-[500] sm:w-[50%] xl:w-[auto]">
+          <div className="helveticaNeue mt-[15px] flex w-full items-center justify-start gap-[22px] text-[16px] font-[500] leading-[19.54px] sm:w-[50%] xl:w-[auto]">
             <div>
               <Image
                 src="/icons/bed.svg"
@@ -269,7 +269,7 @@ function ProjectComponent() {
             </div>
           </div>
 
-          <div className="description mt-[31px] w-full max-w-[100%] helveticaNeue text-[16px] font-[400] leading-[32.4px] xl:w-[auto] xl:max-w-[483px]">
+          <div className="description helveticaNeue mt-[31px] w-full max-w-[100%] text-[16px] font-[400] leading-[32.4px] xl:w-[auto] xl:max-w-[483px]">
             {property[0].description ?? ''}
           </div>
           {property[0].description && (
@@ -432,13 +432,13 @@ function ProjectComponent() {
               height={145}
             />
             <div className="grid grid-rows-[auto_1fr_auto]">
-              <p className="text-[30px] gothamBold leading-[34px]">
+              <p className="gotham text-[30px] font-[700] leading-[34px]">
                 DLD Permit Number:
               </p>
-              <p className="mt-[12px] text-[16px] font-[500] leading-[19.54px] helveticaNeue">
+              <p className="helveticaNeue mt-[12px] text-[16px] font-[500] leading-[19.54px]">
                 632752507835
               </p>
-              <p className="row-start-3 mt-[12px] text-[16px] font-[500] leading-[22.4px] helveticaNeue">
+              <p className="helveticaNeue row-start-3 mt-[12px] text-[16px] font-[500] leading-[22.4px]">
                 This property listing has been reviewed and <br />
                 verified by Dubai Land Department
               </p>
@@ -471,8 +471,10 @@ function ProjectComponent() {
           </div>
         )}
         <div className="my-auto w-full xl:w-[auto] xl:min-w-[400px]">
-          <div className="text-[30px] gothamBold leading-[34px] ">Property Features</div>
-          <div className="helveticaNeue text-[16px] font-[400] leading-[32.4px] mt-[16px] grid grid-cols-2">
+          <div className="gotham text-[30px] font-[700] leading-[34px] ">
+            Property Features
+          </div>
+          <div className="helveticaNeue mt-[16px] grid grid-cols-2 text-[16px] font-[400] leading-[32.4px]">
             {services &&
               services?.map((service: number | string) => {
                 return renderService(service);

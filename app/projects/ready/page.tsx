@@ -31,7 +31,7 @@ export default async function ReadyProjectsPage() {
       </div> */}
       <Providers>
         <div className="gradient-from bg-gradient-to-r  small:p-[20px]">
-          <div className=" max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center  mb-[10px] flex px-[3vw] text-[40px] gothamBold leading-[398px] sm:text-[45px] sm:leading-[42.3px] sm:px-0 ">
+          <div className=" max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center  gotham mb-[10px] flex px-[3vw] text-[35px] font-[700] leading-[398px] sm:px-0 sm:text-[35px] sm:leading-[42.3px] ">
             <h2 className="inline-block capitalize">
               Luxury Properties for Sale
             </h2>

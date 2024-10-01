@@ -11,7 +11,7 @@ const SubHeader = (props: { data: AboutUs }) => {
   }
   return (
     <div className="  text-[20px] font-[700] leading-[38px] small:text-[35px] small:leading-[60px]">
-      <div className="flex flex-row items-center text-[40px] gothamBold leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
+      <div className="gotham flex flex-row items-center text-[40px] font-[700] leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
         <div className="absolute z-[1] ">
           <div className="inline-block max-w-[220px] capitalize small:max-w-[270px]">
             {props.data?.asdf[0].field_value}

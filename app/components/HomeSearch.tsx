@@ -97,10 +97,10 @@ export const HomeSearch = () => {
   return isLargeScreen ? (
     <div className="home-search z-[3] mt-[250px] md:mt-[300px] small:mt-[30px]  ">
       <div className="gradient-from  bg-gradient-to-r small:p-[20px]">
-        <div className=" max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center  mb-[10px] flex text-[40px] gothamBold leading-[65px] sm:text-[45px] sm:leading-[42.3px]">
-          <h2 className="inline-block capitalize">
+        <div className=" max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center  gotham mb-[10px] flex text-[35px] font-[700] leading-[65px] sm:text-[35px] sm:leading-[42.3px]">
+          <div className="inline-block capitalize">
             Luxury Properties for Sale
-          </h2>
+          </div>
         </div>
         {/* <div className="max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center flex px-[3vw] text-sm sm:px-0 ">
           <div
@@ -116,7 +116,7 @@ export const HomeSearch = () => {
             New Projects
           </div>
         </div> */}
-        <div className="max-[639px]:w-full  mt-[15px] ml-[-10px] flex flex-wrap items-center justify-evenly gap-2 text-[16px] helveticaNeue font-[500] leading-[32px] sm:text-[18px] sm:leading-[35.55px]">
+        <div className="max-[639px]:w-full  helveticaNeue ml-[-10px] mt-[15px] flex flex-wrap items-center justify-evenly gap-2 text-[16px] font-[500] font-[500] leading-[32px] sm:text-[16px] sm:leading-[35.55px]">
           {/* <select
             value={projType}
             onChange={handleProjTypeChange}

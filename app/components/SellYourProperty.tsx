@@ -28,7 +28,7 @@ export const SellYourProperty = (data: any) => {
         style={{ backgroundImage: 'url(/images/sell_property-bg.png)' }}
       >
         <div className={styles.tint}></div>
-        <div className="relative z-10 text-[38px] font-[400] leading-[46.86px]">
+        <div className="gotham relative z-10 text-[35px] font-[700] leading-[46.86px]">
           Sell your property
         </div>
         <div className="max-[639px]:mt-[8px] max-[639px[:text-sm relative z-10 text-[14px] font-[400] leading-[22px] small:w-[480px] small:leading-[2]">

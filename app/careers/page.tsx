@@ -16,9 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function CareersPage() {
   return (
     <div className="mb-[30px] mt-[200px] w-full sm:mb-[60px] xl:mb-[70px] 3xl:max-w-[1200px]">
-      <div
-        className="w-full border-b border-solid border-[#eddfd0] border-opacity-60 text-start  text-[40px] gothamBold leading-[39px] sm:text-[45px] sm:leading-[42.3px]"
-      >
+      <div className="gotham w-full border-b border-solid border-[#eddfd0] border-opacity-60  text-start text-[40px] font-[700] leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
         <div className="inline-block max-w-[220px] capitalize small:max-w-[300px]">
           {careers?.['careers-section-1'][0].field_value ?? ''}
         </div>
