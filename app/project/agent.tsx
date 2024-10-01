@@ -9,8 +9,8 @@ import Image from 'next/image';
 // Case 16: Walk in Closet
 // Case 17: Modern
 
-const AgentContact = (property: any) => {
-  console.log(property);
+const AgentContact = (props: any) => {
+  const { property } = props;
 
   const renderContact = (icon: string, iconLabel: string, value: string) => {
     return (
@@ -40,6 +40,13 @@ const AgentContact = (property: any) => {
           alt="QR Code"
           width={116}
           height={116}
+          className="h-116 w-116 rounded-full"
+          style={{
+            objectFit: 'cover', // cover, contain, none
+            borderRadius: '100px',
+            width: 116,
+            height: 116,
+          }}
         />
         <div className="ml-[10px]">
           <div className="mb-[10px] text-[20px] font-[700]">

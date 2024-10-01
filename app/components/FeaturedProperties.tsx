@@ -7,36 +7,55 @@ import { Loading, PropertyCard } from '@/app/components';
 import Link from 'next/link';
 import s from '@/app/ui/main.module.css';
 import { useState, useLayoutEffect, Fragment } from 'react';
-import { FeaturedParameters, Property } from '@/app/types';
+import { FeaturedParameters, FeaturedProperty, Property } from '@/app/types';
 import { apiUrl, fetcher } from '../constants';
 import useSWR from 'swr';
 
 export const FeaturedProperties = () => {
-  const [action, setAction] = useState<'rent' | 'buy' | 'sell'>('buy');
+  // const [action, setAction] = useState<'rent' | 'buy' | 'sell'>('buy');
   const [propType, setPropType] = useState<'villa' | 'apartment' | 'all'>(
     'all',
   );
+  const [pageIndex, setPageIndex] = useState(1);
+  const [properties, setProperties] = useState<Property[]>([]);
 
   const [parameters, setParameters] = useState<FeaturedParameters>({
     propType: 'all',
-    action: 'buy',
+    // action: 'buy',
   });
   const fetchUrl =
     parameters.propType === 'all'
-      ? `${apiUrl}/api/get-featured-properties`
-      : `${apiUrl}/api/get-featured-properties?property_type=${parameters.propType}&availablefor=${parameters.action}`;
+      ? `${apiUrl}/api/get-featured-properties?page=${pageIndex}`
+      : `${apiUrl}/api/get-featured-properties?property_type=${parameters.propType}?page=${pageIndex}`;
+
+  // : `${apiUrl}/api/get-featured-properties?property_type=${parameters.propType}&availablefor=${parameters.action}`;
 
   const {
     data: featuredData,
     error: featuredPropertiesError,
     isLoading: featuredPropertiesisLoading,
-  } = useSWR<Property[]>(fetchUrl, fetcher);
+  } = useSWR<FeaturedProperty>(fetchUrl, fetcher);
 
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
+  // useEffect(() => {
+  //   setParameters({ action, propType });
+  // }, [action, propType, setParameters]);
+
   useEffect(() => {
-    setParameters({ action, propType });
-  }, [action, propType, setParameters]);
+    setProperties([]);
+    setPageIndex(1);
+    setParameters({ propType });
+  }, [propType, setParameters]);
+
+  useEffect(() => {
+    if (featuredData?.data && featuredData?.data?.length > 0) {
+      setProperties((preProperties) => [
+        ...preProperties,
+        ...featuredData?.data!,
+      ]);
+    }
+  }, [featuredData]);
 
   useLayoutEffect(() => {
     const handleResize = () => setIsLargeScreen(window.innerWidth >= 640);
@@ -116,7 +135,7 @@ export const FeaturedProperties = () => {
                 Apartments
               </div>
             </div>
-            <div className="helveticaNeue flex w-full text-center text-[18px] font-[500]">
+            {/* <div className="helveticaNeue flex w-full text-center text-[18px] font-[500]">
               <div
                 className={`min-w-[100px] flex-1 pb-[8px] sm:min-w-[132px] ${s.prop} ${s.hoverable} ${action === 'rent' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] ${s.hoverable}`}
                 onClick={() => setAction('rent')}
@@ -135,7 +154,7 @@ export const FeaturedProperties = () => {
               >
                 Sell
               </div>
-            </div>
+            </div> */}
           </>
         )}
       </div>
@@ -154,16 +173,16 @@ export const FeaturedProperties = () => {
       )}
 
       {!featuredPropertiesisLoading &&
-        Array.isArray(featuredData) &&
-        featuredData.length <= 0 && (
+        Array.isArray(properties) &&
+        properties.length <= 0 && (
           <div className="mb-[20px] mt-[20px] w-full text-center md:mt-[43px]">
             No data available for the selected filter
           </div>
         )}
 
       <div className="featured-properties_grid flex">
-        {Array.isArray(featuredData) &&
-          featuredData.slice(0, 3).map((p: Property) => (
+        {Array.isArray(properties) &&
+          properties.slice(0, 3).map((p: Property) => (
             <Fragment key={p.id}>
               <PropertyCard
                 id={p.id}
@@ -209,6 +228,9 @@ export const FeaturedProperties = () => {
           type="submit"
           className="mx-auto mt-[39px] block rounded-3xl border border-solid border-[#EDDFD0] px-[50px] py-[15px] text-sm transition
                         duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
+          onClick={() => {
+            setPageIndex((prevIndex) => prevIndex + 1);
+          }}
         >
           Load More
         </button>

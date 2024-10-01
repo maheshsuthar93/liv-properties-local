@@ -50,7 +50,21 @@ export interface UpcomingProperties {
   to: number;
   total: number;
 }
-
+export interface FeaturedProperty {
+  current_page: number;
+  data: Property[];
+  first_page_url: string;
+  from: number;
+  last_page: number;
+  last_page_url: string;
+  links: Array<{ url: string | null; label: string; active: boolean }>;
+  next_page_url: string | null;
+  path: string;
+  per_page: number;
+  prev_page_url: string | null;
+  to: number;
+  total: number;
+}
 export interface ReadyProperties {
   current_page: number;
   data: Property[];
@@ -74,7 +88,7 @@ export interface FeaturedProperties {
 
 export interface FeaturedParameters {
   propType: 'villa' | 'apartment' | 'all';
-  action: 'rent' | 'buy' | 'sell';
+  // action: 'rent' | 'buy' | 'sell';
 }
 
 export interface SearchParameters {

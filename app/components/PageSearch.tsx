@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import s from '@/app/ui/main.module.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { useAPI } from '@/app/context/APIContext';
 import { Select } from '@/app/components';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -58,6 +58,7 @@ export const PageSearch = ({ type = 'ready' }) => {
   const [projectStatus, setProjectStatus] = useState<ProjectStatusType>(
     type as ProjectStatusType,
   );
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   //const [hometype, setHometype] = useState<HomeTypeOption>('Home Type');
   const [selectedOption, setSelectedOption] =
@@ -152,9 +153,15 @@ export const PageSearch = ({ type = 'ready' }) => {
     textSearch,
     projectStatus,
   ]);
+  useLayoutEffect(() => {
+    const handleResize = () => setIsLargeScreen(window.innerWidth >= 640);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   if (projectStatus === 'ready')
-    return (
+    return isLargeScreen ? (
       <div className="text-[12px]">
         <div className="flex flex-col items-center gap-4 text-[20px] font-[500] sm:flex-row sm:flex-wrap small:text-[16px] ">
           <Select
@@ -162,7 +169,7 @@ export const PageSearch = ({ type = 'ready' }) => {
             //onChange={handleStatusChange}
 
             onChange={(v) => setProjectStatus(v as ProjectStatusType)}
-            className={`page-search  mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[80px]`}
+            className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
             //className={`custom-select relative  flex max-w-[calc(40%-11px)]  cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-sm text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[70px] small:max-w-[auto]`}
             options={[
               {
@@ -280,7 +287,7 @@ export const PageSearch = ({ type = 'ready' }) => {
             //onChange={handleStatusChange}
 
             onChange={(v) => setPropertyType(v as PropertyType)}
-            className={`page-search  mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[75px] small:min-w-[80px]`}
+            className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
             //className={`custom-select relative  flex max-w-[calc(40%-11px)]  cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-sm text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[70px] small:max-w-[auto]`}
             options={[
               {
@@ -368,6 +375,383 @@ export const PageSearch = ({ type = 'ready' }) => {
               {!pr ? 'Price Range' : pr}
             </button>
           </div>
+          {/* <div className={`${s.line}`} /> */}
+          {/* <Select
+          options={[
+            {
+              value: 'Bedroom',
+              label: 'Bedroom',
+            },
+            {
+              value: 'studio',
+              label: 'Studio',
+            },
+            {
+              value: '1',
+              label: '1',
+            },
+            {
+              value: '2',
+              label: '2',
+            },
+            {
+              value: '3',
+              label: '3',
+            },
+            {
+              value: '4',
+              label: '4',
+            },
+            {
+              value: '5',
+              label: '5',
+            },
+            {
+              value: '6',
+              label: '6',
+            },
+            {
+              value: '7',
+              label: '7',
+            },
+            {
+              value: '7+',
+              label: '7+',
+            },
+          ]}
+          value={bedroom}
+          className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
+          onChange={(b) => setBedroom(b as BedroomOption)}
+        />
+        <div className={`${s.line}`} /> */}
+          {/* <Select
+            options={[
+              {
+                value: 'Bathroom',
+                label: 'Bathroom',
+              },
+              {
+                value: '1',
+                label: '1',
+              },
+              {
+                value: '2',
+                label: '2',
+              },
+              {
+                value: '3',
+                label: '3',
+              },
+              {
+                value: '4',
+                label: '4',
+              },
+              {
+                value: '5',
+                label: '5',
+              },
+              {
+                value: '6',
+                label: '6',
+              },
+              {
+                value: '7',
+                label: '7',
+              },
+              {
+                value: '7+',
+                label: '7+',
+              },
+            ]}
+            value={bathroom}
+            className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
+            onChange={(bt) => setBathroom(bt as BathroomOption)}
+          />
+          <div className={`${s.line}`} /> */}
+          {/* <Select
+            options={[
+              {
+                value: 'Home Type',
+                label: 'Home Type',
+              },
+              {
+                value: 'Villa',
+                label: 'Villa',
+              },
+              {
+                value: 'Apartment',
+                label: 'Apartment',
+              },
+              {
+                value: 'Pentouse',
+                label: 'Pentouse',
+              },
+              {
+                value: 'Townhouse',
+                label: 'Townhouse',
+              },
+              {
+                value: 'Duplex',
+                label: 'Duplex',
+              },
+            ]}
+            value={hometype}
+            className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
+            onChange={(v) => setHometype(v as HomeTypeOption)}
+          /> */}
+          {/* <Select
+                        options={[
+                            {
+                                value: 'Price low to high',
+                                label: 'Price low to high'
+                            },
+                            {
+                                value: 'Price hig to low',
+                                label: 'Price high to low'
+                            }
+                        ]}
+                        value={selectedOption}
+                        className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
+                        onChange={(v) => setSelectedOption(v as SelectedOption)}
+                    /> */}
+        </div>
+        {/* <div className={`${s.line}`} />
+        <div className="mt-[17px] flex flex-row flex-wrap text-center lg:flex-nowrap">
+          <div
+            className={`max-[639px]:flex-1 min-w-[50%] py-3 lg:min-w-[160px] ${projType === 'rent' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] ${s.hoverable} cursor-pointer`}
+            onClick={() => setProjType('rent')}
+          >
+            Rent
+          </div>
+          <div
+            className={`max-[639px]:flex-1 min-w-[50%] py-3 lg:min-w-[160px] ${projType === 'buy' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] ${s.hoverable} cursor-pointer`}
+            onClick={() => setProjType('buy')}
+          >
+            Buy
+          </div>
+          {location && (
+            <button
+              className="mt-[30px] flex w-[180px] flex-row items-center justify-between gap-[7px] rounded-3xl border border-solid border-[#EDDFD0] px-[16px] py-3 pl-[13px]
+                            text-xs transition duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black sm:w-auto sm:min-w-[150px] lg:ml-[30px] lg:mt-0"
+              onClick={handleLocation}
+            >
+              <div>{location}</div>
+              <span>X</span>
+            </button>
+          )}
+        </div> */}
+      </div>
+    ) : (
+      <div className="text-[12px]">
+        <div className="mt-[15px] flex flex-col px-[3vw] text-sm ">
+          <Select
+            value={projectStatus}
+            //onChange={handleStatusChange}
+
+            onChange={(v) => setProjectStatus(v as ProjectStatusType)}
+            className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
+            options={[
+              {
+                value: 'status',
+                label: 'Status',
+              },
+              {
+                value: 'ready',
+                label: 'Ready',
+              },
+              {
+                value: 'upcoming',
+                label: 'New',
+              },
+            ]}
+          >
+            {/* <option className="border-[#eddfd0]" value="">
+              Status
+            </option>
+            <option className="border-[#eddfd0]" value="ready">
+              Ready
+            </option>
+            <option className="border-[#eddfd0]" value="upcoming">
+              New
+            </option> */}
+          </Select>
+          <div
+            className={` ${s.hoverable} max-w-[25%-11px] small:min-w-[80px] small:max-w-[auto]`}
+          >
+            {/* <input
+            type="text"
+            name="textSearch"
+            id="textSearch_input"
+            value={emirate}
+            onChange={(e) => setEmirate(e.target.value)}
+            className={`block 
+                            h-full 
+                             border-0 
+                            bg-transparent 
+                            py-1.5 text-center
+                    text-[100%] 
+                    placeholder-[#eddfd0] ring-0 ring-inset ring-transparent transition duration-200 ease-in-out
+                    hover:ring-[#EDDFD0]/50 focus:ring-0 focus:ring-inset 
+                     focus:ring-[#EDDFD0] 
+                     sm:leading-6 small:min-w-[70px]`}
+            placeholder="Emirate"
+          /> */}
+            <input
+              type="text"
+              name="textSearch"
+              id="textSearch_input"
+              value={emirate}
+              onChange={(e) => setEmirate(e.target.value)}
+              className={`block w-full 
+                border-0 border-b-[1px] border-[#eddfd0] border-opacity-60
+                bg-transparent
+                px-0 pb-[15px] pt-[24px]  
+        text-sm 
+        placeholder-[#eddfd0] ring-0 ring-inset ring-transparent transition duration-200 ease-in-out
+        hover:ring-[#EDDFD0]/50 focus:border-0 focus:border-b-[1px] focus:border-[#eddfd0] focus:outline-none focus:ring-0 focus:ring-inset 
+        focus:ring-[#EDDFD0] 
+        sm:leading-6`}
+              placeholder="Emirate"
+            />
+          </div>
+
+          <input
+            type="text"
+            name="location"
+            id="location_input"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            className={`block w-full 
+                border-0 border-b-[1px] border-[#eddfd0] border-opacity-60
+                bg-transparent
+                px-0 pb-[15px] pt-[24px]  
+        text-sm 
+        placeholder-[#eddfd0] ring-0 ring-inset ring-transparent transition duration-200 ease-in-out
+        hover:ring-[#EDDFD0]/50 focus:border-0 focus:border-b-[1px] focus:border-[#eddfd0] focus:outline-none focus:ring-0 focus:ring-inset 
+        focus:ring-[#EDDFD0] 
+        sm:leading-6`}
+            placeholder="Location"
+          />
+
+          {/* <input
+            type="text"
+            name="textSearch"
+            id="textSearch_input"
+            value={textSearch}
+            onChange={(e) => setTextSearch(e.target.value)}
+            className={`block 
+                            h-full 
+                             border-0 
+                            bg-transparent 
+                            py-1.5 text-center
+                    text-[100%] 
+                    placeholder-[#eddfd0] ring-0 ring-inset ring-transparent transition duration-200 ease-in-out
+                    hover:ring-[#EDDFD0]/50 focus:ring-0 focus:ring-inset 
+                     focus:ring-[#EDDFD0] 
+                     sm:leading-6 small:min-w-[150px]`}
+            placeholder="Community"
+          /> */}
+
+          <input
+            type="text"
+            name="textSearch"
+            id="textSearch_input"
+            value={textSearch}
+            onChange={(e) => setTextSearch(e.target.value)}
+            className={`block w-full 
+                border-0 border-b-[1px] border-[#eddfd0] border-opacity-60
+                bg-transparent
+                px-0 pb-[15px] pt-[24px]  
+        text-sm 
+        placeholder-[#eddfd0] ring-0 ring-inset ring-transparent transition duration-200 ease-in-out
+        hover:ring-[#EDDFD0]/50 focus:border-0 focus:border-b-[1px] focus:border-[#eddfd0] focus:outline-none focus:ring-0 focus:ring-inset 
+        focus:ring-[#EDDFD0] 
+        sm:leading-6`}
+            placeholder="Community"
+          />
+          <Select
+            value={propertyType}
+            //onChange={handleStatusChange}
+
+            onChange={(v) => setPropertyType(v as PropertyType)}
+            className={`page-search ${s.propFilter} mt-[-12px] min-w-[calc(33.333%-0.5rem)] sm:mt-0 lg:min-w-[150px]`}
+            options={[
+              {
+                value: 'propertyType',
+                label: 'Property Type',
+              },
+              {
+                value: 'villa',
+                label: 'Villa',
+              },
+              {
+                value: 'apartment',
+                label: 'Apartment',
+              },
+              {
+                value: 'pentouse',
+                label: 'Pentouse',
+              },
+              {
+                value: 'townhouse',
+                label: 'Townhouse',
+              },
+              {
+                value: 'duplex',
+                label: 'Duplex',
+              },
+            ]}
+          >
+            {/* <option className="border-[#eddfd0]" value="">
+              Status
+            </option>
+            <option className="border-[#eddfd0]" value="ready">
+              Ready
+            </option>
+            <option className="border-[#eddfd0]" value="upcoming">
+              New
+            </option> */}
+          </Select>
+
+          {visibleNoOfBedrooms && (
+            <PriceRange
+              setPr={setBedroomRange}
+              pr={bedroomRange}
+              rangeType="other"
+              maxPlaceholder={'Max bedrooms'}
+              minPlaceholder={'Min bedrooms'}
+              setVisible={setVisibleNoOfBedrooms}
+              keyPrefix="home"
+              className="absolute bottom-[calc(100%-30px)] left-[-40%] z-[10] sm:bottom-[calc(100%+20px)] md:left-[-50%] msmall:left-[unset] msmall:right-[-20px] small:left-[-50%] small:right-[unset]"
+            />
+          )}
+          <button
+            className="w-full border-b border-solid border-[#eddfd0] border-opacity-60 pb-[15px] pt-[24px] text-left"
+            onClick={handleBedroomsClick}
+          >
+            {!bedroomRange ? 'Bedrooms' : bedroomRange}
+          </button>
+
+          {visible && (
+            <PriceRange
+              setPr={setPr}
+              pr={pr}
+              setVisible={setVisible}
+              keyPrefix="page"
+              rangeType="price"
+              minPlaceholder={undefined}
+              maxPlaceholder={undefined}
+              className="absolute bottom-[calc(100%-30px)] z-[10] sm:bottom-[calc(100%-10px)] sm:left-[-50%]"
+            />
+          )}
+          <button
+            className="mt-[30px] flex w-full flex-row items-center justify-start px-[16px]
+                            py-3 pl-[13px]  transition duration-200 ease-in-out sm:mt-0 sm:min-w-[75px] sm:justify-center lg:w-auto"
+            onClick={handlePriceClick}
+          >
+            {!pr ? 'Price Range' : pr}
+          </button>
+
           {/* <div className={`${s.line}`} /> */}
           {/* <Select
           options={[
