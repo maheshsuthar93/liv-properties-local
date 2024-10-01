@@ -74,7 +74,7 @@ export interface FeaturedProperties {
 
 export interface FeaturedParameters {
   propType: 'villa' | 'apartment' | 'all';
-  action: 'rent' | 'buy' | 'sell';
+  // action: 'rent' | 'buy' | 'sell';
 }
 
 export interface SearchParameters {

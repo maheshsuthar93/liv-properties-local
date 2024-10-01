@@ -12,19 +12,21 @@ import { apiUrl, fetcher } from '../constants';
 import useSWR from 'swr';
 
 export const FeaturedProperties = () => {
-  const [action, setAction] = useState<'rent' | 'buy' | 'sell'>('buy');
+  // const [action, setAction] = useState<'rent' | 'buy' | 'sell'>('buy');
   const [propType, setPropType] = useState<'villa' | 'apartment' | 'all'>(
     'all',
   );
 
   const [parameters, setParameters] = useState<FeaturedParameters>({
     propType: 'all',
-    action: 'buy',
+    // action: 'buy',
   });
   const fetchUrl =
     parameters.propType === 'all'
       ? `${apiUrl}/api/get-featured-properties`
-      : `${apiUrl}/api/get-featured-properties?property_type=${parameters.propType}&availablefor=${parameters.action}`;
+      : `${apiUrl}/api/get-featured-properties?property_type=${parameters.propType}`;
+
+  // : `${apiUrl}/api/get-featured-properties?property_type=${parameters.propType}&availablefor=${parameters.action}`;
 
   const {
     data: featuredData,
@@ -34,9 +36,13 @@ export const FeaturedProperties = () => {
 
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
+  // useEffect(() => {
+  //   setParameters({ action, propType });
+  // }, [action, propType, setParameters]);
+
   useEffect(() => {
-    setParameters({ action, propType });
-  }, [action, propType, setParameters]);
+    setParameters({ propType });
+  }, [propType, setParameters]);
 
   useLayoutEffect(() => {
     const handleResize = () => setIsLargeScreen(window.innerWidth >= 640);
@@ -116,7 +122,7 @@ export const FeaturedProperties = () => {
                 Apartments
               </div>
             </div>
-            <div className="helveticaNeue flex w-full text-center text-[18px] font-[500]">
+            {/* <div className="helveticaNeue flex w-full text-center text-[18px] font-[500]">
               <div
                 className={`min-w-[100px] flex-1 pb-[8px] sm:min-w-[132px] ${s.prop} ${s.hoverable} ${action === 'rent' ? 'border-b-[3px]' : 'border-b'} border-solid border-[#eddfd0] ${s.hoverable}`}
                 onClick={() => setAction('rent')}
@@ -135,7 +141,7 @@ export const FeaturedProperties = () => {
               >
                 Sell
               </div>
-            </div>
+            </div> */}
           </>
         )}
       </div>
