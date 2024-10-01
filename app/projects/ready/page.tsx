@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 export default async function ReadyProjectsPage() {
   return (
-    <div className="mb-[30px] mt-[200px] w-full sm:mb-[60px] small:mb-[83px] 3xl:max-w-[1200px]">
+    <div className="mb-[30px] mt-[50px] w-full sm:mb-[60px] small:mb-[83px] 3xl:max-w-[1200px]">
       {/* <div className="flex flex-wrap gap-8">
         <div className="text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px]">
           <h1 className="relative z-[1] inline-block max-w-[220px] capitalize small:max-w-[270px]">
@@ -29,6 +29,20 @@ export default async function ReadyProjectsPage() {
           />
         </div>
       </div> */}
+      <div className="flex flex-row items-center text-[30px] font-[700] leading-[38px] small:text-[45px] small:leading-[60px] ">
+        <div className="absolute z-[1] ">
+          <h1 className="inline-block capitalize ">
+            Luxury Properties for Sale
+          </h1>
+        </div>
+        <Image
+          src="/images/organic-house.webp"
+          alt="Home and a car"
+          className="max-[1366px]:w-[90dvw] w-[100dvw] 4xlh:w-[100dvw] 4xlh:origin-bottom-right 4xlh:scale-[1.5]"
+          width={1100}
+          height={885}
+        />
+      </div>
       <Providers>
         <div className="gradient-from bg-gradient-to-r  small:p-[20px]">
           <div className=" max-[639px]:mx-[3vw] max-[639px]:w-full max-[639px]:text-center  gotham mb-[10px] flex px-[3vw] text-[35px] font-[700] leading-[398px] sm:px-0 sm:text-[35px] sm:leading-[42.3px] ">

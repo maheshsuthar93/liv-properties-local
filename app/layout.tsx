@@ -22,9 +22,10 @@ export default function RootLayout({
       <body>
         <div className="helveticaNeue relative overflow-hidden bg-[#827161] bg-[url(/images/bg.jpg)] bg-contain bg-repeat font-[200] text-[#eddfd0]">
           <div className="absolute mx-auto flex  w-full flex-row justify-center">
-            <div className="absolute mx-auto w-full 3xl:max-w-[1200px] ">
+            {/* <div className="absolute mx-auto w-full 3xl:max-w-[1200px] ">
               <Header />
-            </div>
+            </div> */}
+            <Header />
           </div>
 
           {/* <Image
@@ -36,9 +37,9 @@ export default function RootLayout({
                     /> */}
           <main>
             <div className="flex flex-col items-center px-[3vw] sm:px-[85px]">
-              <div className="mx-auto w-full 3xl:max-w-[1200px]">
+              {/* <div className="mx-auto w-full 3xl:max-w-[1200px]">
                 <Header />
-              </div>
+              </div> */}
               <SmoothScrolling>{children}</SmoothScrolling>
             </div>
           </main>

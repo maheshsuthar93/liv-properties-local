@@ -103,13 +103,11 @@ export const Header = () => {
   return isLargeScreen ? (
     <div
       ref={stickyHeaderRef}
-      className={`] fixed top-0 z-[99] mb-[50px] flex h-auto  w-full pt-[${!isVisible ? '0x' : '30px'}] sm:mb-0 lg:flex-row lg:pt-[${!isVisible ? '0px' : '60px'}]  `}
+      className={`] fixed top-0 z-[99] mb-[50px] flex h-auto w-full flex-row  justify-center pt-[${!isVisible ? '0x gradient-from2 bg-gradient-to-r  ' : '30px'}] sm:mb-0 lg:flex-row lg:pt-[${!isVisible ? '0px' : '60px'}]  `}
 
-    //      className={`${isRouteActive('/', path) ? 'fixed h-auto ' : 'sticky h-[180px] '}w-full ] top-0 z-[99] mb-[50px]  flex pt-[30px] sm:mb-0 lg:flex-row lg:pt-[60px]`}
+      //      className={`${isRouteActive('/', path) ? 'fixed h-auto ' : 'sticky h-[180px] '}w-full ] top-0 z-[99] mb-[50px]  flex pt-[30px] sm:mb-0 lg:flex-row lg:pt-[60px]`}
     >
-      <div
-        className={`flex lg:flex-row ${!isVisible ? 'gradient-from2 bg-gradient-to-r  px-[10px] py-[px]' : ''}  w-[1200px]`}
-      >
+      <div className={`} flex w-full py-[10px] lg:flex-row 3xl:max-w-[1200px]`}>
         <Link href="/" className="w-fit">
           <Image
             src="/logos/logo.svg"
@@ -120,7 +118,7 @@ export const Header = () => {
             priority={true}
           />
         </Link>
-        <nav className="z-50 mx-[-1rem] ml-[20px] mt-[21px] flex flex-wrap gap-[1px] text-[16px] font-[500] helveticaNeue leading-[19.54px]">
+        <nav className="helveticaNeue z-50 mx-[-1rem] ml-[20px] mt-[21px] flex flex-wrap gap-[1px] text-[16px] font-[500] leading-[19.54px]">
           {routes.map((route) => (
             <Link key={route} href={route + '/'}>
               <div
@@ -258,7 +256,7 @@ const Header2 = () => {
         className="ml-[-4px]"
         priority={true}
       />
-      <nav className="mt-[57px] flex gap-[38px] text-[16px] font-[500] helveticaNeue leading-[19.54px]">
+      <nav className="helveticaNeue mt-[57px] flex gap-[38px] text-[16px] font-[500] leading-[19.54px]">
         <div className={styles.navActive}>Home</div>
         <div>About</div>
         <div>Properties</div>

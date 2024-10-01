@@ -705,9 +705,10 @@ input.autofill-input:-webkit-autofill:focus {
 }
 
 .gradient-from2 {
-  --tw-gradient-from: rgba(0, 0, 0, 0.35) var(--tw-gradient-from-position);
+  /* --tw-gradient-from: rgba(0, 0, 0, 0.35) var(--tw-gradient-from-position);
   --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); */
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
 .gradient-from {
