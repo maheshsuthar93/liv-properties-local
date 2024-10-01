@@ -107,30 +107,30 @@ export const Header = () => {
 
       //      className={`${isRouteActive('/', path) ? 'fixed h-auto ' : 'sticky h-[180px] '}w-full ] top-0 z-[99] mb-[50px]  flex pt-[30px] sm:mb-0 lg:flex-row lg:pt-[60px]`}
     >
-      <div
-        className={`} flex w-full px-[3vw] py-[10px] sm:px-[85px] lg:flex-row 3xl:max-w-[1200px]`}
-      >
-        <Link href="/" className="w-fit">
-          <Image
-            src="/logos/logo.svg"
-            alt="LIV Squared Properties logo"
-            width={95}
-            height={87}
-            className="ml-[-4px] h-auto w-auto"
-            priority={true}
-          />
-        </Link>
-        <nav className="helveticaNeue z-50 mx-[-1rem] ml-[20px] mt-[21px] flex flex-wrap gap-[1px] text-[16px] font-[500] leading-[19.54px]">
-          {routes.map((route) => (
-            <Link key={route} href={route + '/'}>
-              <div
-                className={`${isRouteActive(route, path) ? s.navActive : ''} ${sMain.headerNav} cursor-pointer rounded-xl px-4 py-2`}
-              >
-                <span>{routeNameMapping[route]}</span>
-              </div>
-            </Link>
-          ))}
-        </nav>
+      <div className="w-full 3xl:max-w-[1200px]">
+        <div className={` flex  py-[10px] lg:flex-row `}>
+          <Link href="/" className="w-fit">
+            <Image
+              src="/logos/logo.svg"
+              alt="LIV Squared Properties logo"
+              width={95}
+              height={87}
+              className="ml-[-4px] h-auto w-auto"
+              priority={true}
+            />
+          </Link>
+          <nav className="helveticaNeue z-50 mx-[-1rem] ml-[20px] mt-[21px] flex flex-wrap gap-[1px] text-[16px] font-[500] leading-[19.54px]">
+            {routes.map((route) => (
+              <Link key={route} href={route + '/'}>
+                <div
+                  className={`${isRouteActive(route, path) ? s.navActive : ''} ${sMain.headerNav} cursor-pointer rounded-xl px-4 py-2`}
+                >
+                  <span>{routeNameMapping[route]}</span>
+                </div>
+              </Link>
+            ))}
+          </nav>
+        </div>
       </div>
     </div>
   ) : (
