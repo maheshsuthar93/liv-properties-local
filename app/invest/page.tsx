@@ -62,7 +62,7 @@ export default async function InvestPage() {
         }}
       ></div>
       <div className="mt-[72px]">
-        <div className="gotham text-[44px] font-[700] leading-[42px] sm:text-[50px] sm:leading-[47px]">
+        <div className="gotham text-[30px] font-[700] leading-[42px] sm:text-[30px] sm:leading-[47px]">
           <div className="inline-block max-w-[220px] capitalize small:max-w-[270px]">
             {investment?.['investment-section-1'][3].field_value ?? ''}
           </div>

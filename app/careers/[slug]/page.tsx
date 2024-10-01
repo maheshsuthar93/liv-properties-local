@@ -110,7 +110,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
         </Link>
       </div>
       <div
-        className="gotham mt-[30px] w-full text-[44px] font-[700] leading-[39px] sm:text-[50px] sm:leading-[47px]"
+        className="gotham mt-[30px] w-full text-[30px] font-[700] leading-[39px] sm:text-[30px] sm:leading-[47px]"
         id="apply-now"
       >
         <h2>

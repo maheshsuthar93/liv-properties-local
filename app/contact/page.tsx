@@ -174,7 +174,7 @@ export default async function Contact() {
           />
         </div>
       </div>
-      <div className="text-[30px] font-[700] leading-[38px] small:text-[50px] small:leading-[88px]">
+      <div className="gotham text-[30px] font-[700] leading-[38px] small:text-[30px] small:leading-[88px]">
         <h2>
           {getFieldValueByName(
             contactUs?.['contact-us-section-1'],

@@ -288,7 +288,7 @@ export default async function SellPage() {
         </div>
       </div>
       <div className="mt-[72px]">
-        <div className="gotham text-[35px] font-[700] leading-[42.3px] small:text-[35px] small:leading-[88px]">
+        <div className="gotham text-[30px] font-[700] leading-[42.3px] small:text-[30px] small:leading-[88px]">
           Request a Market Appraisal
         </div>
         <EnquireForm />
