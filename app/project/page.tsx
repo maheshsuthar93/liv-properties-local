@@ -99,7 +99,8 @@ function ProjectComponent() {
   }
   const maxVisibleImages = 3;
 
-  const services = property[0].services ? JSON.parse(property[0].services) : [];
+  //const services = property[0].services ? JSON.parse(property[0].services) : [];
+  const services = property[0].services ? property[0].services.split(',') : [];
 
   const handlePopup = () => {
     setViewGallery((prevCheck) => !prevCheck);
@@ -298,7 +299,7 @@ function ProjectComponent() {
         </div>
       </div>
       <div className="flex w-full flex-wrap items-center  border-b border-solid border-[#EDDFD0] border-opacity-50 py-[20px]">
-        <AgentContact propert={property[0]} />
+        <AgentContact property={property[0]} />
       </div>
       <div className="flex w-full flex-wrap items-center  border-b border-solid border-[#EDDFD0] border-opacity-50 ">
         <div className="flex w-[100%] flex-wrap  gap-[18px] md:w-[auto] md:w-[calc(50%)] msm:w-[calc(57%-5px)]">
