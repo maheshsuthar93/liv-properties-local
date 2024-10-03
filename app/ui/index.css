@@ -695,7 +695,12 @@ input.autofill-input:-webkit-autofill:focus {
     }
   }
 }
-
+@media (min-width: 640px) {
+  .modal {
+    max-width: 52rem;
+    max-height: 35rem;
+  }
+}
 .description {
   width: 100%;
   overflow: hidden;

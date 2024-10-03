@@ -17,19 +17,19 @@ interface InfoModalProps {
 export default function InfoModal(props: InfoModalProps) {
   const { title, description, visible, setVisible } = props;
   return (
-    <Dialog open={visible} onClose={setVisible} className="relative z-10">
+    <Dialog open={visible} onClose={setVisible} className=" relative z-10">
       <DialogBackdrop
         transition
         className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
       />
 
-      <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+      <div className="fixed inset-0 z-10 w-screen overflow-y-auto ">
         <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0 ">
           <DialogPanel
             transition
-            className="gotham relative transform overflow-hidden rounded-lg bg-white shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
+            className="modal gotham relative transform overflow-hidden rounded-lg bg-white shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
           >
-            <div className="info-modal bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+            <div className="info-modal bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 ">
               <div style={{ textAlign: 'end' }}>
                 <button type="button" onClick={() => setVisible(false)}>
                   <XMarkIcon
@@ -39,7 +39,7 @@ export default function InfoModal(props: InfoModalProps) {
                 </button>
               </div>
 
-              <div className="sm:flex sm:items-start">
+              <div className="overflow-auto sm:flex sm:items-start">
                 <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-start">
                   {/* <DialogTitle
                     as="h3"
@@ -54,6 +54,7 @@ export default function InfoModal(props: InfoModalProps) {
                     </p>
                     <div style={{ marginTop: '10px' }} />
                     <p className="modal-desc helveticaNeue text-[16px] font-[400] leading-[32.4px]">
+                      {description}
                       {description}
                     </p>
                   </div>
