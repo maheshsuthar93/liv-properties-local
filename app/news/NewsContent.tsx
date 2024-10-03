@@ -9,27 +9,30 @@ import NewsCard from '../components/NewsCard';
 import { Loading } from '../components';
 
 export const NewsContent = () => {
-    const [newsData, setNewsData] = useState<NewsResponse | null>(null);
+  const [newsData, setNewsData] = useState<NewsResponse | null>(null);
 
-    useEffect(() => {
-        fetchGeneral('news').then((data) => setNewsData(data));
-    }, []);
+  useEffect(() => {
+    fetchGeneral('news').then((data) => setNewsData(data));
+  }, []);
 
-    const latestNews: NewsItem | null =
-        newsData && newsData.data.length > 0 ? newsData.data[0] : null;
+  // const latestNews: NewsItem | null =
+  //     newsData && newsData.data.length > 0 ? newsData.data[0] : null;
 
-    const otherNews: NewsItem[] =
-        newsData && newsData.data.length > 1 ? newsData.data.slice(1) : [];
+  // const otherNews: NewsItem[] =
+  //     newsData && newsData.data.length > 1 ? newsData.data.slice(1) : [];
 
-    if (latestNews === null || latestNews === undefined) {
-        return <Loading />;
-    }
-    if (!latestNews) {
-        return <div>No news available</div>;
-    } else {
-        return (
-            <Fragment>
-                <Link
+  const otherNews: NewsItem[] =
+    newsData && newsData.data.length > 1 ? newsData.data : [];
+
+  if (otherNews === null || otherNews === undefined) {
+    return <Loading />;
+  }
+  if (otherNews.length == 0) {
+    return <div>No news available</div>;
+  } else {
+    return (
+      <Fragment>
+        {/* <Link
                     href={`/news/${createSlug(latestNews.heading)}`}
                     className='relative mt-[50px] block h-[380px] w-full lg:h-[480px]'
                 >
@@ -57,13 +60,19 @@ export const NewsContent = () => {
                     dangerouslySetInnerHTML={{
                         __html: latestNews.description
                     }}
-                ></div>
-                <div className='mt-[8px] flex flex-wrap border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[34px] md:mt-[0px] xl:flex-nowrap'>
-                    {otherNews.slice(0, 4).map((newsItem) => (
-                        <NewsCard key={newsItem.id} newsItem={newsItem} />
-                    ))}
-                </div>
-            </Fragment>
-        );
-    }
+                ></div> */}
+        {/* <div className="mt-[8px] flex flex-wrap border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[34px] md:mt-[0px] xl:flex-nowrap">
+          {otherNews.slice(0, 4).map((newsItem) => (
+            <NewsCard key={newsItem.id} newsItem={newsItem} />
+          ))}
+        </div> */}
+        <div className="featured-properties_grid mt-[8px] flex border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[34px] md:mt-[0px] xl:flex-nowrap">
+          {otherNews.slice(0, 4).map((newsItem) => (
+            <NewsCard key={newsItem.id} newsItem={newsItem} />
+          ))}
+        </div>
+      </Fragment>
+    );
+  }
 };
+//
