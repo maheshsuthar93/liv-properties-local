@@ -35,7 +35,8 @@ export default async function UpcomingProjectsPage() {
           <h1 className="inline-block capitalize ">Upcoming Projects</h1>
         </div>
         <Image
-          src="/images/organic-house.webp"
+          src="/images/properties.jpg"
+          // src="/images/organic-house.webp"
           alt="Home and a car"
           className="max-[1366px]:w-[90dvw] w-[100dvw] 4xlh:w-[100dvw] 4xlh:origin-bottom-right 4xlh:scale-[1.5]"
           width={1100}
