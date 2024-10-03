@@ -50,7 +50,7 @@ export default function NewsDetailPage({ params }: NewsPageProps) {
   return (
     <div className="mb-[30px] mt-[200px] w-full sm:mb-[60px] xl:mb-[70px] 3xl:max-w-[1200px]">
       <div className="gotham text-[40px] font-[700] leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
-        <h1>News & Events</h1>
+        <h1>News & Insights</h1>
       </div>
       <Image
         src="/images/news_building.jpg"
