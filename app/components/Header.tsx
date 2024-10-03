@@ -49,16 +49,25 @@ export const Header = () => {
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
+    console.log(`currentScrollY: ${currentScrollY}`);
 
-    if (prevScrollY.current < currentScrollY && currentScrollY > 0) {
+    // if (prevScrollY.current < currentScrollY && currentScrollY > 0) {
+    //   // Scrolling down
+    //   setIsVisible(false);
+    // } else {
+    //   // Scrolling up
+    //   setIsVisible(true);
+    // }
+
+    prevScrollY.current = currentScrollY;
+
+    if (currentScrollY > 0) {
       // Scrolling down
       setIsVisible(false);
     } else {
       // Scrolling up
       setIsVisible(true);
     }
-
-    prevScrollY.current = currentScrollY;
   };
 
   useEffect(() => {
