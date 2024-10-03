@@ -112,7 +112,7 @@ export const Header = () => {
   return isLargeScreen ? (
     <div
       ref={stickyHeaderRef}
-      className={`] fixed top-0 z-[99] mb-[50px] flex h-auto w-full flex-row  justify-center pt-[${!isVisible ? '0x gradient-from2 bg-gradient-to-r  ' : '30px'}] sm:mb-0 lg:flex-row lg:pt-[${!isVisible ? '0px' : '60px'}]  `}
+      className={`] fixed top-0 z-[99] mb-[50px] flex h-auto w-full flex-row  justify-center pt-[${!isVisible ? '0x gradient-from2 bg-gradient-to-r  ' : '30px'}] sm:mb-0 lg:flex-row lg:pt-[${!isVisible ? '0px' : '0px'}]  `}
 
       //      className={`${isRouteActive('/', path) ? 'fixed h-auto ' : 'sticky h-[180px] '}w-full ] top-0 z-[99] mb-[50px]  flex pt-[30px] sm:mb-0 lg:flex-row lg:pt-[60px]`}
     >
