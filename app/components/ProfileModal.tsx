@@ -59,10 +59,10 @@ export default function ProfileModal({
                     <p className="profile-modal-header gotham text-[30px] font-[700] leading-[32.7px] ">
                       {member.heading}
                     </p>
-                    <p className="profile-modal-subheader gothamMedium text-[18px] leading-[19.62px]">
+                    <p className="profile-modal-subheader gotham text-[18px] leading-[19.62px]">
                       {member.subheading}
                     </p>
-                    <p className="profile-modal-desc helveticaNeue text-[16px] font-[400] leading-[32.4px]">
+                    <p className="profile-modal-desc helveticaNeue text-[16px] font-[400] leading-[22.4px]">
                       Contrary to popular belief, Lorem Ipsum is not simply
                       random text. It has roots in a piece of classical Latin
                       literature from 45 BC, making it over 2000 years old.

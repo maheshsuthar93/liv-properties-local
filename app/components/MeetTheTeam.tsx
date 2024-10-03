@@ -54,7 +54,7 @@ export const MeetTheTeam = () => {
                 {member.heading}
               </div>
               <div
-                className="helveticaNeue text-[18px] font-[400] leading-[21.69px]"
+                className="helveticaNeue mt-[10px] text-[18px] font-[400] leading-[21.69px]"
                 onClick={() => {
                   setVisible(true);
                   setTeamMember(member);

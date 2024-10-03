@@ -668,7 +668,7 @@ input.autofill-input:-webkit-autofill:focus {
 
 .profile-modal-subheader {
   color: #938270;
-  font-weight: 700;
+  font-weight: 500;
   text-align: start;
   margin-bottom: 15px;
 }
