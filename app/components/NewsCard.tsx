@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import s from '@/app/ui/main.module.css';
 import { NewsItem } from '@/app/types';
-import { createSlug } from '../constants';
+import { createSlug, formatDate } from '../constants';
 
 interface NewsCardProps {
   newsItem: NewsItem;
@@ -35,7 +35,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ newsItem }) => {
             height={17}
             className="mr-[2px] inline"
           />
-          {newsItem.created_at ?? 'Not specified'}
+          {formatDate(newsItem.created_at)}
         </div>
         <h3 className=" text-[15px] font-[700] leading-normal">
           {newsItem.heading}
