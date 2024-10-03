@@ -627,9 +627,9 @@ input.autofill-input:-webkit-autofill:focus {
   margin-top: 14px;
 }
 
-.news-detail-desc p:last-child {
+/* .news-detail-desc p:last-child {
   @apply border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[15px];
-}
+} */
 
 /* Popup bg colors */
 .bg-white {
