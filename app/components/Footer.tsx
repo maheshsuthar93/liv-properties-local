@@ -91,12 +91,12 @@ export const Footer = async () => {
             >
               Services
             </Link>
-            {/* <Link
-            href="/invest"
-            className={`mt-[6px] block w-fit ${s.hoverable}`}
-          >
-            Investment
-          </Link> */}
+            <Link
+              href="/invest"
+              className={`mt-[6px] block w-fit ${s.hoverable}`}
+            >
+              Investment
+            </Link>
             <Link
               href="/sell"
               className={`mt-[6px] block w-fit ${s.hoverable}`}

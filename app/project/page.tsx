@@ -231,11 +231,11 @@ function ProjectComponent() {
                 maximumFractionDigits: 2,
               })}{' '}
             </div>
-            {<div className={`${s.line2}`} />}
+            {/* {<div className={`${s.line2}`} />}
             <div>
               {property[0].area ?? ''} {','}
               {property[0].emirate ?? ''}
-            </div>
+            </div> */}
           </div>
           <div className="helveticaNeue mt-[15px] flex w-full items-center justify-start gap-[22px] text-[16px] font-[500] leading-[19.54px] sm:w-[50%] xl:w-[auto]">
             <div>
