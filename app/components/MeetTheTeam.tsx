@@ -33,8 +33,6 @@ export const MeetTheTeam = () => {
             <div
               key={member.id}
               onClick={() => {
-                console.log(JSON.stringify(member));
-
                 setVisible(true);
                 setTeamMember(member);
               }}
@@ -46,10 +44,24 @@ export const MeetTheTeam = () => {
                 height={319}
                 className="border border-solid border-[#EDDFD0] border-opacity-50"
               />
-              <div className="mt-[11px] helveticaNeue text-[22px] font-[700] leading-[26.51px]">
+              <div
+                className="helveticaNeue mt-[11px] text-[22px] font-[700] leading-[26.51px]"
+                onClick={() => {
+                  setVisible(true);
+                  setTeamMember(member);
+                }}
+              >
                 {member.heading}
               </div>
-              <div className="helveticaNeue text-[18px] font-[400] leading-[21.69px]">{member.subheading}</div>
+              <div
+                className="helveticaNeue mt-[10px] text-[18px] font-[400] leading-[21.69px]"
+                onClick={() => {
+                  setVisible(true);
+                  setTeamMember(member);
+                }}
+              >
+                {member.subheading}
+              </div>
               <div className="mt-[10px] h-[3px] w-[28px] bg-[#EDDFD0]" />
             </div>
           ))}

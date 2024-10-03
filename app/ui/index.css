@@ -668,7 +668,7 @@ input.autofill-input:-webkit-autofill:focus {
 
 .profile-modal-subheader {
   color: #938270;
-  font-weight: 700;
+  font-weight: 500;
   text-align: start;
   margin-bottom: 15px;
 }
@@ -695,13 +695,19 @@ input.autofill-input:-webkit-autofill:focus {
     }
   }
 }
-
+@media (min-width: 640px) {
+  .modal {
+    max-width: 52rem;
+    max-height: 35rem;
+  }
+}
 .description {
   width: 100%;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 10;
+  line-clamp: 10;
 }
 
 .gradient-from2 {

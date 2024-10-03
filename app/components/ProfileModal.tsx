@@ -32,7 +32,7 @@ export default function ProfileModal({
             transition
             className="gotham relative transform overflow-hidden rounded-lg bg-white shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
           >
-            <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+            <div className="modal bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
               <div style={{ textAlign: 'end' }}>
                 <button type="button" onClick={() => setVisible(false)}>
                   <XMarkIcon
@@ -59,10 +59,10 @@ export default function ProfileModal({
                     <p className="profile-modal-header gotham text-[30px] font-[700] leading-[32.7px] ">
                       {member.heading}
                     </p>
-                    <p className="profile-modal-subheader gothamMedium text-[18px] leading-[19.62px]">
+                    <p className="profile-modal-subheader gotham text-[18px] leading-[19.62px]">
                       {member.subheading}
                     </p>
-                    <p className="profile-modal-desc helveticaNeue text-[16px] font-[400] leading-[32.4px]">
+                    <p className="profile-modal-desc helveticaNeue text-[16px] font-[400] leading-[22.4px]">
                       Contrary to popular belief, Lorem Ipsum is not simply
                       random text. It has roots in a piece of classical Latin
                       literature from 45 BC, making it over 2000 years old.

@@ -95,9 +95,9 @@ export const WhoWeAre = (props: { data: AboutUs }) => {
           </div>
         </div>
       )}
-      {(activeTab === 'mission' || activeTab === 'vision') && (
+      {/* {(activeTab === 'mission' || activeTab === 'vision') && (
         <InvestmentAdvisory data={props.data?.personalisedinvestmentadvisory} />
-      )}
+      )} */}
       {activeTab === 'meet' && (
         <div className="mt-[36px]">
           <div className="text-[20px] font-[700] leading-[38px] small:text-[40px] small:leading-[88px]">

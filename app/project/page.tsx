@@ -223,20 +223,6 @@ function ProjectComponent() {
             )}
             <div>{property[0].availability_date ?? ''}</div>
           </div>
-          <div className="gotham mt-[15px] flex w-full items-center justify-start gap-[10px] text-[28px] font-[700] leading-[30px] sm:w-[50%] sm:text-[30px] sm:leading-[32.7px] xl:w-[auto]">
-            <div>
-              AED{' '}
-              {(property[0].price ?? '').toLocaleString('en-US', {
-                minimumIntegerDigits: 2,
-                maximumFractionDigits: 2,
-              })}{' '}
-            </div>
-            {<div className={`${s.line2}`} />}
-            <div>
-              {property[0].area ?? ''} {','}
-              {property[0].emirate ?? ''}
-            </div>
-          </div>
           <div className="helveticaNeue mt-[15px] flex w-full items-center justify-start gap-[22px] text-[16px] font-[500] leading-[19.54px] sm:w-[50%] xl:w-[auto]">
             <div>
               <Image
@@ -269,6 +255,52 @@ function ProjectComponent() {
               {property[0].area_in_sqft ?? '0'} Sqft
             </div>
           </div>
+          <div className="gotham mt-[15px] flex w-full items-center justify-start gap-[10px] text-[28px] font-[700] leading-[30px] sm:w-[50%] sm:text-[30px] sm:leading-[32.7px] xl:w-[auto]">
+            <div>
+              AED{' '}
+              {(property[0].price ?? '').toLocaleString('en-US', {
+                minimumIntegerDigits: 2,
+                maximumFractionDigits: 2,
+              })}{' '}
+            </div>
+            {/* {<div className={`${s.line2}`} />}
+            <div>
+              {property[0].area ?? ''} {','}
+              {property[0].emirate ?? ''}
+            </div> */}
+          </div>
+          {/* <div className="helveticaNeue mt-[15px] flex w-full items-center justify-start gap-[22px] text-[16px] font-[500] leading-[19.54px] sm:w-[50%] xl:w-[auto]">
+            <div>
+              <Image
+                src="/icons/bed.svg"
+                alt="Bed icon"
+                width={17}
+                height={17}
+                className="mr-[2px] inline"
+              />
+              {property[0].number_of_bedroom ?? 0}
+            </div>
+            <div>
+              <Image
+                src="/icons/bathtub.svg"
+                alt="Bed icon"
+                width={17}
+                height={17}
+                className="mr-[2px] inline"
+              />
+              {property[0].number_of_bathroom ?? 0}
+            </div>
+            <div>
+              <Image
+                src="/icons/crop_free.svg"
+                alt="Bed icon"
+                width={17}
+                height={17}
+                className="mr-[2px] inline"
+              />
+              {property[0].area_in_sqft ?? '0'} Sqft
+            </div>
+          </div> */}
 
           <div className="description helveticaNeue mt-[31px] w-full max-w-[100%] text-[16px] font-[400] leading-[32.4px] xl:w-[auto] xl:max-w-[483px]">
             {property[0].description ?? ''}
