@@ -12,7 +12,7 @@ export const Footer = async () => {
 
   return (
     <footer
-      className={`min-[1440px]-h-[477px] relative bg-cover  bg-right-bottom sm:bg-top `}
+      className={`min-[1440px]-h-[477px] relative mt-[25px]  bg-cover bg-right-bottom sm:bg-top`}
       style={{ backgroundImage: 'url("/images/ft-bg.jpg")' }}
     >
       <div className={`z-[1] ${styles.tint} z-[1]`}></div>
