@@ -52,29 +52,48 @@ export default function NewsDetailPage({ params }: NewsPageProps) {
       <div className="gotham text-[40px] font-[700] leading-[39px] sm:text-[45px] sm:leading-[42.3px]">
         <h1>News & Insights</h1>
       </div>
-      <Image
-        src="/images/news_building.jpg"
-        alt="Building in snow"
-        width={1120}
-        height={480}
-        className="mt-[50px] min-w-full"
-      />
-      <h2 className="helveticaNeue mt-[33px] text-[30px] font-[700] leading-[43px]">
-        {newsItem.heading}
-      </h2>
-      <button
-        type="submit"
-        className="helveticaNeue mr-auto mt-[23px] block rounded-3xl border border-solid border-[#EDDFD0] px-[16px] py-[9px] text-[18px] font-[400] leading-[21.47px] transition
+
+      <div className="mt-[20px] flex flex-row">
+        <div className="w-full msm:w-[calc(50%)]">
+          <div className="helveticaNeue text-[16px] font-[400]">
+            <Image
+              src="/icons/calendar_month.svg"
+              alt="Bed icon"
+              width={17}
+              height={17}
+              className="mr-[2px] inline"
+            />
+            {formatDate(newsItem.created_at)}
+          </div>
+          <h2 className="helveticaNeue mt-[10px] text-[30px] font-[700] leading-[33px]">
+            {newsItem.heading}
+          </h2>
+
+          {/* <button
+            type="submit"
+            className="helveticaNeue mr-auto mt-[23px] block rounded-3xl border border-solid border-[#EDDFD0] px-[16px] py-[9px] text-[18px] font-[400] leading-[21.47px] transition
                 duration-200 ease-in-out hover:bg-white/30 hover:text-gray-700 active:bg-white/60 active:text-black"
-      >
-        {formatDate(newsItem.created_at)}
-      </button>
-      <div
-        className="news-detail-desc text-xs"
-        dangerouslySetInnerHTML={{
-          __html: newsItem.description,
-        }}
-      ></div>
+          >
+            {formatDate(newsItem.created_at)}
+          </button> */}
+          <div
+            className="news-detail-desc text-xs"
+            dangerouslySetInnerHTML={{
+              __html: newsItem.description,
+            }}
+          ></div>
+        </div>
+        <div className="w-full msm:w-[calc(50%)]">
+          <Image
+            src="/images/news_building.jpg"
+            alt="Building in snow"
+            width={1120}
+            height={480}
+            className="mt-[50px] min-w-full"
+          />
+        </div>
+      </div>
+
       <div className="mt-[28px] flex justify-between">
         {prevItem && (
           <Link
