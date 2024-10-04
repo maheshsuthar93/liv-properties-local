@@ -469,7 +469,7 @@ function ProjectComponent() {
                 DLD Permit Number:
               </p>
               <p className="helveticaNeue mt-[12px] text-[16px] font-[500] leading-[19.54px]">
-                632752507835
+                {property[0].permit_number}
               </p>
               <p className="helveticaNeue row-start-3 mt-[12px] text-[16px] font-[500] leading-[22.4px]">
                 This property listing has been reviewed and <br />

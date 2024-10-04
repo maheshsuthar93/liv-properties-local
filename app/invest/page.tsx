@@ -56,7 +56,7 @@ export default async function InvestPage() {
         />
       </div>
       <div
-        className="two-col-desc mt:[50px] ] helveticaNeue flex flex-col flex-nowrap gap-[30px] text-[16px] font-[400] leading-[25.92px] sm:mt-[10px] lg:mt-[10px] lg:flex-row lg:flex-wrap"
+        className="two-col-desc mt:[50px] helveticaNeue flex flex-col flex-nowrap gap-[30px] text-[16px] font-[400] leading-[25.92px] sm:mt-[10px] lg:mt-[10px] lg:flex-row lg:flex-wrap"
         dangerouslySetInnerHTML={{
           __html: investment?.['investment-section-1'][2].field_value as string,
         }}

@@ -55,7 +55,7 @@ export default async function Contact() {
           height={885}
         />
       </div>
-      <div className="mb-[30px] mt-[30px] flex flex-wrap items-center justify-between gap-[50px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[43px] md:mt-[80px] lg:mt-[120px] lg:flex-wrap lg:gap-[0px]">
+      <div className="mb-[30px] mt-[30px] flex flex-wrap items-center justify-between gap-[50px] border-b border-solid border-[#EDDFD0] border-opacity-50 pb-[43px] md:mt-[80px] lg:mt-[0px] lg:flex-wrap lg:gap-[0px]">
         <div className="w-[252px] text-sm leading-[29px] lg:w-[calc(30%-25px)]">
           <div className="mt-[53px] sm:mt-[0px]">
             <p>

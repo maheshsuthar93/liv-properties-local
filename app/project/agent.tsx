@@ -50,9 +50,9 @@ const AgentContact = (props: any) => {
         />
         <div className="ml-[10px]">
           <div className="mb-[10px] text-[20px] font-[700]">
-            {property.agent_phone ?? 'Not Specified'}
+            {property.agent_name ?? 'Not Specified'}
           </div>
-          <div className="text-[16px] font-[500]">{'Not Specified'}</div>
+          <div className="text-[16px] font-[500]">{property.agent_id}</div>
         </div>
       </div>
       <div className="flex-2 text-[20px] font-[700]">
