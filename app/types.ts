@@ -249,7 +249,7 @@ export interface Career {
 export interface HomeSearchText {
   //availablefor: string;
   price_range: string;
-  property_type: string;
+  property_type: string | undefined;
   location: string;
   emirate: string;
   construction_status: string | undefined;

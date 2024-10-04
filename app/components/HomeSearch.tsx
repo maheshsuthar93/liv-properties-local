@@ -71,20 +71,23 @@ export const HomeSearch = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     const params: HomeSearchText = {
-      construction_status: projectStatus,
+      construction_status:
+        projectStatus == 'status' ? undefined : projectStatus,
       // availablefor: projType,
       emirate: emirate,
-      property_type: propertyType,
+      property_type: propertyType == 'propertyType' ? undefined : propertyType,
       price_range: pr,
       location: location,
       search_text: textSearch,
     };
     const queryString = buildQueryString(params);
     console.log(`Query ${queryString}`);
-    const page = params.construction_status ?? 'ready';
+    //const page = params.construction_status ?? 'ready';
 
-    router.push(`/projects/${page}${queryString}`);
+    // router.push(`/projects/${page}${queryString}`);
+    router.push(`/projects/ready${queryString}`);
   };
 
   useLayoutEffect(() => {
@@ -144,7 +147,7 @@ export const HomeSearch = () => {
             //className={`custom-select relative  flex max-w-[calc(40%-11px)]  cursor-pointer flex-row items-center justify-between border-0 border-[#eddfd0] bg-transparent py-3 pl-[0] text-sm text-[#eddfd0] focus:border-0  focus:outline-none focus:ring-0 focus:ring-inset focus:ring-[#EDDFD0] small:min-w-[70px] small:max-w-[auto]`}
             options={[
               {
-                value: 'Status',
+                value: 'status',
                 label: 'Status',
               },
               {
