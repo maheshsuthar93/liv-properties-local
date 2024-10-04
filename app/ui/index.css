@@ -436,12 +436,12 @@ input.autofill-input:-webkit-autofill:focus {
     color 0s 600000s !important;
 }
 
-.home-search ul {
+/* .home-search ul {
   top: unset;
   transform: translateY(-70%);
   bottom: 0;
   left: 12zpx;
-}
+} */
 
 .who-desc {
   display: grid;

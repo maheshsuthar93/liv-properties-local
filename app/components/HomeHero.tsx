@@ -28,7 +28,7 @@ export const HomeHero = () => {
     : home['section-1'][1].field_value;
   // 3xl:max-w-[1200px]
   return (
-    <div className="min-[1630px]:min-w-[1440px] max-[1629px]:w-full  verticalPanelInner flex h-full flex-col justify-between overflow-hidden lg:pb-[50px] xl:pb-[60px]  small:pb-[40px]">
+    <div className="min-[1630px]:min-w-[1440px] max-[1629px]:w-full  verticalPanelInner flex h-full flex-col justify-between  lg:pb-[50px] xl:pb-[60px]  small:pb-[40px]">
       <div className="flex flex-row items-center">
         <div className="home-sec_title gotham absolute z-[2] mt-[20px] flex w-[100vw] text-[55px] font-[700] leading-[65px] sm:text-[55px] sm:leading-[75px]">
           <div className="px-[3vw] sm:px-0 ">

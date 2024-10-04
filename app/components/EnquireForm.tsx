@@ -43,9 +43,13 @@ interface FormData {
 
 interface EnquireFormProps {
   hasUploadField?: boolean;
+  subjectFieldLabel?: string;
 }
 
-export const EnquireForm = ({ hasUploadField = false }: EnquireFormProps) => {
+export const EnquireForm = ({
+  hasUploadField = false,
+  subjectFieldLabel = 'Subject',
+}: EnquireFormProps) => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -229,7 +233,8 @@ export const EnquireForm = ({ hasUploadField = false }: EnquireFormProps) => {
               htmlFor="subject"
               className="block text-sm font-medium leading-6"
             >
-              Subject*
+              {/* Subject* */}
+              {subjectFieldLabel}
             </label>
             <input
               type="text"
@@ -238,7 +243,8 @@ export const EnquireForm = ({ hasUploadField = false }: EnquireFormProps) => {
               value={formData.subject}
               onChange={handleChange}
               required
-              placeholder="Subject"
+              placeholder={subjectFieldLabel}
+              // placeholder="Subject"
               className={`block 
                                 w-[100%] 
                                 border-0 border-b-[1px] border-[#eddfd0] 
